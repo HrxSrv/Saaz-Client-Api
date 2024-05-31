@@ -51,10 +51,10 @@ const Footer = () => {
       <div className="bottom-bar">
         <div className="bottom-bar-content">
           <span className="text">
-            Developed By Harshit Srivastava
+            Designed By Vishrut Sagar
           </span>
           <span className="text">
-            Designed By Vishrut Sagar
+            Developed By Harshit Srivastava
           </span>
           <img src={Payment} />
         </div>
