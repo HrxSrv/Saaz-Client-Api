@@ -1,0 +1,99 @@
+@import "../../../css-config/mixins.scss";
+@font-face {
+    font-family: 'saazLight';
+    src: url('../../../fonts/HelveticaNeueLight.otf') format('opentype'),
+         url('../../../fonts/HelveticaNeueLightItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    /* Add additional font formats if necessary */
+    /* Specify the correct path to the font files */
+  }
+.hero-banner {
+    position: relative;
+    background-color: black;
+    max-width: 100vw;
+    img{
+        max-width: 100vw;
+    }
+    height:calc(100vh - 500px);
+    @include md {
+        height: 100vh;
+        img{
+            width: 100vw;
+        }
+    }
+    .content {
+        position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        @include md {
+            flex-direction: column;
+            max-width: 1200px;
+        }      
+        .img-cta{
+            .banner-img {
+                position: relative;
+                z-index: 9;
+                width: 200px;
+                margin-bottom: 20px;
+                margin-right: auto;
+                margin-top: 0;
+                    margin-left: auto;
+                    max-width: fit-content;
+                @include md {
+                    width: 600px;
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-bottom: 0;
+                }
+                @include xxl {
+                    width: 600px;
+                    margin-right: 0;
+                    margin-top: 0;
+                }
+            }
+            
+            .ctas {
+                color: white;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                .banner-cta {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-weight: 500;
+                    width: fit-content;
+                    border: 2px solid white;
+                    padding: 10px 20px;
+                    transition: all ease 0.3s;
+                    cursor: pointer;
+                    &.v2 {
+                        background-color: white;
+                        color: black;
+                    }
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+        .text-content {
+           color: white;
+           font-family: 'saazLight';
+           line-height: 132%;
+           letter-spacing: 3px;
+           @include md{
+            font-size: 30.35px;
+           }
+        }
+        
+    }
+}
