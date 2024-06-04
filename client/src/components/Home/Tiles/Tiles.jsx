@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Tiles.scss'
 import arrow from "../../../assets/arrow3x.png"
 import menAvatar from "../../../assets/menAvatar.png"
+import TilePopup from '../Drawer/Drawer'
 function Tiles() {
+  const [isClicked,setIsClicked] = useState(false);
   return (
     <div className='tileLayout'>
         <div className="menAvatar">
@@ -13,6 +15,7 @@ function Tiles() {
         <div className="title">EVENTS</div>
         <div className="more">more</div>
         <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
+        <TilePopup/>
       </div>
       <div className="two"></div>
       <div className="three"></div>

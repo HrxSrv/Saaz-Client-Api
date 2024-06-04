@@ -6,7 +6,7 @@ import saazBanner from "../../../assets/Group28.png"
 const Banner = () => {
     return (
         <div className="hero-banner">
-            <img src={BannerImg} alt="Banner" />
+            <img src={BannerImg} alt="Banner" className="background"/>
             <div className="content">
                 <div className="img-cta">
                 <img className="banner-img" src={saazBanner} />

@@ -12,10 +12,13 @@
     position: relative;
     background-color: black;
     max-width: 100vw;
+    .background{
+        filter: blur(2px);
+    }
     img{
         max-width: 100vw;
     }
-    height:calc(100vh - 500px);
+    height:calc(100vh - 640px);
     @include md {
         height: 100vh;
         img{
@@ -24,9 +27,12 @@
     }
     .content {
         position: absolute;
-            top: 50%;
+            top: 80%;
             left: 50%;
             transform: translate(-50%, -50%);
+        @include md{
+            top: 50%;
+        }    
         height: fit-content;
         display: flex;
         flex-direction: row;
