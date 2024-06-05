@@ -53,9 +53,9 @@ const Footer = () => {
           <span className="text">
             Designed By Vishrut Sagar
           </span>
-          <span className="text">
+          {/* <span className="text">
             Developed By Harshit Srivastava
-          </span>
+          </span> */}
           <img src={Payment} />
         </div>
       </div>
