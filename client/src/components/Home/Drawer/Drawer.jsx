@@ -164,7 +164,7 @@ const TilePopup = ({ handleClick }) => {
               <Typography
                 variant="h1"
                 fontFamily={"Helvetica"}
-                color={"black"}
+                color={"#181818c4"}
                 fontSize={"10px"}
                 letterSpacing={'1px'}
                 style={{top:'20%', left:'-15%', position:'relative',fontWeight:'light'}}
@@ -184,7 +184,7 @@ const TilePopup = ({ handleClick }) => {
               <Typography
                 variant="h1"
                 fontFamily={"Helvetica"}
-                color={"black"}
+                color={"#181818c4"}
                 fontSize={"10px"}
                 letterSpacing={'1px'}
                 style={{top:'20%', left:'-27%', position:'relative',fontWeight:'light'}}
