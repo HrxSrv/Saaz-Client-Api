@@ -8,6 +8,7 @@ import About from "./components/Footer/Newsletter/About"; // Assuming you meant 
 import AppContext from "./utils/context";
 import LoadingSaaz from "./components/Animation/LoadingSaaz";
 import Newsletter from "./components/Footer/Newsletter/About"
+import Event from "./Pages/Events/Events";
 function usePageLoading() {
     const [loading, setLoading] = useState(true);
     const location = useLocation();
@@ -16,7 +17,7 @@ function usePageLoading() {
         setLoading(true);
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 4000);
+        }, 0);
         return () => {
             clearTimeout(timer);
         };
@@ -35,6 +36,7 @@ function PageWrapper() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/event" element={<Event />} />
             </Routes>
             <Newsletter />
             <Footer />

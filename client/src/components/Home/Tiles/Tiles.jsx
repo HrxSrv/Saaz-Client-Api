@@ -3,7 +3,7 @@ import './Tiles.scss'
 import arrow from "../../../assets/arrow3x.png"
 import menAvatar from "../../../assets/menAvatar.png"
 import TilePopup from '../Drawer/Drawer'
-
+import { useNavigate } from 'react-router-dom'
 function Tiles() {
   const [clickedTiles, setClickedTiles] = useState({});
 
@@ -13,18 +13,17 @@ function Tiles() {
       [tile]: !prevState[tile]
     }));
   }
-
+  const navigate = useNavigate()
   return (
     <div className='tileLayout'>
       <div className="menAvatar">
         <img src={menAvatar} alt="Men Avatar" />
       </div>
       <div className='Tiles'>
-        <div className="one" onClick={() => handleClick('one')}>
+        <div className="one" onClick={() => navigate("/Event")}>
           <div className="title">EVENTS</div>
           <div className="more">more</div>
           <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
-          {clickedTiles['one'] && <TilePopup color='black' handleClick={() => handleClick('one')} />}
         </div>
         <div className="two" onClick={() => handleClick('two')}>
           {clickedTiles['two'] && <TilePopup color='black' handleClick={() => handleClick('two')} />}

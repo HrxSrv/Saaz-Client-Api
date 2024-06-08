@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import "../../css-config/mixins.scss";
+.layout{
+  width: calc(100% - 20px);
+  color: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  @include md{
+   flex-direction: row;
+  }
+  .left{
+
+    display: flex;
+    margin-left: 40px;
+    @include md{
+      margin-left: 180px;
+    }
+    .title{
+      font-family: "Anton";
+      font-weight: 400;
+      font-style: normal;
+      background-color: transparent;
+      font-size: 100px;
+      transform: rotate(-90deg);
+      // position: relative;
+      line-height: 107.5%; 
+      letter-spacing: 5.721px;
+      // width: 150px;
+     }
+     .subtext{
+      position: relative;
+      left: -60%;
+      margin-top: 30px;
+      @include md{
+        left: -40%;
+      }
+      h1{
+        width: 150px;
+        display: flex;
+        justify-content: center;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      img{
+        width: 150px;
+        position: relative;
+        left: -10%;
+      }
+     }
+  }
+  .right{
+    width: calc(100% );
+    @include md{
+      width: 50%;
+      position: relative;
+      top: 1%;
+    }
+    margin: 20px auto;
+    img{
+      border-radius: 4px;
+    }
+  }
+}

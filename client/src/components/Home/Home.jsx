@@ -4,6 +4,7 @@ import Banner from "./Banner/Banner";
 import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
 import Tiles from './Tiles/Tiles'
+import  ImageSlider from "../Slideshow/Carousel/Carousel"
 const Home = () => {
     const { products, setProducts, categories, setCategories } =
         useContext(Context);
@@ -27,6 +28,7 @@ const Home = () => {
         <div className="home">
             <Banner />
             <Tiles/>
+            {/* <ImageSlider/> */}
         </div>
     );
 };
