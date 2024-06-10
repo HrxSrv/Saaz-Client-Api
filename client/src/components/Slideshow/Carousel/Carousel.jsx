@@ -3,22 +3,25 @@ import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
+import  { useState, useEffect } from 'react';
 const images = [
   {
-    url: 'https://via.placeholder.com/800x400.png?text=Image+1',
-    title: 'Image 1',
+    url: "https://drive.google.com/uc?export=view&id=1FpK14Nci-OO2OX9RZk1WvpopwUUHRT8D",
+    title: "bg (3).png"
   },
   {
-    url: 'https://via.placeholder.com/800x400.png?text=Image+2',
-    title: 'Image 2',
+    url: "https://drive.google.com/uc?export=view&id=1IQ283uGGjyi5jpuy4HTsjaPeiR_JMf35",
+    title: "bg (2).png"
   },
   {
-    url: 'https://via.placeholder.com/800x400.png?text=Image+3',
-    title: 'Image 3',
+    url: "https://drive.google.com/uc?export=view&id=1741BdOior9tL0ldtZQUHWmsVushrY11R",
+    title: "bg (1).png"
   },
+  {
+    url: "https://drive.google.com/uc?export=view&id=1GAQyYiqP3YlbRqww7XAt40qRexNubFbH",
+    title: "bg.png"
+  }
 ];
-
 const ImageSlider = () => {
   const settings = {
     dots: true,
@@ -31,7 +34,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <Box sx={{ width: '100%',height:'80%', margin: 'auto' }}>
+    <Box sx={{ width: '100%', margin: 'auto' }}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <Box key={index} sx={{ position: 'relative' }}>
