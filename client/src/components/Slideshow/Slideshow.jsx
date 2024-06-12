@@ -1,6 +1,6 @@
 import React from "react";
 import "./Slideshow.scss";
-import ImageSlider from "./Carousel/Carousel";
+import Gallary from "./CloudinaryGallary/Gallary";
 import arrow from "../../assets/arrow2x.png";
 function Slideshow() {
   return (
@@ -20,7 +20,7 @@ function Slideshow() {
         </div>
       </div>
       <div className="right">
-        <ImageSlider />
+        <Gallary />
       </div>
     </div>
   );

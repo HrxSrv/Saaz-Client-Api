@@ -55,9 +55,10 @@
   .right{
     width: calc(100% );
     @include md{
-      width: 50%;
+      width: 100%;
       position: relative;
-      top: 1%;
+      left:-5%;
+      top:6%;
     }
     margin: 20px auto;
     img{
