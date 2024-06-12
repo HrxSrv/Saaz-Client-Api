@@ -53,14 +53,13 @@ const Footer = () => {
           <span className="text">
             Designed By Vishrut Sagar
           </span>
-          {/* <span className="text">
+          <span className="text">
             Developed By Harshit Srivastava
-          </span> */}
-          <img src={Payment} />
+          </span>
+          {/* <img src={Payment} /> */}
         </div>
       </div>
     </div>
   );
 };
-
 export default Footer;
