@@ -1,8 +1,8 @@
-**For Local Development**
-API <br>
+**For Local Development**<br>
+<br>
+API 
 <br>
 1.npm init<br>
-<br>
 2.setup .env file:<br>
   CLOUDINARY_CLOUD_NAME=djy2jlthj<br>
   CLOUDINARY_API_KEY=558185613369759<br>
