@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchEvents = async () => {
   try {
-    const response = await axios.get('/api/events');
+    const response = await axios.get('http://localhost:5000/api/events');
     return response.data;
   } catch (error) {
     console.error('Error fetching events:', error);
@@ -12,7 +12,7 @@ export const fetchEvents = async () => {
 
 export const searchEvents = async (tag) => {
   try {
-    const response = await axios.get(`/api/events/search?tag=${tag}`);
+    const response = await axios.get(`http://localhost:5000/api/events/search?tag=${tag}`);
     return response.data;
   } catch (error) {
     console.error('Error searching events:', error);
@@ -22,7 +22,7 @@ export const searchEvents = async (tag) => {
 
 export const fetchEventMedia = async (eventId) => {
   try {
-    const response = await axios.get(`/api/events/${eventId}/media`);
+    const response = await axios.get(`http://localhost:5000/api/folder/${eventId}/media`);
     return response.data;
   } catch (error) {
     console.error('Error fetching event media:', error);
