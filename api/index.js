@@ -1,68 +1,29 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cloudinary = require('cloudinary').v2;
-const dotenv = require('dotenv');
-
-dotenv.config();
-
+import express from 'express';
+import pkg from 'body-parser';
+const { json, urlencoded } = pkg;
+import { searchByTag,searchForAllFolders,fetchMediaFromFolder } from './Handlers/Images.js';
 const app = express();
 const port = process.env.PORT || 5000;
-
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
-
-app.use(bodyParser.json());
-
-// Route to fetch all events
-app.get('/api/events', async (req, res) => {
-  try {
-    const result = await cloudinary.search
-      .expression('tags= EventsPage Slideshow')
-      .with_field('tags')
-      .execute();
-    res.json(result.resources);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch events' });
-  }
-});
-
-// Route to search events by tags
-app.get('/api/events/search', async (req, res) => {
-  const { tag } = req.query;
-  try {
-    const result = await cloudinary.search
-      .expression(`tags=${tag}`)
-      .execute();
-    res.json(result.resources);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to search events' });
-  }
-});
-
-// Route to fetch media for a specific event
-app.get('/api/events/:eventId/media', async (req, res) => {
-  const { eventId } = req.params;
-  try {
-    const result = await cloudinary.search
-      .expression(`folder=${eventId}`)
-      .execute();
-    res.json(result.resources);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch event media' });
-  }
-});
-
-app.get('/api/folders', async (req, res) => {
-    try {
-      const result = await cloudinary.api.root_folders();
-      res.json(result.folders);
-    } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch folders' });
-    }
-  });
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+});
+// Middlewares
+app.use(json());
+app.use(urlencoded({ extended: true }));
+
+// Route to search events by tags
+app.get('/api/events/*/media', searchByTag);
+
+// Route to get all the fodlers
+app.get('/api/folders', searchForAllFolders);
+
+//Route to get all the media of a subfolder
+app.get('/api/folder/*/media', async (req, res) => {
+  const folderPath = decodeURIComponent(req.params[0]); // Decoding the folder path
+  try {
+    const media = await fetchMediaFromFolder(folderPath);
+    res.json(media);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });

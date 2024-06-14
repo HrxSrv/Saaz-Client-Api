@@ -1,0 +1,3 @@
+Cloudinary
+photos which do not reflect their file structure in their p-ID are not retrievable
+photos uploaded from media explorer do not hold their parent photo structure in their p_id

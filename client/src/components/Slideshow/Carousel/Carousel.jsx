@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import  { useState, useEffect } from 'react';
+import DummyImages from "../../../Cloudinary/Fetching Photos/DummyImages"
 const images = [
   {
     url: "https://drive.google.com/uc?export=view&id=1FpK14Nci-OO2OX9RZk1WvpopwUUHRT8D",
@@ -23,6 +24,8 @@ const images = [
   }
 ];
 const ImageSlider = () => {
+  const Dimages = DummyImages();
+  console.log(Dimages);
   const settings = {
     dots: true,
     infinite: true,
