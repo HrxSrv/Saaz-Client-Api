@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './EventTiles.scss'
 function EventTIles() {
   return (
-    <div>
-      
+    <div className='layout1'>
+        
     </div>
   )
 }

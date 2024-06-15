@@ -5,10 +5,8 @@ import EventTIles from '../../components/EventTiles/EventTIles'
 function Events() {
   return (
     <div>
-      <div className="layout">
         <Slideshow/>
         <EventTIles/>
-      </div>
     </div>
   )
 }
