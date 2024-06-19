@@ -1,3 +1,4 @@
+// EventCard.js
 import React, { useEffect, useState } from "react";
 import {
   Card,
@@ -11,14 +12,11 @@ import {
 } from "@mui/material";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import "./Tile.scss";
-import Carousel, { Modal, ModalGateway } from "react-images";
-
 const Tile = ({ event }) => {
   const [images, setImages] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showImage, setShowImage] = useState(true);
-  const [viewerIsOpen, setViewerIsOpen] = useState(false);
-
+  
   useEffect(() => {
     const loadImages = async () => {
       const fetchedImages = await fetchEventMedia(event.path);
@@ -26,7 +24,7 @@ const Tile = ({ event }) => {
     };
     loadImages();
   }, [event.path]);
-
+  console.log(images);
   useEffect(() => {
     const interval = setInterval(() => {
       if (images && images.length > 0) {
@@ -41,23 +39,17 @@ const Tile = ({ event }) => {
     return () => clearInterval(interval);
   }, [images]);
 
-  const openLightbox = (event, { index }) => {
-    setCurrentImageIndex(index);
-    setViewerIsOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setCurrentImageIndex(0);
-    setViewerIsOpen(false);
-  };
-
   const getTransformedImageUrl = (url) => {
     return url.replace("/upload/", "/upload/w_600,q_50/");
   };
 
   return (
-    <Card className="transparent-card">
-      <CardActionArea onClick={(event) => openLightbox(event, { index: currentImageIndex })}>
+    <Card className="transparent-card"  style={{
+      'background-color': 'transparent'
+    }}>
+      <CardActionArea style={{
+      'background-color': 'transparent'
+    }}>
         {images && images.length > 0 ? (
           <Fade in={showImage} timeout={500}>
             <CardMedia
@@ -65,10 +57,16 @@ const Tile = ({ event }) => {
               height="340"
               image={getTransformedImageUrl(images[currentImageIndex].url)}
               alt={event.name}
+
             />
           </Fade>
         ) : (
-          <Box display="flex" justifyContent="center" alignItems="center" height="340">
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height="140"
+          >
             <CircularProgress />
           </Box>
         )}
@@ -78,13 +76,13 @@ const Tile = ({ event }) => {
             variant="h5"
             component="div"
             style={{
-              fontFamily: "Anton",
-              fontSize: "37.64px",
-              fontWeight: 400,
-              lineHeight: "40.47px",
-              letterSpacing: "0.045em",
-              wordWrap: "break-word",
-              width: "250px",
+              "font-family": "Anton",
+              "font-size": "37.64px",
+              "font-weight": "400",
+              "line-height": "40.47px",
+              "letter-spacing": "0.045em",
+              'wordWrap': "break-word", // Ensures long words break into a new line
+              'width': "250px", // Example: Adjust width as per your design
             }}
           >
             {event.name}
@@ -94,20 +92,8 @@ const Tile = ({ event }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <ModalGateway>
-        {viewerIsOpen && images && (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImageIndex}
-              views={images.map((image, index) => ({
-                src: getTransformedImageUrl(image.url),
-                alt: event.name,
-              }))}
-            />
-          </Modal>
-        )}
-      </ModalGateway>
     </Card>
+    
   );
 };
 
