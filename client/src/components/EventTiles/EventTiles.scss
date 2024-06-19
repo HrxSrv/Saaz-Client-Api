@@ -1,9 +1,11 @@
 @import "../../css-config/mixins.scss";
 .layout1{
-    height: 400vh;
+    height: fit-content;
     width: calc(100% - 20px);
     background: #181818;
     margin: 0 auto;
     top: 50%;
     position: relative;
+    padding: 30px;
+    border-radius: 20px;
 }

@@ -1,10 +1,26 @@
-/* EventCard.css */
-.fade {
-    transition: opacity 1s ease-in-out;
+/* Tile.scss */
+
+.transparent-card {
+  background-color: transparent;
+  box-shadow: none;
+  position: relative;
+
+  .MuiCardContent-root {
+    background-color: transparent;
     opacity: 1;
+    transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out; /* Added transform transition */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
   }
-  
-  .fade-exit {
-    opacity: 0;
+
+  .MuiCardActionArea-root {
+    background-color: transparent;
   }
-  
+
+  &:hover .MuiCardContent-root {
+    // transform: translateY(200px); /* Adjust translateY value as per your animation needs */
+    opacity: 50%;
+  }
+}
