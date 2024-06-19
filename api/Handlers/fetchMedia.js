@@ -28,7 +28,7 @@ export const searchForAllFolders =  async (req, res) => {
       resource_type: 'image', 
       transformation: [
         { width: 800, height: 600, crop: 'limit' }, // Example transformation
-        { fetch_format: 'auto', quality: 'auto' } // Auto format and quality
+        { fetch_format: 'auto', quality: '50' } // Auto format and quality
       ]
     });
     return result.resources;
