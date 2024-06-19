@@ -1,0 +1,10 @@
+/* EventCard.css */
+.fade {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+  }
+  
+  .fade-exit {
+    opacity: 0;
+  }
+  

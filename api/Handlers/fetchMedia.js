@@ -2,7 +2,6 @@ import cloudinary from "../cloudinary.js";
 export const searchByTag = async (req, res) => {
   const  eventId  = decodeURIComponent(req.params[0]);
   try {
-    
     const result = await cloudinary.search
       .expression(`tags=${eventId}`)
       .execute();
