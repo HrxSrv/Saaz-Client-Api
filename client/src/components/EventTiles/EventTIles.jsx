@@ -4,6 +4,7 @@ import  { useState, useEffect } from 'react';
 import {  fetchEvents } from '../../Cloudinary/Cloudinary';
 import  Tile  from './Tile/Tile';
 import { Grid } from '@mui/material';
+import calendar from '../../assets/calendar.png'
 function EventTIles() {
   // const [events,setEvents] = useState();
   // useEffect(()=>{
@@ -70,6 +71,7 @@ function EventTIles() {
   //   // Add more events here
   // ];
   return (
+    <>
     <div className='layout1'>
         <Grid container spacing={4}>
       {events.map((event, index) => (
@@ -79,6 +81,8 @@ function EventTIles() {
       ))}
     </Grid>
     </div>
+    <img src={calendar} className="calendar" alt="" />
+    </>
   )
 }
 

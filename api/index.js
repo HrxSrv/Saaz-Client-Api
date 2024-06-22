@@ -6,7 +6,7 @@ import { searchByTag,searchForAllFolders,searchMediaByFolder } from './Handlers/
 const app = express();
 const port = process.env.PORT || 5000;
 const corsOptions = {
-  origin: 'https://saaz.onrender.com',
+  origin: 'http://localhost:3000',
   credentials: true,
   optionSuccessStatus: 200,
 };

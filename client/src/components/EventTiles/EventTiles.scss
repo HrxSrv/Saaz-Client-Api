@@ -2,10 +2,16 @@
 .layout1{
     height: fit-content;
     width: calc(100% - 20px);
-    background: #181818;
+    background: #121212;
     margin: 0 auto;
     top: 50%;
     position: relative;
     padding: 30px;
     border-radius: 20px;
+}
+.calendar{
+    width: 20vw;
+    position: relative;
+    left: 79%;
+    transform: translateY(-50%);
 }

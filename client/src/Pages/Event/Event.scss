@@ -1,0 +1,56 @@
+.breadCrumbs{
+    width: calc(100% - 50px);
+    position: relative;
+    margin: 40px auto;
+}
+.eventFlex{
+    width:calc(100% - 50px);
+    position: relative;
+    margin:0 auto;
+    color: white;
+    .title{
+        font-family: "Anton";
+        font-weight: 400;
+        font-style: normal;
+        background-color: transparent;
+        font-size: 100px;
+        line-height: 107.5%; 
+        letter-spacing: 5.721px;
+        height: inherit;
+        width: 60%;
+       }
+       .subtext{
+        position: relative;
+        left: -60%;
+        margin-top: 30px;
+        }
+}
+
+.lg-react-element {
+    position: relative;
+    display: grid;
+    width: calc(100% - 50px);
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;  /* Adjust the gap as needed */
+    background-color: #121212;
+    padding: 20px;
+    border-radius:20px ;
+}
+.image-grid-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;  /* Makes a square */
+    overflow: hidden;
+    width: 200px;
+}
+
+.image-grid-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the image covers the area */
+    border-radius: 10px;
+}

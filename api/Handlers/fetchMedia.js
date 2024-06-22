@@ -19,28 +19,41 @@ export const searchForAllFolders =  async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch folders' });
   }
 }
- const  fetchMediaFromFolder = async (folderPath) => {
+const fetchMediaFromFolder = async (folderPath) => {
+  let resources = [];
+  let nextCursor = null;
+
   try {
-    const result = await cloudinary.api.resources({
-      type: 'upload',
-      prefix: folderPath,
-      resource_type: 'image', 
-      transformation: [
-        { width: 800, height: 600, crop: 'limit' }, // Example transformation
-        { fetch_format: 'auto', quality: '50' } // Auto format and quality
-      ]
-    });
-    return result.resources;
+    do {
+      const result = await cloudinary.api.resources({
+        type: 'upload',
+        prefix: folderPath,
+        resource_type: 'image',
+        max_results: 500, // Set a high value to minimize the number of requests
+        next_cursor: nextCursor, // Use next_cursor for pagination
+        transformation: [
+          { width: 800, height: 600, crop: 'limit' }, // Example transformation
+          { fetch_format: 'auto', quality: '50' } // Auto format and quality
+        ]
+      });
+
+      resources = resources.concat(result.resources);
+      nextCursor = result.next_cursor;
+    } while (nextCursor);
+
+    return resources;
   } catch (error) {
     throw new Error('Error fetching media from folder: ' + error.message);
   }
 };
+
 export const searchMediaByFolder = async (req, res) => {
   const folderPath = decodeURIComponent(req.params[0]); // Decoding the folder path
   try {
     const media = await fetchMediaFromFolder(folderPath);
     res.set('Cache-Control', 'public, max-age=86400');
     res.json(media);
+    // console.log(media)''
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

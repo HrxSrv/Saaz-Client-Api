@@ -20,7 +20,7 @@ function Tiles() {
         <img src={menAvatar} alt="Men Avatar" />
       </div>
       <div className='Tiles'>
-        <div className="one" onClick={() => navigate("/Event")}>
+        <div className="one" onClick={() => navigate("/Events")}>
           <div className="title">EVENTS</div>
           <div className="more">more</div>
           <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>

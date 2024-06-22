@@ -12,11 +12,14 @@ import {
 } from "@mui/material";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import "./Tile.scss";
+import { useNavigate } from "react-router-dom";
+
 const Tile = ({ event }) => {
   const [images, setImages] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showImage, setShowImage] = useState(true);
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     const loadImages = async () => {
       const fetchedImages = await fetchEventMedia(event.path);
@@ -24,7 +27,9 @@ const Tile = ({ event }) => {
     };
     loadImages();
   }, [event.path]);
-  console.log(images);
+
+  console.log("Event Object:", event); // Debugging line to log the event object
+ const eventName = event.name;
   useEffect(() => {
     const interval = setInterval(() => {
       if (images && images.length > 0) {
@@ -43,13 +48,20 @@ const Tile = ({ event }) => {
     return url.replace("/upload/", "/upload/w_600,q_50/");
   };
 
+  const handleTileClick = () => {
+    navigate(`/event/${event.name}`, { state: { images: images, eventName: eventName} });
+  };
+
   return (
-    <Card className="transparent-card"  style={{
-      'background-color': 'transparent'
-    }}>
-      <CardActionArea style={{
-      'background-color': 'transparent'
-    }}>
+    <Card
+      className="transparent-card"
+      style={{
+        backgroundColor: "transparent",
+        borderRadius: "10px",
+      }}
+      onClick={handleTileClick}
+    >
+      <CardActionArea style={{ backgroundColor: "transparent" }}>
         {images && images.length > 0 ? (
           <Fade in={showImage} timeout={500}>
             <CardMedia
@@ -57,16 +69,10 @@ const Tile = ({ event }) => {
               height="340"
               image={getTransformedImageUrl(images[currentImageIndex].url)}
               alt={event.name}
-
             />
           </Fade>
         ) : (
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            height="140"
-          >
+          <Box display="flex" justifyContent="center" alignItems="center" height="140">
             <CircularProgress />
           </Box>
         )}
@@ -76,16 +82,16 @@ const Tile = ({ event }) => {
             variant="h5"
             component="div"
             style={{
-              "font-family": "Anton",
-              "font-size": "37.64px",
-              "font-weight": "400",
-              "line-height": "40.47px",
-              "letter-spacing": "0.045em",
-              'wordWrap': "break-word", // Ensures long words break into a new line
-              'width': "250px", // Example: Adjust width as per your design
+              fontFamily: "Anton",
+              fontSize: "37.64px",
+              fontWeight: "400",
+              lineHeight: "40.47px",
+              letterSpacing: "0.045em",
+              wordWrap: "break-word",
+              width: "250px", // Adjust width as per your design
             }}
           >
-            {event.name}
+            {event.name || "Unnamed Event"} {/* Fallback text for debugging */}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {/* {event.description} */}
@@ -93,7 +99,6 @@ const Tile = ({ event }) => {
         </CardContent>
       </CardActionArea>
     </Card>
-    
   );
 };
 
