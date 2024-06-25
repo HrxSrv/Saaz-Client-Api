@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import "./App.scss";
 import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
-import About from "./components/Footer/Newsletter/About"; // Assuming you meant 'About' here.
+import About from "./components/Footer/Newsletter/About";
 import AppContext from "./utils/context";
 import LoadingSaaz from "./components/Animation/LoadingSaaz";
-import Newsletter from "./components/Footer/Newsletter/About"
+import Newsletter from "./components/Footer/Newsletter/About";
 import Events from "./Pages/Events/Events";
 import Event from "./Pages/Event/Event";
+import PageTransition from "./components/PageTransition/PageTransition"; // Import the PageTransition component
+
 function usePageLoading() {
     const [loading, setLoading] = useState(true);
     const location = useLocation();
@@ -18,7 +20,8 @@ function usePageLoading() {
         setLoading(true);
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 0);
+        }, 0); // Adjust timeout for loading animation
+
         return () => {
             clearTimeout(timer);
         };
@@ -29,17 +32,48 @@ function usePageLoading() {
 
 function PageWrapper() {
     const loading = usePageLoading();
+    const location = useLocation();
 
     return (
         <>
             {loading && <LoadingSaaz />}
             <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/events" element={<Events />} />
-                <Route path="/event/:id" element={<Event />} />
-            </Routes>
+            <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                    <Route
+                        path="/"
+                        element={
+                            <PageTransition>
+                                <Home />
+                            </PageTransition>
+                        }
+                    />
+                    <Route
+                        path="/about"
+                        element={
+                            <PageTransition>
+                                <About />
+                            </PageTransition>
+                        }
+                    />
+                    <Route
+                        path="/events"
+                        element={
+                            <PageTransition>
+                                <Events />
+                            </PageTransition>
+                        }
+                    />
+                    <Route
+                        path="/event/:id"
+                        element={
+                            <PageTransition>
+                                <Event />
+                            </PageTransition>
+                        }
+                    />
+                </Routes>
+            </AnimatePresence>
             <Newsletter />
             <Footer />
         </>

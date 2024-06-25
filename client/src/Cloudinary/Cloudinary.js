@@ -1,8 +1,7 @@
-import axios from 'axios';
-
+import { makeRequest } from '../axios';
 export const fetchEvents = async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/folders');
+    const response = await makeRequest.get('/api/folders');
     return response.data;
   } catch (error) {
     console.error('Error fetching events:', error);
@@ -12,7 +11,7 @@ export const fetchEvents = async () => {
 
 export const searchEvents = async (tag) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/events/search?tag=${tag}`);
+    const response = await makeRequest.get(`api/events/search?tag=${tag}`);
     return response.data;
   } catch (error) {
     console.error('Error searching events:', error);
@@ -22,7 +21,7 @@ export const searchEvents = async (tag) => {
 
 export const fetchEventMedia = async (eventId) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/folder/${eventId}/media`);
+    const response = await makeRequest.get(`api/folder/${eventId}/media`);
    
     return response.data;
   } catch (error) {

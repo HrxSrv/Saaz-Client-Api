@@ -39,7 +39,9 @@ export default function IconBreadcrumbs({ eventName,isEvent }) {
         </Link>
         {isEvent && <Typography
           sx={{ display: 'flex', alignItems: 'center' }}
-          color="#1E969F"
+          color="#1E969F" 
+          fontSize="70px"
+          fontWeight="bolder"
         >
           <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
           {eventName}

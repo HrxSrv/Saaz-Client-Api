@@ -98,6 +98,8 @@
            letter-spacing: 3px;
            @include md{
             font-size: 30.35px;
+            position: relative;
+            top: -100px;
            }
         }
         
