@@ -4,10 +4,12 @@
   background-color: transparent;
   box-shadow: none;
   position: relative;
-
+  img{
+    filter: brightness(70%);
+  }
   .MuiCardContent-root {
     background-color: transparent;
-    opacity: 1;
+    opacity:1;
     transition: opacity 0.2s ease-in-out, transform 0.1s ease-in-out; /* Added transform transition */
     position: absolute;
     bottom: 0;

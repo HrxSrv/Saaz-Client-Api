@@ -73,9 +73,11 @@ function PageWrapper() {
                         }
                     />
                 </Routes>
+                
+                <Newsletter />
+                <Footer />
+           
             </AnimatePresence>
-            <Newsletter />
-            <Footer />
         </>
     );
 }
