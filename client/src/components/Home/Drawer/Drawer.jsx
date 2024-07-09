@@ -6,6 +6,7 @@ import {
   Slide,
   IconButton,
 } from "@mui/material";
+import './Drawer.scss'
 import { styled } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import arrow from "../../../assets/arrow3x.png"; // Import the arrow image
@@ -16,7 +17,7 @@ const Transition = forwardRef(function Transition(props, ref) {
 const TileContainer = styled("div")(({ theme }) => ({
   display: "grid",
   gridTemplateAreas: `
-    'tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile2 tile2'
+    'tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile2 tile2 '
     'tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile3 tile4'
   `,
   gridGap: "8px",
@@ -26,8 +27,8 @@ const TileContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     width: "60vw",
     gridTemplateAreas: `
-    'tile1 tile1 tile1 tile1 tile1 tile1  tile2 tile2'
-    'tile1 tile1 tile1 tile1 tile1 tile1  tile3 tile4'
+    'tile1 tile1 tile1 tile1 tile1 tile1 tile2 tile2 tile2 tile2 '
+    'tile1 tile1 tile1 tile1 tile1 tile1 tile3 tile3 tile4 tile4'
   `,
   },
 }));
@@ -43,7 +44,7 @@ const Tile = styled("div")(({ area }) => ({
   alignItems: "center",
   position: "relative",
   opacity: "80%",
-  transition: "ease-out",
+  transition: "0.3s ease-in-out",
   borderRadius: "1vw",
   "&:hover": {
     opacity: "100%",
@@ -101,7 +102,7 @@ const StyledDialogContent = styled(DialogContent)({
   borderRadius: "10px",
 });
 
-const TilePopup = ({ handleClick }) => {
+const TilePopup = ({ eventName,image,date,handleClick }) => {
   const [open, setOpen] = useState(true);
 
   const handleClose = () => {
@@ -127,27 +128,44 @@ const TilePopup = ({ handleClick }) => {
             </IconButton>
           </CloseButtonContainer>
           <TileContainer>
-            <Tile area="tile1">
+            <Tile area="tile1" style={{
+    backgroundImage: `url(${image})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+  }}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
-              <Typography variant="h6">Tile 1</Typography>
+              <div className="tile1-register-tile">
+                <div className="left">
+                <div className="eventName">{eventName}</div>
+                <div className="date">{date}</div>
+                </div>
+                <div className="register">
+                  Event Registration 
+                </div>
+              </div>
             </Tile>
             <Tile area="tile2" style={{ backgroundImage: `url(${Mic})`, backgroundSize: 'cover', backgroundPosition: 'right' }}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
-              <Typography variant="h6"
+              {/* <Typography variant="h6"
                 fontFamily={"Anton"}
                 color={"white"}
                 fontSize={"30px"}
-                style={{top:'-5vh', left:'-4vw', position:'relative',zIndex:'100'}}>Audition Registration</Typography>
-               <Typography
+                style={{ position:'relative',zIndex:'100'}}>Audition Registration</Typography> */}
+                <div className="tile2-audition-tile">
+                  <div className="audition"> Audition Registration</div>
+                  <div className="audition-subtext">Show Us What You Got And Get To Perform On Stage.</div>
+                </div>
+               {/* <Typography
                 variant="h1"
                 fontFamily={"Helvetica"}
                 color={"white"}
                 fontSize={"10px"}
                 letterSpacing={'1px'}
-                style={{top:'5vh', left:'7vw', position:'relative',fontWeight:'light'}}
+                style={{ position:'relative',fontWeight:'light'}}
               >
                 Show Us What You Got <br/>And Get To Perform.
-              </Typography>  
+              </Typography>   */}
                   </Tile>
             <Tile area="tile3" style={{ background: "#FFFFFF" }}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />

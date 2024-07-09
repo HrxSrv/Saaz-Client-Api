@@ -9,15 +9,14 @@
        url('../../fonts/HelveticaNeueLightItalic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  
 }
+
 @font-face {
   font-family: 'saazLight';
   src: url('../../fonts/HelveticaNeueLight.otf') format('opentype'),
        url('../../fonts/HelveticaNeueLightItalic.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  
 }
 
 .main-header {
@@ -29,117 +28,148 @@
   border-bottom: 1px solid;
   border-color: rgba(0, 0, 0, 0.1);
   position: relative;
-  @include md {
-    padding: 0 20px;
-  }
-  
+
   .header-content {
     display: flex;
     align-items: center;
     height: 50px;
-    gap: 28vw;
     max-width: 100vw;
     margin: 0 auto;
-    
+
     @include md {
-      height: 112px;
+      height: 100px;
     }
-  }
-  
-  .center {
-    margin-left: 2.2vw;
-    list-style-type: none;
-    // display: none;
-    display: flex;
-    @include md {
-      gap: 15px;
+
+    .left {
+      position: relative;
+      width: 25px;
+
+      img {
+        width: 100%;
+      }
+
+      cursor: pointer;
+
+      @include md {
+        width: 50px;
+        left: 48px;
+      }
+    }
+
+    .right {
+      margin-left: auto;
       display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .hamburger {
+        display: block;
+        width: 25px;
+        cursor: default;
+        position: relative;
+        user-select: none;
+
+        .stick {
+          width: 100%;
+          height: 3px;
+          background: white;
+          margin: 4px 0;
+          transition: all 0.3s ease;
+          transform-origin: center;
+        }
+
+        &.open {
+          .stick:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+          }
+          .stick:nth-child(2) {
+            opacity: 0;
+          }
+          .stick:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+          }
+        }
+
+        @include md {
+          display: none;
+        }
+      }
+
+      @include md {
+        gap: 25px;
+      }
     }
-    gap:2px;
-    
-    li {
-        font-family: "saazLight";
-        font-size: 10px;
-        font-weight: 100;
-        cursor: pointer;
+
+    .center {
+      list-style-type: none;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: black;
+      transition: all 0.3s ease;
+      gap: 5vh;
+      li {
+        padding: 10px;
+        text-align: center;
+        font-family:  Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight:300;
+        cursor: default;
         border-radius: 1vw;
         background-color: white;
-        transition: all ease 0.3s;
-        width: 14vw;
-        height: 29px;
         color: black;
+        transition: all ease 0.3s;
+        width: calc(100% - 180px);
+        box-sizing: border-box;
+        margin: auto;
+        cursor:default;
+       @include md{
+          cursor:pointer;
+          &:hover {
+            opacity: 0.6;
+            color: #323232;
+          }
+        }
+      }
+
+      &.open {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        @include md {
-          width: 14vw;
-          height: 66px;
-          // border-radius: 15px;
-          font-size: 22px;
-        }
-        
-        &:hover {
-          opacity: 0.6;
-          color: #323232;
-        }
-    }
-  }
-  
-  .left {
-    position: relative;
-    width: 25px;
-    
-    img {
-      width: 100%;
-    }
-    
-    cursor: pointer;
-    
-    @include md {
-      width: 50px;
-    }
-  }
-  
-  .right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    
-    @include md {
-      gap: 25px;
-    }
-    
-    svg {
-      font-size: 20px;
-      cursor: pointer;
-      
+        animation: slideIn 0.3s ease forwards;
+        padding:20px 0;
+      }
+
       @include md {
-        font-size: 24px;
-      }
-      
-      &:hover {
-        opacity: 0.6;
-      }
-    }
-    
-    .cart-icon {
-      position: relative;
-      
-      span {
-        min-width: 20px;
-        text-align: center;
-        background: #8e2de2;
-        padding: 2.5px;
-        position: absolute;
-        top: -5px;
-        right: -12px;
-        font-size: 12px;
-        line-height: 1;
-        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        height: 10vh;
+        align-items: center;
+        margin: 0;
+        margin-left: 31.3vw;
+        gap: 16px;
+
+        li {
+          font-size: 10px;
+          width: 14vw;
+          height: 29px;
+          margin: 0;
+          @include md {
+            width: 14.1vw;
+            height: 66px;
+            font-size: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
       }
     }
   }
-  
+
   &.sticky-header {
     background-color: rgba(0, 0, 0, 0.438);
     color: white;
@@ -155,6 +185,17 @@
     transform: translateY(-60px);
   }
   100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
     transform: translateY(0);
   }
 }

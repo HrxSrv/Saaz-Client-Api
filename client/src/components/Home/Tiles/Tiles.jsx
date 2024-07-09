@@ -4,6 +4,7 @@ import arrow from "../../../assets/arrow3x.png"
 import menAvatar from "../../../assets/menAvatar.png"
 import TilePopup from '../Drawer/Drawer'
 import { useNavigate } from 'react-router-dom'
+import independenceDay from '../../../assets/DrawerImages/independenceDay.jpg'
 function Tiles() {
   const [clickedTiles, setClickedTiles] = useState({});
 
@@ -25,8 +26,19 @@ function Tiles() {
           <div className="more">more</div>
           <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
         </div>
-        <div className="two" onClick={() => handleClick('two')}>
-          {clickedTiles['two'] && <TilePopup color='black' handleClick={() => handleClick('two')} />}
+        <div className="two" onClick={() => handleClick('two')} style={{"background-color":"#1E969F"}}>
+          <div className="date" style={{"background":'transparent'}}>
+            <div className="day" style={{"background":'transparent'}}>15</div>
+            <div className="month" style={{"background":'transparent'}}>August</div>
+            <div className="year" style={{"background":'transparent'}}>2024</div>
+          </div>
+          <div className="eventName" style={{"background":'transparent'}}>
+             Independence Day
+            </div>
+            <div className="more1" style={{"background":'transparent'}}>
+              More
+            </div>
+          {clickedTiles['two'] && <TilePopup eventName={'Independence Day'} image={independenceDay} date={'15 August 2024'} color='black' handleClick={() => handleClick('two')} />}
         </div>
         <div className="three" onClick={() => handleClick('three')}>
           {clickedTiles['three'] && <TilePopup color='black' handleClick={() => handleClick('three')} />}

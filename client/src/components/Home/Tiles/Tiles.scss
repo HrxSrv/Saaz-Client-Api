@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 @import "../../../css-config/mixins.scss";
-.tileLayout{
+.tileLayout {
   position: relative;
   height: 125vh;
 }
-.menAvatar{
-    width: 9vw;
-    img{
-        width: 100%;
-    }
-    position: relative;
-    top: 5.8vh;
-    @include md{
-      top:1vh;
-    }
-    left: 5vw;
+.menAvatar {
+  width: 9vw;
+  img {
+    width: 100%;
   }
+  position: relative;
+  top: 5.8vh;
+  @include md {
+    top: 1vh;
+  }
+  left: 5vw;
+}
 .Tiles {
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: minmax(150px, auto);
@@ -25,34 +25,100 @@
   margin: 0 2vw;
   background-color: rgba(0, 0, 0, 0);
   position: relative;
-  top:5vh;
+  top: 5vh;
   overflow-x: scroll;
   overflow-y: hidden;
-  @include md{
+  @include md {
     top: 0;
-    overflow-x:auto ;
+    overflow-x: auto;
   }
   div {
     // padding: 30px;
     background: white;
-    width:210px; 
+    width: 210px;
     border-radius: 1vw;
     font-family: "Anton", sans-serif;
-      font-weight: 400;
-      font-style: normal;
+    font-weight: 400;
+    font-style: normal;
   }
-  .one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.ten{
-    opacity: 80%;  
-  &:hover {
-    opacity: 100%;
-    border: 1px solid white;
-  }
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six,
+  .seven,
+  .eight,
+  .nine,
+  .ten {
+    opacity: 80%;
+    .date {
+      color: white;
+      position: relative;
+      left: 1vw;
+      top: 4vh;
+      font-size: 50px;
+      display: flex;
+      flex-direction: column;
+      // gap: 10px;
+      .month {
+        font-family: Helvetica, sans-serif;
+        font-size: 12.73px;
+        font-weight: 400;
+        line-height: 13.68px;
+        letter-spacing: 0.045em;
+        text-align: left;
+        margin-top: 13px;
+        margin-bottom: 3px;
+      }
+      .year {
+        font-size: 1vw;
+        font-family: Helvetica, sans-serif;
+        font-size: 12.73px;
+        font-weight: 200;
+        line-height: 13.68px;
+        letter-spacing: 0.045em;
+        text-align: left;
+      }
+    }
+    .eventName{
+      color: white;
+      position: relative;
+      top: 21vh;
+      width: calc(100% - 27px);
+      margin: 0 auto;
+font-size: 29.37px;
+font-weight: 400;
+line-height: 31.58px;
+letter-spacing: 0.045em;
+text-align: left;
+
+    }
+    .more1{
+      cursor: pointer;
+      color: white;
+      font-family: Helvetica, sans-serif;
+font-size: 12.73px;
+font-weight: 500;
+line-height: 13.68px;
+letter-spacing: 0.045em;
+text-align: left;
+position: relative;
+      top: 43vh;
+      left: 1vw;
+    }
+    transition: 0.5s ease-in-out;
+    &:hover {
+      opacity: 100%;
+      // border: 1px solid white;
+    }
   }
   .one {
+    padding: 2vh;
     grid-column: 1/3;
     grid-row: 1/4;
     height: 700px;
-    @include md{
+    @include md {
       width: 28.85vw;
       height: 100vh;
     }
@@ -67,38 +133,37 @@
       position: relative;
       top: 30%;
       left: 25%;
-      @include md{
-        font-size: 188px;
+      @include md {
+        font-size: 25vh;
         top: 56%;
-      left: 54%;
+        left: 54%;
       }
-
     }
-    .more{
-        position: relative;
-        background-color: transparent;
-        font-size: 50px;
-        top:90%;
-        left: 4%;
+    .more {
+      position: relative;
+      background-color: transparent;
+      font-size: 30px;
+      top: 90%;
+      left: 4%;
     }
-    .arrow{
-        background-color: transparent;
-        position: relative;
-        top: 84.5%;
-        left:83%;
-        width: 4vw;
-        img{
-            width: 100%;
-            transition: 0.2s ease-out;
-            &:hover{
-                transform: rotate(45deg) scale(1.1);
-            }
+    .arrow {
+      background-color: transparent;
+      position: relative;
+      top: 84.5%;
+      left: 83%;
+      width: 4vw;
+      img {
+        width: 100%;
+        transition: 0.2s ease-out;
+        &:hover {
+          transform: rotate(45deg) scale(1.1);
         }
+      }
     }
-    &:hover{
-        img{
-            transform: rotate(45deg) scale(1.1);
-        }
+    &:hover {
+      img {
+        transform: rotate(45deg) scale(1.1);
+      }
     }
   }
   .two {
