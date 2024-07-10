@@ -4,10 +4,10 @@ import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
-import About from "./components/Footer/Newsletter/About";
+import AboutPage from "./Pages/About/About_page";
 import AppContext from "./utils/context";
 import LoadingSaaz from "./components/Animation/LoadingSaaz";
-import Newsletter from "./components/Footer/Newsletter/About";
+
 import Events from "./Pages/Events/Events";
 import Event from "./Pages/Event/Event";
 import PageTransition from "./components/PageTransition/PageTransition"; // Import the PageTransition component
@@ -52,7 +52,7 @@ function PageWrapper() {
                         path="/about"
                         element={
                             <PageTransition>
-                                <About />
+                                <AboutPage/>
                             </PageTransition>
                         }
                     />
@@ -74,7 +74,7 @@ function PageWrapper() {
                     />
                 </Routes>
                 
-                <Newsletter />
+                
                 <Footer />
            
             </AnimatePresence>

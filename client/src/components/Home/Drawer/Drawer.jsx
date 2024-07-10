@@ -17,11 +17,35 @@ const Transition = forwardRef(function Transition(props, ref) {
 const TileContainer = styled("div")(({ theme }) => ({
   display: "grid",
   gridTemplateAreas: `
-    'tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile2 tile2 '
-    'tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile1 tile3 tile4'
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile1 tile1 '
+    'tile2 tile2 '
+    'tile3 tile4 '
   `,
   gridGap: "8px",
-  width: "100%",
+  width: "82vw",
   height: "100%",
   background: "#181818",
   [theme.breakpoints.up("md")]: {
@@ -36,7 +60,7 @@ const Tile = styled("div")(({ area }) => ({
   background: "black",
   gridArea: area,
   border: "1px solid black",
-  padding: "16px",
+  padding: "5px",
   boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
@@ -45,7 +69,7 @@ const Tile = styled("div")(({ area }) => ({
   position: "relative",
   opacity: "80%",
   transition: "0.3s ease-in-out",
-  borderRadius: "1vw",
+  borderRadius: "8px",
   "&:hover": {
     opacity: "100%",
     border: "1px solid white",
@@ -141,7 +165,7 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 <div className="date">{date}</div>
                 </div>
                 <div className="register">
-                  Event Registration 
+                  Register
                 </div>
               </div>
             </Tile>
@@ -167,14 +191,14 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 Show Us What You Got <br/>And Get To Perform.
               </Typography>   */}
                   </Tile>
-            <Tile area="tile3" style={{ background: "#FFFFFF" }}>
+            <Tile area="tile3" style={{ background: "#FFFFFF",minHeight:'100px' }}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               <Typography
                 variant="h6"
                 fontFamily={"Anton"}
                 color={"black"}
                 fontSize={"30px"}
-                style={{top:'-20%', left:'-15%', position:'relative'}}
+                style={{top:'10px', left:'10px', position:'absolute'}}
               >
                 Event <br />
                 Gallery
@@ -185,7 +209,8 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 color={"#181818c4"}
                 fontSize={"10px"}
                 letterSpacing={'1px'}
-                style={{top:'20%', left:'-15%', position:'relative',fontWeight:'light'}}
+                style={{bottom:'10px', left:'10px', position:'absolute',fontWeight:'light'}}
+                className="invisible-on-phone"
               >
                 Explore The Photos <br/>And Videos Of The <br/>Event
               </Typography>
@@ -197,7 +222,7 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 fontFamily={"Anton"}
                 color={"black"}
                 fontSize={"30px"}
-                style={{top:'-20%', left:'-15%', position:'relative'}}
+                style={{top:'10px', left:'10px', position:'absolute'}}
               >Our <br/> Contact</Typography>
               <Typography
                 variant="h1"
@@ -205,7 +230,8 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 color={"#181818c4"}
                 fontSize={"10px"}
                 letterSpacing={'1px'}
-                style={{top:'20%', left:'-27%', position:'relative',fontWeight:'light'}}
+                style={{bottom:'10px', left:'10px', position:'absolute',fontWeight:'light'}}
+                className="invisible-on-phone"
               >
                 Having Some <br/> Questions <br/> Specific <br/> To Event ?
               </Typography>

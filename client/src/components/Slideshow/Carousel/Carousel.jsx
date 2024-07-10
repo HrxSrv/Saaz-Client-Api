@@ -16,7 +16,7 @@ const ImageSlider = () => {
 
     loadImages();
   }, []);
-  console.log(images)
+  // console.log(images)
 //    const images = [
 //     {
 //         "asset_id": "52e51265677c5beab300697283cee487",
@@ -92,7 +92,8 @@ const ImageSlider = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     cssEase: 'ease-in-out', // Easing function for transition
-    fade: true // Enable fade effect
+    fade: true, // Enable fade effect
+    arrows:false,
   };
 
   return (

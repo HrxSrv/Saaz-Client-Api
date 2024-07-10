@@ -1,0 +1,53 @@
+@import "../../css-config/mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+.About-section {
+  max-width: calc(100% - 10px);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 100px;
+  margin: 0 auto;
+  .About-content {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 23px;
+    text-align: center;
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10vw;
+      top: 2vh;
+    }
+    .text {
+      margin-bottom: 20px;
+      font-family: Helvetica;
+      font-weight: 300;
+      font-size: 14px;
+      color: rgb(177, 174, 174);
+    }
+    .small-text {
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: white;
+    }
+    .bannerImg {
+      margin-bottom: 0px;
+      width: 60vw;
+      img {
+        width: 100%;
+        @include md{
+            width: 60%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../../css-config/mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+.Members_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+  max-width: calc(100% - 10px);
+  overflow-x: hidden;
+}
+.members-title {
+  // background-color: white;
+  display: flex;
+  justify-content: center;
+  .one,
+  .two,
+  .three {
+    min-width: 150px;
+    height: 50px;
+    background-color: #181818;
+    border-radius: 8px;
+  }
+  .one {
+    position: relative;
+    left: -15%;
+  }
+  .three {
+    position: relative;
+    right: -15%;
+  }
+  .two {
+    color: white;
+    background-color: #1e969f;
+    font-family: "Anton";
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23.3176px;
+    line-height: 107.5%;
+    letter-spacing: 0.045em;
+  }
+}
+.members-details {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .cordinator {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    img {
+      width: 100%;
+    }
+    
+  }
+  .cocs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    .co-cordinator1,.co-cordinator2{
+       width: 40%;
+       display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+       img{
+        width: 100%;
+       }
+    }
+}
+  .position {
+    color: white;
+    text-transform: uppercase;
+    font-family: "Anton";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20.0377px;
+    line-height: 107.5%;
+    /* identical to box height, or 22px */
+    text-align: center;
+    letter-spacing: 0.045em;
+  }
+  .Name{
+
+font-family: 'Helvetica';
+font-style: normal;
+font-weight: 300;
+font-size: 11.4501px;
+line-height: 107.5%;
+text-align: center;
+letter-spacing: 0.045em;
+text-transform: capitalize;
+color: #FFFFFF;
+  }
+}

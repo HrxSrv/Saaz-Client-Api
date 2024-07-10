@@ -21,7 +21,7 @@ function Slideshow() {
         </div>
       </div>
       <div className="right">
-        {/* <Gallary /> */}
+        {/* <Gallary /> */} 
         <ImageSlider/>
       </div>
     </div>

@@ -5,6 +5,7 @@ import menAvatar from "../../../assets/menAvatar.png"
 import TilePopup from '../Drawer/Drawer'
 import { useNavigate } from 'react-router-dom'
 import independenceDay from '../../../assets/DrawerImages/independenceDay.jpg'
+import { useEffect,useRef } from 'react'
 function Tiles() {
   const [clickedTiles, setClickedTiles] = useState({});
 
@@ -15,17 +16,53 @@ function Tiles() {
     }));
   }
   const navigate = useNavigate()
+  const scrollableContainerRef = useRef(null);
+
+  useEffect(() => {
+    const scrollableContainer = scrollableContainerRef.current;
+    let start = null;
+
+    const scrollAmount = 100; // Adjust the value as needed
+    const duration = 1000; // Duration of the animation in milliseconds
+
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percent = Math.min(progress / duration, 1);
+      scrollableContainer.scrollLeft = scrollAmount * percent;
+      
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      } else {
+        start = null;
+        const stepBack = timestampBack => {
+          if (!start) start = timestampBack;
+          const progressBack = timestampBack - start;
+          const percentBack = Math.min(progressBack / duration, 1);
+          scrollableContainer.scrollLeft = scrollAmount * (1 - percentBack);
+          
+          if (progressBack < duration) {
+            window.requestAnimationFrame(stepBack);
+          }
+        };
+        window.requestAnimationFrame(stepBack);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, []);
   return (
     <div className='tileLayout'>
       <div className="menAvatar">
         <img src={menAvatar} alt="Men Avatar" />
       </div>
-      <div className='Tiles'>
+      <div className='Tiles' ref={scrollableContainerRef}>
         <div className="one" onClick={() => navigate("/Events")}>
           <div className="title">EVENTS</div>
           <div className="more">more</div>
           <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
         </div>
+       
         <div className="two" onClick={() => handleClick('two')} style={{"background-color":"#1E969F"}}>
           <div className="date" style={{"background":'transparent'}}>
             <div className="day" style={{"background":'transparent'}}>15</div>
@@ -65,6 +102,11 @@ function Tiles() {
           {clickedTiles['ten'] && <TilePopup color='black' handleClick={() => handleClick('ten')} />}
         </div>
       </div>
+      <div className="one-mobile" onClick={() => navigate("/Events")}>
+          <div className="title">EVENTS</div>
+          <div className="more">more</div>
+          <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
+        </div>
     </div>
   );
 }

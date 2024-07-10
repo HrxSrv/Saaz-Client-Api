@@ -12,10 +12,11 @@
    flex-direction: row;
   }
   .left{
-
     display: flex;
+    display:none;
     margin-left: 40px;
     @include md{
+      display:flex;
       margin-left: 180px;
     }
     .title{
@@ -31,10 +32,11 @@
       // width: 150px;
      }
      .subtext{
-      position: relative;
+      position: absolute;
       left: -60%;
       margin-top: 30px;
       @include md{
+        position: relative;
         left: -40%;
       }
       h1{
