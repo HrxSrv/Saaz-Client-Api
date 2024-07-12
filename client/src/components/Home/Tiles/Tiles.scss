@@ -5,6 +5,7 @@
   min-width: calc(100% - 20px);
   height: fit-content;
   padding-bottom: 30px;
+  overflow: hidden;
 }
 .menAvatar {
   width: 9vw;
@@ -37,6 +38,7 @@
   @include md {
     top: 0;
     overflow-x: auto;
+    overflow: hidden;
   }
   div {
     background: white;
@@ -55,6 +57,7 @@
   .eight,
   .nine,
   .ten {
+    overflow: hidden;
     opacity: 80%;
     min-width: calc(50% - 6px); 
     width: calc(50% - 6px); 
@@ -103,17 +106,10 @@
       left: 2vw;
     }
     .more1 {
-      cursor: pointer;
-      color: white;
-      font-family: Helvetica, sans-serif;
-      font-size: 12.73px;
-      font-weight: 500;
-      line-height: 13.68px;
-      letter-spacing: 0.045em;
-      text-align: left;
-      position: relative;
-      top: 43vh;
-      left: 1vw;
+      display: none;
+    }
+    .more1-square{
+      display: none;
     }
     transition: 0.5s ease-in-out;
     &:hover {
@@ -200,6 +196,7 @@
     font-size: 10px;
     bottom:1vw;
   }
+
   
   .arrow {
     background-color: transparent;
@@ -325,6 +322,7 @@
         line-height: 31.58px;
         letter-spacing: 0.045em;
         text-align: left;
+        left:1vw;
       }
       .more1 {
         cursor: pointer;
@@ -336,6 +334,20 @@
         letter-spacing: 0.045em;
         position: absolute;
         top: 62vh;
+        left: 16px;
+        display: inline;
+      }
+      .more1-square{
+        color: white;
+        font-family: Helvetica, sans-serif;
+        font-size: 12.73px;
+        font-weight: 500;
+        line-height: 13.68px;
+        letter-spacing: 0.045em;
+        position: absolute;
+        top: 28vh;
+        left: 16px;
+        display: inline;
       }
       transition: 0.5s ease-in-out;
       &:hover {
@@ -404,8 +416,49 @@
     .six {
       grid-row: 2/4;
     }
+    .seven{
+      grid-row:2/4;
+    }
   }
   .one-mobile {
     display: none;
   }
+}
+
+///insta video
+.video-background {
+  position: relative;
+  height: 100%; /* Make sure the container takes the full viewport height */
+  width: 100%;
+  // overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  // overflow-x: hidden;
+  left: 5%;
+}
+
+#bgVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 230px;
+  height: 466px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Ensure the video covers the entire element */
+  background-color: white;
+  // z-index: 1000; /* Place content above the video */
+}
+
+// .content {
+//   position: relative;
+//   z-index: 1000; /* Place content above the video */
+//   color: white; /* Text color */
+//   text-align: center;
+//   padding: 20px;
+// }
+
+h1, p {
+  margin: 0;
 }

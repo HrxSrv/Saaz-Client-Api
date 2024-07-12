@@ -2,6 +2,7 @@ import React from "react";
 import "./About.scss";
 import saazBanner from "../../assets/Group28.png";
 import Members from "./Members/Members";
+import bandImage from "../../assets/Music Band.png"
 const About_page = () => {
   return (
     <div className="About-section">
@@ -24,6 +25,9 @@ const About_page = () => {
         </span>
       </div>
       <Members/>
+       <div className="bandImage">
+        <img src={bandImage} alt="" />
+       </div>
     </div>
   );
 };

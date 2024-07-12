@@ -2,25 +2,9 @@ import React from "react";
 import "./About.scss";
 import saazBanner from "../../../assets/Group28.png";
 import arrow from "../../../assets/arrow.png"
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 const About = () => {
-    const [rotation, setRotation] = useState(0);
-
-  const handleMouseMove = (event) => {
-    const arrow = event.target;
-    const rect = arrow.getBoundingClientRect();
-    const arrowCenterX = rect.left + rect.width / 2;
-    const arrowCenterY = rect.top + rect.height / 2;
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-
-    const angle = Math.atan2(mouseY - arrowCenterY, mouseX - arrowCenterX) * (180 / Math.PI);
-    setRotation(angle + 90); 
-  };
-
-  const handleMouseLeave = () => {
-    setRotation(0); 
-  };
+  const navigate =useNavigate();
   return (
     <div className="About-section">
       <div className="About-content">
@@ -40,14 +24,13 @@ const About = () => {
           sessions to create a supportive environment for students to gain
           confidence and explore their musical abilities.
         </span>
-        <span className="more">
+        <span className="more" onClick={()=>{
+          navigate("/about")
+        }}>
         <img
         src={arrow}
         alt="Arrow"
         className="arrow"
-        style={{ transform: `rotate(${rotation}deg)` }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
       />
             <p>more</p>
         </span>

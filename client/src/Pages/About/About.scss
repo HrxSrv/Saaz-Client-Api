@@ -50,4 +50,16 @@
       }
     }
   }
+  .bandImage{
+    width: calc(80% - 10px);
+    img{
+      width: 100%;
+    }
+    @include md{
+      width: calc(30% - 10px);
+      position: relative;
+      bottom: 0;
+      right: 0;
+    }
+  }
 }

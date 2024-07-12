@@ -7,6 +7,7 @@
   gap: 100px;
   max-width: calc(100% - 10px);
   overflow-x: hidden;
+  height: fit-content;
 }
 .members-title {
   // background-color: white;
@@ -60,25 +61,25 @@
     img {
       width: 100%;
     }
-    
   }
-  .cocs{
+  .cocs {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 10vw;
-    .co-cordinator1,.co-cordinator2{
-       width: 40%;
-       display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-       img{
+    .co-cordinator1,
+    .co-cordinator2 {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      img {
         width: 100%;
-       }
+      }
     }
-}
+  }
   .position {
     color: white;
     text-transform: uppercase;
@@ -91,16 +92,132 @@
     text-align: center;
     letter-spacing: 0.045em;
   }
-  .Name{
+}
+.Name {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11.4501px;
+  line-height: 107.5%;
+  text-align: center;
+  letter-spacing: 0.045em;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+.bottom-half {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .working-committe-title {
+    z-index: 1000;
+    min-width: 150px;
+    width: 70vw;
+    height: 50px;
+    background-color: #181818;
+    border-radius: 8px;
+    color: white;
+    background-color: #1e969f;
+    font-family: "Anton";
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23.3176px;
+    line-height: 107.5%;
+    letter-spacing: 0.045em;
+    margin: 0 auto;
+    position: absolute;
+    top: -24px;
+    @include md {
+      width: 20vw;
+    }
+  }
+  .working-committe {
+    padding: 20px;
+    padding-top: 50px;
+    background-color: #181818;
+    border-radius: 8px;
+    max-width: calc(100% - 10px);
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-height: 450px; // Set a max-height for the collapsed state
+    @include md{
+        max-height: fit-content;
+    }
+    transition: max-height 0.5s ease;
+    overflow-y: hidden;
+    position: relative;
+    &.expanded {
+      max-height: fit-content; // Set a max-height that is sufficient for the expanded state
 
-font-family: 'Helvetica';
-font-style: normal;
-font-weight: 300;
-font-size: 11.4501px;
-line-height: 107.5%;
-text-align: center;
-letter-spacing: 0.045em;
-text-transform: capitalize;
-color: #FFFFFF;
+    }
+  
+    .committee-member-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 100%;
+      @include md {
+        width: 250px;
+        height: 250px;
+      }
+    }
+    .Name {
+      font-size: 12px;
+      // background-color:black;
+      color: white;
+      border-radius: 6px;
+      padding: 6px 12px;
+    }
+}
+
+}
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+  cursor: default;
+  left: 45%;
+  color: white;
+  position: absolute;
+  bottom:225px;
+  img{
+    transform: rotate(135deg);
+  transition: transform 0.5s ease;
+  width:50px;
+    height: 50px;
+  }
+  &.up{
+    img{
+        transform: rotate(315deg);
+    }
+  }
+  @include md{
+      display: none;
+  }
+  .more {
+    color: white;
+    position: relative;
+    background-color: transparent;
+    font-size: 10px;
+    // top: 90%;
+    // left: 4%;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal
   }
 }

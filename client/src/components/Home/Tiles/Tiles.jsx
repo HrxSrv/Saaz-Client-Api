@@ -1,21 +1,31 @@
-import React, { useState } from 'react'
-import './Tiles.scss'
-import arrow from "../../../assets/arrow3x.png"
-import menAvatar from "../../../assets/menAvatar.png"
-import TilePopup from '../Drawer/Drawer'
-import { useNavigate } from 'react-router-dom'
-import independenceDay from '../../../assets/DrawerImages/independenceDay.jpg'
-import { useEffect,useRef } from 'react'
+import React, { useState } from "react";
+import "./Tiles.scss";
+import arrow from "../../../assets/arrow3x.png";
+import menAvatar from "../../../assets/menAvatar.png";
+import TilePopup from "../Drawer/Drawer";
+import { useNavigate } from "react-router-dom";
+import independenceDay from "../../../assets/DrawerImages/independenceDay.jpg";
+import { useEffect, useRef } from "react";
+import orientation from "../../../assets/Home-tiles/orientation.jpg";
+import Tarang from "../../../assets/Home-tiles/Tarang.jpg";
+import saazNight25 from "../../../assets/Home-tiles/saazNight25.jpg";
+import Saanjh24 from "../../../assets/Home-tiles/Saanjh24.jpg";
+import NoticeBoard from "../../../assets/Home-tiles/NoticeBoard.jpg";
+import Merch1 from "../../../assets/Home-tiles/Merch1.jpg";
+// import saazInstagram from "../../../assets/Home-tiles/saazInstagram1.mp4";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import ContentPasteIcon from "@mui/icons-material/ContentPaste";
 function Tiles() {
+  // const orientation = '../../../assets/Home-tiles/orientation.jpg'
   const [clickedTiles, setClickedTiles] = useState({});
 
   const handleClick = (tile) => {
-    setClickedTiles(prevState => ({
+    setClickedTiles((prevState) => ({
       ...prevState,
-      [tile]: !prevState[tile]
+      [tile]: !prevState[tile],
     }));
-  }
-  const navigate = useNavigate()
+  };
+  const navigate = useNavigate();
   const scrollableContainerRef = useRef(null);
 
   useEffect(() => {
@@ -25,22 +35,22 @@ function Tiles() {
     const scrollAmount = 100; // Adjust the value as needed
     const duration = 1000; // Duration of the animation in milliseconds
 
-    const step = timestamp => {
+    const step = (timestamp) => {
       if (!start) start = timestamp;
       const progress = timestamp - start;
       const percent = Math.min(progress / duration, 1);
       scrollableContainer.scrollLeft = scrollAmount * percent;
-      
+
       if (progress < duration) {
         window.requestAnimationFrame(step);
       } else {
         start = null;
-        const stepBack = timestampBack => {
+        const stepBack = (timestampBack) => {
           if (!start) start = timestampBack;
           const progressBack = timestampBack - start;
           const percentBack = Math.min(progressBack / duration, 1);
           scrollableContainer.scrollLeft = scrollAmount * (1 - percentBack);
-          
+
           if (progressBack < duration) {
             window.requestAnimationFrame(stepBack);
           }
@@ -52,61 +62,278 @@ function Tiles() {
     window.requestAnimationFrame(step);
   }, []);
   return (
-    <div className='tileLayout'>
+    <div className="tileLayout">
       <div className="menAvatar">
         <img src={menAvatar} alt="Men Avatar" />
       </div>
-      <div className='Tiles' ref={scrollableContainerRef}>
+      <div className="Tiles" ref={scrollableContainerRef}>
         <div className="one" onClick={() => navigate("/Events")}>
           <div className="title">EVENTS</div>
           <div className="more">more</div>
-          <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
-        </div>
-       
-        <div className="two" onClick={() => handleClick('two')} style={{"background-color":"#1E969F"}}>
-          <div className="date" style={{"background":'transparent'}}>
-            <div className="day" style={{"background":'transparent'}}>15</div>
-            <div className="month" style={{"background":'transparent'}}>August</div>
-            <div className="year" style={{"background":'transparent'}}>2024</div>
+          <div className="arrow">
+            <img src={arrow} alt="arrowIcon" />
           </div>
-          <div className="eventName" style={{"background":'transparent'}}>
-             Independence Day
+        </div>
+
+        <div
+          className="two"
+          onClick={() => handleClick("two")}
+          style={{ "background-color": "#1E969F" }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            <div className="day" style={{ background: "transparent" }}>
+              15
             </div>
-            <div className="more1" style={{"background":'transparent'}}>
-              More
+            <div className="month" style={{ background: "transparent" }}>
+              August
             </div>
-          {clickedTiles['two'] && <TilePopup eventName={'Independence Day'} image={independenceDay} date={'15 August 2024'} color='black' handleClick={() => handleClick('two')} />}
+            <div className="year" style={{ background: "transparent" }}>
+              2024
+            </div>
+          </div>
+          <div className="eventName" style={{ background: "transparent" }}>
+            Independence Day
+          </div>
+          <div className="more1" style={{ background: "transparent" }}>
+            More
+          </div>
+          {clickedTiles["two"] && (
+            <TilePopup
+              eventName={"Independence Day"}
+              image={independenceDay}
+              date={"15 August 2024"}
+              color="black"
+              handleClick={() => handleClick("two")}
+            />
+          )}
         </div>
-        <div className="three" onClick={() => handleClick('three')}>
-          {clickedTiles['three'] && <TilePopup color='black' handleClick={() => handleClick('three')} />}
+        <div
+          className="three"
+          onClick={() => handleClick("three")}
+          style={{
+            backgroundImage: `url(${orientation})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            <div className="day" style={{ background: "transparent" }}>
+              21
+            </div>
+            <div className="month" style={{ background: "transparent" }}>
+              August
+            </div>
+            <div className="year" style={{ background: "transparent" }}>
+              2024
+            </div>
+          </div>
+          <div className="eventName" style={{ background: "transparent" }}>
+            Orientation '24
+          </div>
+          <div className="more1-square" style={{ background: "transparent" }}>
+            More
+          </div>
+          {clickedTiles["three"] && (
+            <TilePopup
+              color="black"
+              handleClick={() => handleClick("three")}
+              eventName={"Orientation '24"}
+              image={orientation}
+              date={"21 August 2024"}
+            />
+          )}
         </div>
-        <div className="four" onClick={() => handleClick('four')}>
-          {clickedTiles['four'] && <TilePopup color='black' handleClick={() => handleClick('four')} />}
+        <div
+          className="four"
+          onClick={() => handleClick("four")}
+          style={{
+            backgroundImage: `url(${saazNight25})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            <div className="day" style={{ background: "transparent" }}>
+              Soon
+            </div>
+            <div className="month" style={{ background: "transparent" }}>
+              {/* August */}
+            </div>
+            <div className="year" style={{ background: "transparent" }}>
+              {/* 2024 */}
+            </div>
+          </div>
+          <div className="eventName" style={{ background: "transparent" }}>
+            Saaz Night'25
+          </div>
+          <div className="more1" style={{ background: "transparent" }}>
+            More
+          </div>
+          {clickedTiles["four"] && (
+            <TilePopup
+              color="black"
+              handleClick={() => handleClick("four")}
+              eventName={"Saaz Night '25"}
+              image={saazNight25}
+              date={"To Be Announced"}
+            />
+          )}
         </div>
-        <div className="five" onClick={() => handleClick('five')}>
-          {clickedTiles['five'] && <TilePopup color='black' handleClick={() => handleClick('five')} />}
+        <div
+          className="five"
+          onClick={() => handleClick("five")}
+          style={{
+            backgroundImage: `url(${Merch1})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            {/* <div className="day" style={{ background: "transparent" ,position:'absolute',top:'-20px' }}>
+            <ShoppingBagIcon fontSize='xl'/>
+            </div> */}
+          </div>
+          <div
+            className="eventName"
+            style={{ background: "transparent", width: "100px" }}
+          >
+            <div className="merch" style={{ background: "transparent" }}>
+              <ShoppingBagIcon fontSize="20px" /> Merch
+            </div>
+          </div>
+          <div className="more1-square" style={{ background: "transparent" }}>
+            Shop
+          </div>
+          {clickedTiles["five"] && (
+            <TilePopup color="black" handleClick={() => handleClick("five")} />
+          )}
         </div>
-        <div className="six" onClick={() => handleClick('six')}>
-          {clickedTiles['six'] && <TilePopup color='black' handleClick={() => handleClick('six')} />}
+        <div
+          className="six"
+          onClick={() => handleClick("six")}
+          style={{
+            backgroundImage: `url(${NoticeBoard})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            <div className="day" style={{ background: "transparent" }}>
+              <ContentPasteIcon fontSize="10px" />
+            </div>
+          </div>
+          <div className="eventName" style={{ background: "transparent" }}>
+            Cookin Somethin...
+          </div>
+          <div className="more1" style={{ background: "transparent" }}>
+            More
+          </div>
+          {clickedTiles["six"] && (
+            <TilePopup color="black" handleClick={() => handleClick("six")} />
+          )}
         </div>
-        <div className="seven" onClick={() => handleClick('seven')}>
-          {clickedTiles['seven'] && <TilePopup color='black' handleClick={() => handleClick('seven')} />}
+        <div className="seven" style={{background:"black"}} onClick={() => handleClick("seven")}>
+          {/* <div className="video-background">
+            <video autoPlay muted loop id="bgVideo">
+              <source src={saazInstagram} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div> */}
+          {clickedTiles["seven"] && (
+            <TilePopup color="black" handleClick={() => handleClick("seven")} />
+          )}
         </div>
-        <div className="eight" onClick={() => handleClick('eight')}>
-          {clickedTiles['eight'] && <TilePopup color='black' handleClick={() => handleClick('eight')} />}
+        <div
+          className="eight"
+          onClick={() => handleClick("eight")}
+          style={{
+            backgroundImage: `url(${Tarang})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            <div
+              className="day"
+              style={{ background: "transparent", zIndex: "2" }}
+            >
+              Soon
+            </div>
+            <div className="month" style={{ background: "transparent" }}>
+              {/* Be */}
+            </div>
+            <div className="year" style={{ background: "transparent" }}>
+              {/* Announced */}
+            </div>
+          </div>
+          {/* <div className="eventName" style={{ background: "transparent" }}>
+            Tarang '24
+          </div> */}
+          <div className="more1-square" style={{ background: "transparent" }}>
+            More
+          </div>
+          {clickedTiles["eight"] && (
+            <TilePopup
+              color="black"
+              handleClick={() => handleClick("eight")}
+              eventName={"Tarang '24"}
+              image={Tarang}
+              date={"21 August 2024"}
+            />
+          )}
         </div>
-        <div className="nine" onClick={() => handleClick('nine')}>
-          {clickedTiles['nine'] && <TilePopup color='black' handleClick={() => handleClick('nine')} />}
+        <div
+          className="nine"
+          onClick={() => handleClick("nine")}
+          style={{
+            backgroundImage: `url(${Saanjh24})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="date" style={{ background: "transparent" }}>
+            <div
+              className="day"
+              style={{ background: "transparent", zIndex: "2" }}
+            >
+              12
+            </div>
+            <div className="month" style={{ background: "transparent" }}>
+              October
+            </div>
+            <div className="year" style={{ background: "transparent" }}>
+              2024
+            </div>
+          </div>
+          <div className="eventName" style={{ background: "transparent" }}>
+            Saanjh '24
+          </div>
+          <div className="more1-square" style={{ background: "transparent" }}>
+            More
+          </div>
+          {clickedTiles["nine"] && (
+            <TilePopup
+              color="black"
+              handleClick={() => handleClick("nine")}
+              eventName={"Saanjh '24"}
+              image={Saanjh24}
+              date={"21 August 2024"}
+            />
+          )}
         </div>
-        <div className="ten" onClick={() => handleClick('ten')}>
-          {clickedTiles['ten'] && <TilePopup color='black' handleClick={() => handleClick('ten')} />}
-        </div>
+        {/* <div className="seven" onClick={() => handleClick("seven")}>
+          {clickedTiles["seven"] && (
+            <TilePopup color="black" handleClick={() => handleClick("seven")} />
+          )}
+        </div> */}
       </div>
       <div className="one-mobile" onClick={() => navigate("/Events")}>
-          <div className="title">EVENTS</div>
-          <div className="more">more</div>
-          <div className="arrow"><img src={arrow} alt="arrowIcon" /></div>
+        <div className="title">EVENTS</div>
+        <div className="more">more</div>
+        <div className="arrow">
+          <img src={arrow} alt="arrowIcon" />
         </div>
+      </div>
     </div>
   );
 }
