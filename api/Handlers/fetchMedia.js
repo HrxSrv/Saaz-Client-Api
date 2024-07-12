@@ -31,6 +31,7 @@ const fetchMediaFromFolder = async (folderPath) => {
         resource_type: 'image',
         max_results: 500, // Set a high value to minimize the number of requests
         next_cursor: nextCursor, // Use next_cursor for pagination
+        secure: true, // Ensure the URLs are secure
         transformation: [
           { width: 800, height: 600, crop: 'limit' }, // Example transformation
           { fetch_format: 'auto', quality: '50' } // Auto format and quality
