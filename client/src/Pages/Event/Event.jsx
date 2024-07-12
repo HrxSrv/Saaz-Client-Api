@@ -23,8 +23,8 @@ const getTransformedImageUrl = (url) => {
   };
 const { images,eventName } = location.state;
 const imageUrls = images.map(x => ({
-    original: x.url,
-    thumbnail: getTransformedImageUrl(x.url),
+    original: x.secure_url,
+    thumbnail: getTransformedImageUrl(x.secure_url),
   }));
 // console.log(imageUrls);
     const onInit = () => {
