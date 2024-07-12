@@ -7,15 +7,14 @@ import { searchByTag, searchForAllFolders, searchMediaByFolder } from './Handler
 const app = express();
 const port = process.env.PORT || 5000;
 const currentIp='192.168.1.3'
-const allowedOrigins = [
-  `http://${currentIp}:3000`,
-  `http://localhost:3000`,
-  // Add more origins as needed
-];
+// const allowedOrigins = [
+//   `http://${currentIp}:3000`,
+//   `http://localhost:3000`,
+//   // Add more origins as needed
+// ];
 
 const corsOptions = {
   origin: '*',
-  credentials: true,
   optionsSuccessStatus: 200,
 };
 
