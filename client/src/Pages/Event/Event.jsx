@@ -49,9 +49,9 @@ const imageUrls = images.map(x => ({
             >
                 {
                     imageUrls.map((x)=>(
-                        <a href={x.original}>
+                        <a secure href={x.original}>
                          <div className="image-grid-item">
-                            <img src={x.thumbnail} />
+                            <img src={x.thumbnail} secure/>
                         </div>
                     </a>
                     ))
