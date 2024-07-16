@@ -40,17 +40,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 10px;
       cursor: pointer;
-      @include md {
-        margin-top: 6px;
-        margin-left: 12px;
-      }
+      // @include md {
+      //   margin-top: 6px;
+      //   margin-left: 12px;
+      // }
       img {
         width: 22px;
         transition: transform 0.3s ease;
         position: relative;
         top: 0;
         left: 0;
+        transition: 0.1s ease-in-out;
+      }
+      img:hover{
+        transform: rotate(45deg);
       }
 
       p {

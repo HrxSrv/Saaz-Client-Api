@@ -5,6 +5,7 @@ import {
     FaTwitter,
     FaInstagram,
     FaLinkedinIn,
+    FaYoutube
 } from "react-icons/fa";
 import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
 // import Payment from "../../assets/payments.png";
@@ -33,18 +34,18 @@ const Footer = () => {
       </div>
       <div className="col">
         <div className="social-icons">
-                    <div className="icon">
-                        <FaLinkedinIn size={14} />
-                    </div>
-                    <div className="icon">
+                    <a className="icon" href="https://www.youtube.com/@saaziiitdmj8882" target="_blank" rel="noopener noreferrer">
+                        <FaYoutube size={14} />
+                    </a>
+                    <a className="icon" href="https://www.facebook.com/saazIIITDMJ" target="_blank" rel="noopener noreferrer">
                         <FaFacebookF size={14} />
-                    </div>
-                    <div className="icon">
+                    </a>
+                    {/* <a className="icon" target="_blank" rel="noopener noreferrer">
                         <FaTwitter size={14} />
-                    </div>
-                    <div className="icon">
+                    </a> */}
+                    <a className="icon" href="https://www.instagram.com/saaz_iiitdmj/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram size={14} />
-                    </div>
+                    </a>
                 </div>
         </div>
         </div>
