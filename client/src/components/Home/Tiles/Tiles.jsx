@@ -100,6 +100,7 @@ function Tiles() {
           {clickedTiles["two"] && (
             <TilePopup
               eventName={"Independence Day"}
+              eventGallary={"Independence Day"}
               image={independenceDay}
               date={"15 August 2024"}
               color="black"
@@ -140,6 +141,7 @@ function Tiles() {
               eventName={"Orientation '24"}
               image={orientation}
               date={"21 August 2024"}
+              eventGallary={"Orientation '23"}
             />
           )}
         </div>
@@ -174,6 +176,7 @@ function Tiles() {
               color="black"
               handleClick={() => handleClick("four")}
               eventName={"Saaz Night '25"}
+              eventGallary={"Saaz Night '24"}
               image={saazNight25}
               date={"To Be Announced"}
             />
@@ -229,7 +232,7 @@ function Tiles() {
             More
           </div>
           {clickedTiles["six"] && (
-            <TilePopup color="black" handleClick={() => handleClick("six")} />
+            <TilePopup color="black" handleClick={() => handleClick("six")} image={NoticeBoard}  eventName={"Cooking Somethin...."}/>
           )}
         </div>
         <div className="seven" style={{background:"black"}} onClick={() => handleClick("seven")}>
@@ -277,6 +280,7 @@ function Tiles() {
               color="black"
               handleClick={() => handleClick("eight")}
               eventName={"Tarang '24"}
+              eventGallary={"Tarang '23"}
               image={Tarang}
               date={"21 August 2024"}
             />
@@ -316,6 +320,7 @@ function Tiles() {
               color="black"
               handleClick={() => handleClick("nine")}
               eventName={"Saanjh '24"}
+              eventGallary={"Saanjh 22"}
               image={Saanjh24}
               date={"21 August 2024"}
             />

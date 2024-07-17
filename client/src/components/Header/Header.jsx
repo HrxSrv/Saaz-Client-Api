@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
+import { Context } from "../../utils/context";
 import saazIcon from "../../assets/saazICON.png";
-
+import { useContext } from "react";
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
-    const [selectedButton, setSelectedButton] = useState(1);
+    // const [selectedButton, setSelectedButton] = useState("");
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const navigate = useNavigate();
-
+    const {selectedButton,setSelectedButton} = useContext(Context);
     const handleScroll = () => {
         const offset = window.scrollY;
         if (offset > 200) {

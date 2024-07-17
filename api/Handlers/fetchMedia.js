@@ -52,7 +52,7 @@ export const searchMediaByFolder = async (req, res) => {
   const folderPath = decodeURIComponent(req.params[0]); // Decoding the folder path
   try {
     const media = await fetchMediaFromFolder(folderPath);
-    res.set('Cache-Control', 'public, max-age=86400');
+    res.set('Cache-Control', 'public, max-age=1');
     res.json(media);
     // console.log(media)''
   } catch (error) {

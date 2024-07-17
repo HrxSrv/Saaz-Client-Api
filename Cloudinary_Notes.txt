@@ -1,6 +1,6 @@
 Cloudinary
 photos which do not reflect their file structure in their p-ID are not retrievable
-photos uploaded from media explorer do not hold their parent photo structure in their p_id
+photos uploaded from media explorer do hold their parent photo structure in their p_id while those from media asset manager do not.
 
 Http caching is set to 6 hours so any change in Cloudinary content will be take 6 hours to take effect on front 
 if the website is on same ip for long.

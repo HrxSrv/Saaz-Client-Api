@@ -5,6 +5,9 @@ import {  fetchEvents } from '../../Cloudinary/Cloudinary';
 import  Tile  from './Tile/Tile';
 import { Grid } from '@mui/material';
 import calendar from '../../assets/calendar.png'
+import 'lazysizes';
+import 'lazysizes/plugins/attrchange/ls.attrchange';
+
 function EventTIles() {
   const [events,setEvents] = useState([
         {
@@ -48,14 +51,14 @@ function EventTIles() {
             "path": "Saaz Events 23-24/Saaz Events 23-24/Tarang '23"
         }
     ]);
-  useEffect(()=>{
-    const loadEvents = async () => {
-      const fetchedEvents = await fetchEvents()
-      setEvents(fetchedEvents)
-      console.log(fetchedEvents);
-    }
-    loadEvents();
-  },[])
+  // useEffect(()=>{
+  //   const loadEvents = async () => {
+  //     const fetchedEvents = await fetchEvents()
+  //     setEvents(fetchedEvents)
+  //     console.log(fetchedEvents);
+  //   }
+  //   loadEvents();
+  // },[])
 //   const events =[
 //     {
 //         "name": "Alumni Meet '24",

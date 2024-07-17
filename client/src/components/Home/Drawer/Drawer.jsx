@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState, forwardRef,useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -11,6 +11,8 @@ import { styled } from "@mui/system";
 import CloseIcon from "@mui/icons-material/Close";
 import arrow from "../../../assets/arrow3x.png"; // Import the arrow image
 import Mic from "../../../assets/Mic.png"
+import { useNavigate} from "react-router-dom";
+import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -126,14 +128,26 @@ const StyledDialogContent = styled(DialogContent)({
   borderRadius: "10px",
 });
 
-const TilePopup = ({ eventName,image,date,handleClick }) => {
+const TilePopup = ({ eventName,image,date,handleClick,eventGallary }) => {
   const [open, setOpen] = useState(true);
+  const [images, setImages] = useState(null);
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const loadImages = async () => {
+      const fetchedImages = await fetchEventMedia(`Saaz Events 23-24/Saaz Events 23-24/${eventGallary}`);
+      console.log(fetchedImages)
+      setImages(fetchedImages);
+    };
+    loadImages();
+  }, [eventGallary]);
   const handleClose = () => {
     setOpen(false);
     handleClick();
   };
-
+  const handleTileClick = () => {
+    navigate(`/event/${eventGallary}`, { state: { images: images, eventName: eventGallary} });
+  };
   return (
     <div>
       <StyledDialog
@@ -191,7 +205,7 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 Show Us What You Got <br/>And Get To Perform.
               </Typography>   */}
                   </Tile>
-            <Tile area="tile3" style={{ background: "#FFFFFF",minHeight:'100px' }}>
+            <Tile area="tile3" style={{ background: "#FFFFFF",minHeight:'100px' }} onClick={handleTileClick}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               <Typography
                 variant="h6"
@@ -199,6 +213,7 @@ const TilePopup = ({ eventName,image,date,handleClick }) => {
                 color={"black"}
                 fontSize={"30px"}
                 style={{top:'10px', left:'10px', position:'absolute'}}
+                
               >
                 Event <br />
                 Gallery

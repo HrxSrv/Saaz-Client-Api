@@ -15,6 +15,7 @@ import 'lightgallery/scss/lg-zoom.scss';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { colors } from '@mui/material';
+//lazyload
 
 function Event() {
 const location=useLocation();

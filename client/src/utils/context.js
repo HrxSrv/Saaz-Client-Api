@@ -14,14 +14,14 @@ const AppContext = ({ children }) => {
     const location = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
-
+            window.scrollTo(0, 0);
+        }, [location]);
+        
     useEffect(() => {
-        let count = 0;
-        cartItems?.map((item) => (count += item.attributes.quantity));
+            let count = 0;
+            cartItems?.map((item) => (count += item.attributes.quantity));
         setCartCount(count);
-
+    
         let subTotal = 0;
         cartItems.map(
             (item) =>
@@ -36,22 +36,22 @@ const AppContext = ({ children }) => {
         if (index !== -1) {
             items[index].attributes.quantity += quantity;
         } else {
-            product.attributes.quantity = quantity;
+                product.attributes.quantity = quantity;
             items = [...items, product];
         }
         setCartItems(items);
     };
 
     const handleRemoveFromCart = (product) => {
-        let items = [...cartItems];
+            let items = [...cartItems];
         items = items?.filter((p) => p.id !== product?.id);
         setCartItems(items);
     };
-
+    
     const handleCartProductQuantity = (type, product) => {
-        let items = [...cartItems];
-        let index = items?.findIndex((p) => p.id === product?.id);
-        if (type === "inc") {
+            let items = [...cartItems];
+            let index = items?.findIndex((p) => p.id === product?.id);
+            if (type === "inc") {
             items[index].attributes.quantity += 1;
         } else if (type === "dec") {
             if (items[index].attributes.quantity === 1) return;
@@ -59,7 +59,14 @@ const AppContext = ({ children }) => {
         }
         setCartItems(items);
     };
-
+    
+    const [selectedButton, setSelectedButton] = useState(()=>{
+        const savedButton = localStorage.getItem("selectedButton")
+        return savedButton ? parseInt(savedButton,10):1;
+    });
+    useEffect(()=>{
+        localStorage.setItem("selectedButton",selectedButton)
+    },[selectedButton])
     return (
         <Context.Provider
             value={{
@@ -76,6 +83,8 @@ const AppContext = ({ children }) => {
                 setShowCart,
                 handleCartProductQuantity,
                 cartSubTotal,
+                selectedButton,
+                setSelectedButton
             }}
         >
             {children}

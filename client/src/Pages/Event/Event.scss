@@ -5,6 +5,7 @@
     margin: 40px auto;
 }
 .eventFlex{
+    // overflow-x: hidden;
     width:calc(100% - 50px);
     position: relative;
     margin:0 auto;
@@ -27,6 +28,7 @@
         }
 }
 .lg-react-element {
+    overflow-x: hidden;
     position: relative;
     display: grid;
     width: calc(100% - 50px);
@@ -87,3 +89,12 @@
     }
     
 }
+// .lazyload {
+//     opacity: 0;
+//     transition: opacity 0.3s;
+//   }
+  
+//   .lazyloaded {
+//     opacity: 1;
+//   }
+  

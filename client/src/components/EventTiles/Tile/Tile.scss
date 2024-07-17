@@ -26,3 +26,12 @@
     opacity: 50%;
   }
 }
+// EventTiles.scss
+.lazyload {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazyloaded {
+  opacity: 1;
+}

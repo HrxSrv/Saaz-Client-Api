@@ -37,10 +37,10 @@ export default function IconBreadcrumbs({ eventName,isEvent }) {
           <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
           Events
         </Link>
-        {isEvent && <Typography
+        {isEvent  && <Typography
           sx={{ display: 'flex', alignItems: 'center' }}
           color="#1E969F" 
-          fontSize="70px"
+          fontSize="5vw"
           fontWeight="bolder"
         >
           <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />

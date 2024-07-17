@@ -1,4 +1,3 @@
-// EventCard.js
 import React, { useEffect, useState } from "react";
 import {
   Card,
@@ -13,6 +12,8 @@ import {
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import "./Tile.scss";
 import { useNavigate } from "react-router-dom";
+import 'lazysizes';
+import 'lazysizes/plugins/attrchange/ls.attrchange';
 
 const Tile = ({ event }) => {
   const [images, setImages] = useState(null);
@@ -29,7 +30,8 @@ const Tile = ({ event }) => {
   }, [event.path]);
 
   console.log("Event Object:", event); // Debugging line to log the event object
- const eventName = event.name;
+  const eventName = event.name;
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (images && images.length > 0) {
@@ -67,12 +69,13 @@ const Tile = ({ event }) => {
             <CardMedia
               component="img"
               height="340"
-              image={getTransformedImageUrl(images[currentImageIndex].url)}
+              data-src={getTransformedImageUrl(images[currentImageIndex].url)}
               alt={event.name}
+              className="lazyload"
             />
           </Fade>
         ) : (
-          <Box display="flex" justifyContent="center" alignItems="center" height="140">
+          <Box display="flex" justifyContent="center" alignItems="center" height="340">
             <CircularProgress />
           </Box>
         )}
