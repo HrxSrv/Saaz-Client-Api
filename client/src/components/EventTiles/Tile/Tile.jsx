@@ -12,8 +12,10 @@ import {
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import "./Tile.scss";
 import { useNavigate } from "react-router-dom";
-import 'lazysizes';
-import 'lazysizes/plugins/attrchange/ls.attrchange';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+// import 'lazysizes';
+// import 'lazysizes/plugins/attrchange/ls.attrchange';
 
 const Tile = ({ event }) => {
   const [images, setImages] = useState(null);
@@ -54,11 +56,28 @@ const Tile = ({ event }) => {
     navigate(`/event/${event.name}`, { state: { images: images, eventName: eventName} });
   };
 
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'));
+
+  let height;
+  let fontSize;
+  if (isSmallScreen) {
+    height = 150; // height for small screens
+    fontSize="20px";
+  } else if (isMediumScreen) {
+    height = 280; // height for medium screens
+    fontSize="30px";
+  } else if (isLargeScreen) {
+    height = 280; // height for large screens
+    fontSize="37.64px";
+  }
   return (
     <Card
       className="transparent-card"
       style={{
-        backgroundColor: "transparent",
+        backgroundColor: "#1E969F",
         borderRadius: "10px",
       }}
       onClick={handleTileClick}
@@ -68,15 +87,20 @@ const Tile = ({ event }) => {
           <Fade in={showImage} timeout={500}>
             <CardMedia
               component="img"
-              height="340"
-              data-src={getTransformedImageUrl(images[currentImageIndex].url)}
+              height={height}
+              src={getTransformedImageUrl(images[currentImageIndex].url)}
               alt={event.name}
-              className="lazyload"
+              // className="cardMedia"
             />
           </Fade>
         ) : (
           <Box display="flex" justifyContent="center" alignItems="center" height="340">
-            <CircularProgress />
+            <CardMedia
+              component="img"
+              height={height}
+              // alt={event.name}
+              // className="cardMedia"
+            />
           </Box>
         )}
         <CardContent>
@@ -86,12 +110,12 @@ const Tile = ({ event }) => {
             component="div"
             style={{
               fontFamily: "Anton",
-              fontSize: "37.64px",
+              fontSize: `${fontSize}`,
               fontWeight: "400",
-              lineHeight: "40.47px",
+              // lineHeight: "40.47px",
               letterSpacing: "0.045em",
               wordWrap: "break-word",
-              width: "250px", // Adjust width as per your design
+              // width: "250px", // Adjust width as per your design
             }}
           >
             {event.name || "Unnamed Event"} {/* Fallback text for debugging */}

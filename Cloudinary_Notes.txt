@@ -4,3 +4,5 @@ photos uploaded from media explorer do hold their parent photo structure in thei
 
 Http caching is set to 6 hours so any change in Cloudinary content will be take 6 hours to take effect on front 
 if the website is on same ip for long.
+
+Dynamic Event Rendering is turned off for the Events Page as it quickly reaches 500/hour api rate limit.

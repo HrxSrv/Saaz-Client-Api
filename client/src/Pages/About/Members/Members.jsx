@@ -248,7 +248,7 @@ function Members() {
   },[]);
   console.log(members);
   const getTransformedImageUrl = (url) => {
-    return url.replace("/upload/", "/upload/w_400,q_50/");
+    return url.replace("/upload/", "/upload/w_600,q_50/");
   };
   // const testMembers = [
   //   {

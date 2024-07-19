@@ -16,7 +16,7 @@ export const searchForAllFolders =  async (req, res) => {
     const result = await cloudinary.api.sub_folders("Saaz Events 23-24/Saaz Events 23-24");
     res.json(result.folders);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch folders' });
+    res.status(500).json({ error });
   }
 }
 const fetchMediaFromFolder = async (folderPath) => {
@@ -57,5 +57,6 @@ export const searchMediaByFolder = async (req, res) => {
     // console.log(media)''
   } catch (error) {
     res.status(500).json({ error: error.message });
+    // console.log(error)
   }
 }

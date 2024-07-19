@@ -119,7 +119,7 @@ function EventTIles() {
     <div className='layout1'>
         <Grid container spacing={4}>
       {events.map((event, index) => (
-        <Grid item key={index} xs={12} sm={6} md={4}>
+        <Grid item key={index} xs={6} sm={6} md={4}>
           <Tile event={event} />
         </Grid>
       ))}
