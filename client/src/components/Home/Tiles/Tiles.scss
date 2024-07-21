@@ -13,7 +13,7 @@
     width: 100%;
   }
   position: relative;
-  top: 5.8vh;
+  top: 0.8vh;
   @include md {
     top: 1vh;
   }
@@ -32,7 +32,7 @@
   margin: 0px auto;
   background-color:transparent;
   position: relative;
-  top: 5vh;
+  // top: 1vh;
   overflow-x: scroll;
   overflow-y: hidden;
   @include md {
@@ -41,7 +41,7 @@
     overflow: hidden;
   }
   div {
-    background: white;
+    background: #1E969F;
     border-radius: 2vw;
     font-family: "Anton", sans-serif;
     font-weight: 400;
@@ -260,7 +260,7 @@
     }
     div {
       // padding: 30px;
-      background: white;
+      background: #1E969F;
       width: 210px;
       border-radius: 1vw;
       font-family: "Anton", sans-serif;

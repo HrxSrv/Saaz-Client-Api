@@ -6,6 +6,7 @@ import { Context } from "../../utils/context";
 import Tiles from './Tiles/Tiles'
 import  ImageSlider from "../Slideshow/Carousel/Carousel"
 import Newsletter from '../../components/Footer/Newsletter/About';
+import AlertBanner from './Alert_Banner/Alert_Banner'
 const Home = () => {
     const { products, setProducts, categories, setCategories } =
         useContext(Context);
@@ -28,6 +29,7 @@ const Home = () => {
     return (
         <div className="home">
             <Banner />
+            <AlertBanner/>
             <Tiles/>
             {/* <ImageSlider/> */}
             <Newsletter/>

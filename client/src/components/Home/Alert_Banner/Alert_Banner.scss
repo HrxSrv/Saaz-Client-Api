@@ -1,0 +1,121 @@
+@import '../../../css-config/mixins.scss';
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+.Alert_banner{
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    // top: 10vh;
+    height: fit-content;
+    margin: 40px auto;
+    margin-top: 60px;
+    .horizontal-bar{
+        height: 150px;
+        width: calc(100% - 10px);
+        margin: 0 auto;
+        background-color: #3C38A0;
+        border-radius: 16px;
+        // overflow-y: hidden;
+        @include md{
+            height: 250px;
+        }
+        .notification-details-square{
+            background-color: white;
+            width: calc(100% - 40px);
+            height: 170px;
+            margin: 0 auto;
+            position: relative;
+            top: -6.5%;
+            border-radius: 4px;
+            .date {
+                color: white;
+                position: absolute;
+                left: 2vw;
+                top: 1.7vw;
+                font-size: 5vh;
+                display: flex;
+                flex-direction: column;
+                background-color: black;
+                height: fit-content;
+                // gap: 10px
+                padding: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 8px;
+                .day{
+                    font-family: "Anton", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 30px;
+                }
+                .month {
+                  font-family: Helvetica, sans-serif;
+                  font-size: 12.73px;
+                  font-weight: 400;
+                  line-height: 13.68px;
+                  letter-spacing: 0.045em;
+                  text-align: left;
+                  margin-top: 13px;
+                  margin-bottom: 3px;
+                }
+                .year {
+                  font-size: 1vw;
+                  font-family: Helvetica, sans-serif;
+                  font-size: 12.73px;
+                  font-weight: 200;
+                  line-height: 13.68px;
+                  letter-spacing: 0.045em;
+                  text-align: left;
+                }
+              }
+            .Qr{
+                position: relative;
+                left: 74%;
+                top: 10px;
+                width: 70px;
+                height: 70px;
+                @include md{
+                    display: none;
+                }
+            }
+            
+            .more{
+                font-family: Helvetica, sans-serif;
+                padding: 6px 22px;
+                background-color: black;
+                color: white;
+                width: fit-content;
+                border-radius: 8px;
+                position: relative;
+                top: 32%;
+                left: 72.5%;
+                @include md{
+                    left: 69.5%;
+                    top: 82%;
+                    padding: 6px 38px;
+                }
+            }
+            @include md{
+                width: calc(30%);
+                height: 282px;
+                position: relative;
+                right: -30%;
+            }
+
+        }
+        .pc-Qr{
+            display: none;
+            @include md{
+                display:inline-block;
+                width: 15%;
+                height: 200px;
+                background-color: #6962FF;
+                position: relative;
+                bottom: 93%;
+                left: 3%;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                
+            }
+        }
+    }
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Banner.scss";
 import BannerImg from "../../../assets/BannerImg.png";
-import saazBanner from "../../../assets/Group281.png"
+import saazBanner from "../../../assets/SaazIntext.png"
 const Banner = () => {
     return (
         <div className="hero-banner">

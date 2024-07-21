@@ -128,22 +128,25 @@ const StyledDialogContent = styled(DialogContent)({
   borderRadius: "10px",
 });
 
-const TilePopup = ({ eventName,image,date,handleClick,eventGallary }) => {
+const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clickedTiles }) => {
   const [open, setOpen] = useState(true);
+  // console.log(open)
   const [images, setImages] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const loadImages = async () => {
       const fetchedImages = await fetchEventMedia(`Saaz Events 23-24/Saaz Events 23-24/${eventGallary}`);
-      console.log(fetchedImages)
+      // console.log(fetchedImages)
       setImages(fetchedImages);
     };
     loadImages();
   }, [eventGallary]);
   const handleClose = () => {
     setOpen(false);
-    handleClick();
+    console.log(buttonId)
+    handleClick(buttonId);
+    console.log(buttonId)
   };
   const handleTileClick = () => {
     navigate(`/event/${eventGallary}`, { state: { images: images, eventName: eventGallary} });

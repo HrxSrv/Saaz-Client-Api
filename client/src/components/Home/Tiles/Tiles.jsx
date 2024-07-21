@@ -24,6 +24,7 @@ function Tiles() {
       ...prevState,
       [tile]: !prevState[tile],
     }));
+    console.log(clickedTiles[tile]);
   };
   const navigate = useNavigate();
   const scrollableContainerRef = useRef(null);
@@ -105,6 +106,7 @@ function Tiles() {
               date={"15 August 2024"}
               color="black"
               handleClick={() => handleClick("two")}
+              buttonId="two"
             />
           )}
         </div>
@@ -142,6 +144,7 @@ function Tiles() {
               image={orientation}
               date={"21 August 2024"}
               eventGallary={"Orientation '23"}
+              buttonId="three"
             />
           )}
         </div>
@@ -179,6 +182,7 @@ function Tiles() {
               eventGallary={"Saaz Night '24"}
               image={saazNight25}
               date={"To Be Announced"}
+              buttonId="four"
             />
           )}
         </div>
@@ -208,7 +212,7 @@ function Tiles() {
             Shop
           </div>
           {clickedTiles["five"] && (
-            <TilePopup color="black" handleClick={() => handleClick("five")} />
+            <TilePopup color="black" handleClick={() => handleClick("five")} buttonId="five" />
           )}
         </div>
         <div
@@ -232,7 +236,7 @@ function Tiles() {
             More
           </div>
           {clickedTiles["six"] && (
-            <TilePopup color="black" handleClick={() => handleClick("six")} image={NoticeBoard}  eventName={"Cooking Somethin...."}/>
+            <TilePopup color="black" handleClick={() => handleClick("six")} image={NoticeBoard}  buttonId="six" eventName={"Cooking Somethin...."}/>
           )}
         </div>
         <div className="seven" style={{background:"black"}} onClick={() => handleClick("seven")}>
@@ -243,7 +247,7 @@ function Tiles() {
             </video>
           </div> */}
           {clickedTiles["seven"] && (
-            <TilePopup color="black" handleClick={() => handleClick("seven")} />
+            <TilePopup color="black" handleClick={() => handleClick("seven")} buttonId="seven" />
           )}
         </div>
         <div
@@ -283,6 +287,7 @@ function Tiles() {
               eventGallary={"Tarang '23"}
               image={Tarang}
               date={"21 August 2024"}
+              buttonId="eight"
             />
           )}
         </div>
@@ -323,6 +328,7 @@ function Tiles() {
               eventGallary={"Saanjh 22"}
               image={Saanjh24}
               date={"21 August 2024"}
+              buttonId="nine"
             />
           )}
         </div>
