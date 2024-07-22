@@ -1,17 +1,17 @@
 import React from "react";
 import "./About.scss";
-import saazBanner from "../../../assets/Group28.png";
+import saazBanner from "../../../assets/SaazIntext.png";
 import arrow from "../../../assets/arrow.png"
 import { useNavigate } from 'react-router-dom'
 const About = () => {
   const navigate =useNavigate();
   return (
-    <div className="About-section">
-      <div className="About-content">
+    <div className="Home-About-section">
+      <div className="Home-About-content">
         <div className="bannerImg">
           <img src={saazBanner} alt="saaz banner" />
         </div>
-        {/* <div className="form">
+        {/* <div className="form"> 
                     <input type="text" placeholder="Email Address" />
                     <button>Subscribe</button>
                 </div> */}

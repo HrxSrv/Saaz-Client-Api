@@ -58,7 +58,7 @@
                     width: 600px;
                     margin-right: auto;
                     margin-left: auto;
-                    margin-bottom: 0;
+                    margin-bottom: 20px;
                 }
                 @include xxl {
                     width: 600px;
@@ -98,8 +98,9 @@
            letter-spacing: 3px;
            @include md{
             font-size: 30.35px;
-            position: relative;
-            top: -100px;
+        position: relative;
+        bottom: 85px;
+        left: 24.5%;
            }
         }
         

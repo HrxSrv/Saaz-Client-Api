@@ -17,7 +17,7 @@ const Banner = () => {
                 </div>
                 <div className="text-content">
                      <p>THE MUSIC CLUB</p>
-                </div>
+                </div> 
             </div>
         </div>
     );

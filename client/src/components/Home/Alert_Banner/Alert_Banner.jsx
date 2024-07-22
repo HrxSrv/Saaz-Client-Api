@@ -1,12 +1,11 @@
 import React from "react";
 import "./Alert_Banner.scss";
 import Notification from "../../../assets/Home-tiles/Home-Nofification-Banner/Notification.jpg";
-import NotificationQr from "../../../assets/Home-tiles/Home-Nofification-Banner/Qr.png";
+import NotificationQr from "../../../assets/Home-tiles/Home-Nofification-Banner/QR.png";
 import TilePopup from "../Drawer/Drawer";
 import { useState,useEffect } from "react";
 function AlertBanner() {
     const [clickedTiles, setClickedTiles] = useState({});
-
   const handleClick = (tile) => {
     setClickedTiles((prevState) => ({
       ...prevState,
@@ -16,8 +15,18 @@ function AlertBanner() {
   useEffect(() => {
     console.log(clickedTiles["notification"]);
   }, [clickedTiles]);
+  const notification = {
+    title: "Tarang '24",
+    date: "21",
+    month:"October",
+    year:"2024",
+    fullDate : "21 October 2024",
+    eventGallary: "Tarang '23",
+    eventBulletins: ["Clash of Melodies","Sa Re Ga Ma","Bonfire","Dard-e-Disco","Band Wars"],
+    registerLink:"#"
+  };
   return (
-    <div className="Alert_banner" onClick={() => handleClick("notification")}>
+    <div className="Alert_banner" >
       <div className="horizontal-bar">
         <div
           className="notification-details-square"
@@ -29,17 +38,28 @@ function AlertBanner() {
           
         >
         <div className="date" >
-            <div className="day">21</div>
-            <div className="month">October</div>
-            <div className="year">2024</div>
+            <div className="day">{notification.date}</div>
+            <div className="month">{notification.month}</div>
+            <div className="year">{notification.year}</div>
         </div>    
         <img src={NotificationQr} alt="" className="Qr" />
-        <div className="more">
+        <div className="more" onClick={() => handleClick("notification")}>
            more
         </div>
         </div>
         <div className="pc-Qr">
-          
+          <img src={NotificationQr} alt="" />
+          <div className="register">
+            Register
+          </div>
+        </div>
+        <div className="Bulletin">
+          <div className="title">
+            Prospects
+          </div>
+          <div className="bulletins">
+            {notification.eventBulletins.map(x => (<div> {'•' + ' ' + x} </div>) )}
+          </div>
         </div>
       </div>
       {clickedTiles["notification"] && (
@@ -47,10 +67,10 @@ function AlertBanner() {
            color="black"
            handleClick={() => handleClick("notification")}
            buttonId="notification"
-           eventName={"Tarang '24"}
+           eventName={notification.title}
            image={Notification}
-           date={"21 October 2024"}
-           eventGallary={"Tarang '23"}
+           date={notification.fullDate}
+           eventGallary={notification.eventGallary}
            clickedTiles={`${clickedTiles["notification"]}`}
          />
           )}
