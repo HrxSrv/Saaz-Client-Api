@@ -1,7 +1,7 @@
 import React from "react";
 import "./Alert_Banner.scss";
 import Notification from "../../../assets/Home-tiles/Home-Nofification-Banner/Notification.jpg";
-import NotificationQr from "../../../assets/Home-tiles/Home-Nofification-Banner/QR.png";
+import NotificationQr from "../../../assets/Home-tiles/Home-Nofification-Banner/Qr.png";
 import TilePopup from "../Drawer/Drawer";
 import { useState,useEffect } from "react";
 function AlertBanner() {
