@@ -100,13 +100,12 @@ function MerchBar( { name }) {
         <div className="left">
         <div className="title">MERCH</div>
         <div className="subtext">
-          <h1>
-            Discover <br /> 
-            All
-            <br /> The
-
-            <br /> MERCH
-          </h1>
+        <div className="h1s">
+            <h1>Discover </h1>
+            <h1>All</h1>
+            <h1>The</h1>
+            <h1> Events</h1>
+          </div>
           <img src={arrow} alt="" />
         </div>
       </div>

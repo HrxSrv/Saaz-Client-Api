@@ -124,15 +124,22 @@
                   letter-spacing: 5.721px;
                   // width: 150px;
                   position: relative;
-                  bottom: -40px;
+                  bottom: -5px;
                 //   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
                  }
                  .subtext{
                   position: absolute;
                 //   left: -50%;
                 font-size: 13px;
-                  top: 40px;
+                  top: 22px;
                   color: rgba(255, 255, 255, 0.537);
+                  .h1s{
+                    display:flex;
+                    flex-direction:column;
+                    justify-content: left;
+                    gap:15px;
+                    text-align: left;
+                  }
                   @include md{
                     position: relative;
                     left: -40%;
@@ -140,7 +147,7 @@
                   h1{
                     // width: 150px;
                     display: flex;
-                    justify-content: center;
+                    justify-content: left;
                     
                   }
                   display: flex;

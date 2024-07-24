@@ -32,6 +32,13 @@
       // width: 150px;
      }
      .subtext{
+      .h1s{
+        display:flex;
+        flex-direction:column;
+        justify-content: left;
+        gap:20px;
+        text-align: left;
+      }
       position: absolute;
       left: -60%;
       margin-top: 30px;
@@ -42,7 +49,7 @@
       h1{
         width: 150px;
         display: flex;
-        justify-content: center;
+        justify-content: left;
       }
       display: flex;
       flex-direction: column;
@@ -50,19 +57,20 @@
       img{
         width: 150px;
         position: relative;
-        left: -10%;
+        left: -20%;
       }
      }
   }
   .right{
     width: calc(100% );
+    margin-bottom: 20px;
     @include md{
       width: 50%;
       position: relative;
       left:-5%;
       top:6%;
+      margin-top: 40px;
     }
-    margin-top: 40px;
     img{
       border-radius: 4px;
     }
