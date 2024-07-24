@@ -13,9 +13,15 @@
 }
 
 .calendar {
-    width: 20vw;
-    position: relative; /* Changed to absolute for more precise positioning */
-    left: 79%;
-    top: 50%;
+    width: 15vw;
+    position: absolute;
+    top: 98%;
+    left:43%;
+    @include md{
+        width: 10vw;
+    position: absolute; /* Changed to absolute for more precise positioning */
+    left: 85%;
+    top: 98%;
     transform: translateY(-50%);
+    }
 }
