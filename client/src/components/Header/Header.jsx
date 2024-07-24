@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { Context } from "../../utils/context";
 import saazIcon from "../../assets/saazICON.png";
@@ -26,10 +26,20 @@ const Header = () => {
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
-
+    const toggleMobileMenuSpecific = () =>{
+        if(mobileMenuOpen){
+            toggleMobileMenu()
+        }
+    }
     const darkButton = { background: "black", color: "white" };
     const whiteButton = { background: mobileMenuOpen ? '#1E969F':'white', color: mobileMenuOpen ? 'white':'black' };
-
+    const location = useLocation();
+    useEffect(()=>{
+      if(location.pathname==="/") setSelectedButton(1);
+      if(location.pathname==="/Merch") setSelectedButton(2);
+      if(location.pathname==="/Library") setSelectedButton(3);
+      if(location.pathname==="/About") setSelectedButton(4);
+    },[location, setSelectedButton])
     return (
         <>
             <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
@@ -45,10 +55,10 @@ const Header = () => {
                         </div>
                     </div>
                     <ul className={`center ${mobileMenuOpen ? "open" : ""}`} >
-                        <li style={selectedButton === 1 ? whiteButton : darkButton} onClick={() => { navigate("/"); setSelectedButton(1) }}>Home</li>
-                        <li style={selectedButton === 2 ? whiteButton : darkButton} onClick={() => { navigate("/Merch"); setSelectedButton(2) }}>Merch</li>
-                        <li style={selectedButton === 3 ? whiteButton : darkButton} onClick={() => { navigate("/Library"); setSelectedButton(3) }}>Library</li>
-                        <li style={selectedButton === 4 ? whiteButton : darkButton} onClick={() => { navigate("/about"); setSelectedButton(4) }}>About</li>
+                        <li style={selectedButton === 1 ? whiteButton : darkButton} onClick={() => { navigate("/"); setSelectedButton(1);toggleMobileMenuSpecific() } }>Home</li>
+                        <li style={selectedButton === 2 ? whiteButton : darkButton} onClick={() => { navigate("/Merch"); setSelectedButton(2);toggleMobileMenuSpecific()  }}>Merch</li>
+                        <li style={selectedButton === 3 ? whiteButton : darkButton} onClick={() => { navigate("/Library"); setSelectedButton(3);toggleMobileMenuSpecific()  }}>Library</li>
+                        <li style={selectedButton === 4 ? whiteButton : darkButton} onClick={() => { navigate("/about"); setSelectedButton(4);toggleMobileMenuSpecific()  }}>About</li>
                     </ul>
                 </div>
             </header>

@@ -1,0 +1,54 @@
+@import "../../../css-config/mixins.scss";
+.merch-hero-banner {
+  height: fit-content;
+  width: calc(100% - 10px);
+  .cart{
+    width: 10%;
+    position: absolute;
+    right: 35%;
+    top: 1.1%;
+   @include md{
+    right: 29%;
+    top: 1%;
+   }
+    img{
+        width: 100%;
+    }
+  }
+  .content {
+    position: relative;
+    top:30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    @include md{
+        flex-direction: column;
+    }
+    .img-cta {
+      width: 50vw;
+      @include md{
+        width: 40vw;
+      }
+      margin-bottom:20px;
+      img {
+        width: 100%;
+      }
+    }
+    .text-content {
+      color: white;
+      font-family: Helvetica, sans-serif;
+      line-height: 132%;
+      letter-spacing: 3px;
+      width: 50px;
+      @include md {
+        font-size: 30.35px;
+        position: relative;
+        bottom: 85px;
+        left: 10.5%;
+        width:fit-content
+      }
+    }
+  }
+}

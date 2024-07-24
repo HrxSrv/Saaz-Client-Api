@@ -1,0 +1,120 @@
+@import "../../../../css-config/mixins.scss";
+.Product {
+  width: 100%;
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  .product-title {
+    font-size: 40px;
+    font-family: Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 80%;
+    letter-spacing: 0.045em;
+    color: #e0e0e0;
+  }
+  .product-info {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 80%;
+    letter-spacing: 0.045em;
+    color: #909090;
+  }
+  .product-img {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    // margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+    //   display: none;
+      width: 220px;
+    }
+  }
+  .buying-info {
+    display: flex;
+    gap: 60%;
+    height: fit-content;
+    width: 180%;
+    @include md{
+        width: 70%;
+    }
+    .price {
+        width: 50px;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 107.5%;
+      /* or 34px */
+      text-align: center;
+      letter-spacing: 0.045em;
+
+      color: #909090;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .buy-button {
+      /* Component 1 */
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 24px;
+      gap: 6.39px;
+
+      // position: absolute;
+      // width: 146.42px;
+      // height: 49.13px;
+      // left: 347.28px;
+      // top: 2039.98px;
+
+      background: #1e969f;
+      box-shadow: 24px 16px 8px rgba(0, 0, 0, 0.01),
+        15px 10px 7px rgba(0, 0, 0, 0.08), 9px 6px 6px rgba(0, 0, 0, 0.28),
+        4px 2px 5px rgba(0, 0, 0, 0.47), 1px 1px 3px rgba(0, 0, 0, 0.54);
+      border-radius: 9.59108px;
+      cursor: pointer;
+      transition: all 150ms linear;
+      &:hover{
+        opacity: 80%;
+      }
+    }
+    .SoldOut{
+        position: relative;
+        right: 30px;
+        /* Component 1 */
+
+      /* Auto layout */
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: center;
+    //   align-items: center;
+      padding: 8px 24px;
+    //   gap: 6.39px;
+      // position: absolute;
+      // width: 146.42px;
+      // height: 49.13px;
+      // left: 347.28px;
+      // top: 2039.98px;
+
+      background: #1e969f;
+      box-shadow: 24px 16px 8px rgba(0, 0, 0, 0.01),
+        15px 10px 7px rgba(0, 0, 0, 0.08), 9px 6px 6px rgba(0, 0, 0, 0.28),
+        4px 2px 5px rgba(0, 0, 0, 0.47), 1px 1px 3px rgba(0, 0, 0, 0.54);
+      border-radius: 9.59108px;
+    //   cursor: pointer;
+      opacity: 80%;
+    }
+  }
+}

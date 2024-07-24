@@ -1,0 +1,28 @@
+@import "../../../css-config/mixins.scss";
+.products{
+    width: calc(100% - 10px);
+    background-color:black;
+    padding: 10px;
+    height: fit-content;
+    margin: 0 auto;
+    display:flex;
+    // overflow-x: scroll;
+    // position: relative;
+    // top: 60px;
+    color: white;
+    justify-content: center;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.each-product-tile {
+    // flex: 3 1 calc(25% - 20px);
+    // box-sizing: border-box;
+    width: 50%;
+    @include md {
+        width: 28%;
+    }
+}

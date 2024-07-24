@@ -21,9 +21,9 @@
     height:calc(100vh - 640px);
     @include md {
         height: 100vh;
-        img{
-            width: 100vw;
-        }
+        // img{
+        //     width: 100vw;
+        // }
     }
     .content {
         position: absolute;
@@ -48,23 +48,26 @@
             .banner-img {
                 position: relative;
                 z-index: 9;
-                width: 200px;
+                width: 50vw;
+                @include md{
+                    width: 40vw;
+                }
                 margin-bottom: 20px;
                 margin-right: auto;
                 margin-top: 0;
                     margin-left: auto;
                     max-width: fit-content;
-                @include md {
-                    width: 600px;
-                    margin-right: auto;
-                    margin-left: auto;
-                    margin-bottom: 20px;
-                }
-                @include xxl {
-                    width: 600px;
-                    margin-right: 0;
-                    margin-top: 0;
-                }
+                // @include md {
+                //     // width: 600px;
+                //     margin-right: auto;
+                //     margin-left: auto;
+                //     margin-bottom: 20px;
+                // }
+                // @include xxl {
+                //     // width: 600px;
+                //     margin-right: 0;
+                //     margin-top: 0;
+                // }
             }
             
             .ctas {

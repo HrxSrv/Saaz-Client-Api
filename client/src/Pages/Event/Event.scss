@@ -1,76 +1,47 @@
 @import "../../css-config/mixins.scss";
-.breadCrumbs{
-    width: calc(100% - 50px);
-    position: relative;
-    margin: 40px auto;
-}
-.eventFlex{
-    // overflow-x: hidden;
-    width:calc(100% - 50px);
-    position: relative;
-    margin:0 auto;
-    color: white;
-    .title{
-        font-family: "Anton";
-        font-weight: 400;
-        font-style: normal;
-        background-color: transparent;
-        font-size: 100px;
-        line-height: 107.5%; 
-        letter-spacing: 5.721px;
-        height: inherit;
-        width: 60%;
-       }
-       .subtext{
+.Event-page{
+    .breadCrumbs{
+        width: calc(100% - 50px);
         position: relative;
-        left: -60%;
-        margin-top: 30px;
-        }
-}
-.lg-react-element {
-    overflow-x: hidden;
-    position: relative;
-    display: grid;
-    width: calc(100% - 50px);
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;  /* Adjust the gap as needed */
-    background-color: #121212;
-    padding: 20px;
-    border-radius:20px ;
-}
-.image-grid-item {
-    cursor: default;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;  /* Makes a square */
-    overflow: hidden;
-    width: 200px;
-}
-
-.image-grid-item img {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    width: 65%;
-    height: 90%;
-    object-fit: cover;  /* Ensures the image covers the area */
-    border-radius: 10px;
-}
-//screen >768px css
-@include md{
+        margin: 40px auto;
+    }
+    .eventFlex{
+        // overflow-x: hidden;
+        width:calc(100% - 50px);
+        position: relative;
+        margin:0 auto;
+        color: white;
+        .title{
+            font-family: "Anton";
+            font-weight: 400;
+            font-style: normal;
+            background-color: transparent;
+            font-size: 100px;
+            line-height: 107.5%;  
+            letter-spacing: 5.721px;
+            height: inherit;
+            width: 60%;
+           }
+           .subtext{
+            position: relative;
+            left: -60%;
+            margin-top: 30px;
+            }
+    }
     .lg-react-element {
+        overflow-x: hidden;
         position: relative;
         display: grid;
         width: calc(100% - 50px);
         margin: 0 auto;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 10px;  /* Adjust the gap as needed */
         background-color: #121212;
         padding: 20px;
         border-radius:20px ;
     }
     .image-grid-item {
+        cursor: default;
         position: relative;
         width: 100%;
         padding-bottom: 100%;  /* Makes a square */
@@ -82,19 +53,50 @@
         position: absolute; 
         top: 0;
         left: 0;
-        width: 80%;
-        height: 100%;
+        width: 65%;
+        height: 90%;
         object-fit: cover;  /* Ensures the image covers the area */
         border-radius: 10px;
     }
-    
+    //screen >768px css
+    @include md{
+        .lg-react-element {
+            position: relative;
+            display: grid;
+            width: calc(100% - 50px);
+            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;  /* Adjust the gap as needed */
+            background-color: #121212;
+            padding: 20px;
+            border-radius:20px ;
+        }
+        .image-grid-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;  /* Makes a square */
+            overflow: hidden;
+            width: 200px;
+        }
+        
+        .image-grid-item img {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 100%;
+            object-fit: cover;  /* Ensures the image covers the area */
+            border-radius: 10px;
+        }
+        
+    }
+    // .lazyload {
+    //     opacity: 0;
+    //     transition: opacity 0.3s;
+    //   }
+      
+    //   .lazyloaded {
+    //     opacity: 1;
+    //   }
+      
 }
-// .lazyload {
-//     opacity: 0;
-//     transition: opacity 0.3s;
-//   }
-  
-//   .lazyloaded {
-//     opacity: 1;
-//   }
-  

@@ -33,7 +33,7 @@ const imageUrls = images.map(x => ({
     };
     
     return (
-        <div className="App">
+        <div className="Event-page">
             {/* <div className="eventFlex"> */}
                 {/* <div className="title"> */}
                     {/* {eventName} */}

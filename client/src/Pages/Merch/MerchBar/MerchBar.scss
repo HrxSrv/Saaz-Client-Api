@@ -1,0 +1,356 @@
+@import '../../../css-config/mixins.scss';
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+.Merch-banner{
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    // top: 10vh;
+    height: fit-content;
+    margin: 40px auto;
+    margin-top: 60px;
+    .Merch-horizontal-bar{
+        height: 150px;
+        width: calc(100% - 10px);
+        margin: 0 auto;
+        background-color: #125055;
+        border-radius: 16px;
+        // overflow-y: hidden;
+        margin-bottom: 400px;
+        display: flex;
+        justify-content: center;
+        @include md{
+            margin-bottom:0 ;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            height: 250px;
+        }
+        .pc-Qr{
+            // display: inline;
+            position:absolute;
+            // top: 100px;
+            width: 80%;
+            bottom: -28px;
+            // margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            @include md{
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                display:flex;
+                gap: 10%;
+                width: 15%;
+                height: 200px;
+                background-color: #1E969F;
+                position: relative;
+                bottom: -20%;
+                // left: 3%;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                // img{
+                //    width: 50%;
+                //    border: 4px solid black;
+                //    border-radius: 16px;
+                //    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.712);
+                // }
+                .register{
+                    background-color: black;
+                    padding: 8px 36px;
+                    color: white;
+                    border-radius: 8px;
+                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.712);
+                    transition: all 150ms linear;
+                    // margin-bottom: 20px;
+                    position: absolute;
+                    bottom: 10%;
+                    &:hover{
+                        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.941);
+                    }
+                    display: none;
+                    @include md{
+                        cursor: pointer;
+                        display: inline;
+                    }
+                }
+            }
+        }
+        .Bulletin{
+            display: none;
+            @include md{
+                display: flex;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            bottom: -25%;
+            // left: 33%;
+            gap: 10px;
+            .title{
+                font-family: "Anton";
+                font-weight: 400;
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+            .bulletins{
+                display: flex;
+                flex-direction: column;
+                font-weight: lighter;
+                font-size: 14px;
+                color: rgba(255, 255, 255, 0.738);
+            }
+        }
+    }
+    .merch-title{
+        display: none;
+        width: 20%;
+        color: white;
+        @include md {
+            display: inline;
+            .left{
+                display: flex;
+                .title{
+                  font-family: "Anton";
+                  font-weight: 400;
+                  font-style: normal;
+                  background-color: transparent;
+                  font-size: 70px;
+                  transform: rotate(-90deg);
+                  // position: relative;
+                  line-height: 107.5%; 
+                  letter-spacing: 5.721px;
+                  // width: 150px;
+                  position: relative;
+                  bottom: -40px;
+                //   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                 }
+                 .subtext{
+                  position: absolute;
+                //   left: -50%;
+                font-size: 13px;
+                  top: 40px;
+                  color: rgba(255, 255, 255, 0.537);
+                  @include md{
+                    position: relative;
+                    left: -40%;
+                  }
+                  h1{
+                    // width: 150px;
+                    display: flex;
+                    justify-content: center;
+                    
+                  }
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  img{
+                    border-radius: 50%;
+                    width: 100px;
+                    position: relative;
+                    left: -10%;
+                    color: white;
+                    transition: box-shadow ease 200ms;
+                    &:hover{
+                         box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+                    }
+                  }
+                 }
+              }
+        }
+    }
+    .notification-details-square{
+        flex-grow: 0;
+        background-color: white;
+        width: calc(100% - 40px);
+        height: 170px;
+        margin: 0 auto;
+        position: relative;
+        top: -6.5%;
+        border-radius: 4px;
+        border: 4px solid white;
+        transition: flex-grow 0.3s ease; /* Smooth transition effect */
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        &:hover{
+            flex-grow:0.1;
+        }
+        @include md{
+            margin: 0;
+            position:absolute;
+        }
+        .date {
+            color: white;
+            position: absolute;
+            left: 2vw;
+            top: 1.7vw;
+            font-size: 5vh;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            height: fit-content;
+            // gap: 10px
+            padding: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 8px;
+            .day{
+                font-family: "Anton", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 30px;
+            }
+            .month {
+              font-family: Helvetica, sans-serif;
+              font-size: 12.73px;
+              font-weight: 400;
+              line-height: 13.68px;
+              letter-spacing: 0.045em;
+              text-align: left;
+              margin-top: 13px;
+              margin-bottom: 3px;
+            }
+            .year {
+              font-size: 1vw;
+              font-family: Helvetica, sans-serif;
+              font-size: 12.73px;
+              font-weight: 200;
+              line-height: 13.68px;
+              letter-spacing: 0.045em;
+              text-align: left;
+            }
+          }
+        .Qr{
+            position: relative;
+            left: 74%;
+            top: 10px;
+            width: 70px;
+            height: 70px;
+            @include md{
+                display: none;
+            }
+        }
+        
+        .more{
+            font-family: Helvetica, sans-serif;
+            padding: 6px 22px;
+            background-color: black;
+            color: white;
+            width: fit-content;
+            border-radius: 8px;
+            position: relative;
+            top: 32%;
+            left: 72.5%;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.712);
+            transition: ease 0.1s;
+                &:hover{
+                    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.941);
+                }
+            @include md{
+                left: 69.5%;
+                top: 82%;
+                padding: 6px 38px;
+                cursor: pointer;
+            }
+        }
+        @include md{
+            width: calc(30%);
+            height: 282px;
+            position: relative;
+            // right: -30%;
+        }
+    
+    }
+}
+}
+//lightroom css
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-zoom.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-share.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-video.css');
+.slick__slide img {
+//   height: 270px;
+  max-width: 100%;
+  position: relative;
+//   left: 15%;
+  cursor: pointer;
+  
+  @include md{
+    height:180px;
+    left: 9%;
+  }
+}
+.lg-react-element {
+    
+    position: relative;
+    // display: grid;
+    width: calc(100%);
+    // margin: 0 auto;
+    // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    // gap: 10px;
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 20px;
+    // padding-bottom: 60px;
+    // height: 250px;
+    // overflow-y: hidden;
+    bottom:40%;
+    img{
+        border-radius: 8px; 
+        border: 4px solid white;
+        // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    }
+    @include md{
+        width: 80%;
+        height: auto;
+        overflow-y:visible ;
+        background-color: transparent;
+    padding:0px;
+    border-radius: 20px;
+    img{
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        
+    }
+    }
+}
+.slick-arrow {
+    // position: relative;
+    // right: -200%;
+    position: absolute;
+    // top: 360px;
+    
+    @include md{
+        display: none !important;
+    }
+  }
+  .slick-prev{
+    left: -45px;
+  }
+//   .slick-next{
+//     right: 8px;
+//     // bottom: 28px;
+//   }
+.slick-prev::before{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.516);
+}
+.slick-next::before{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.516);
+}
+.slick-dots li.slick-active button:before{
+    color: white;
+}
+.slick-dots li button:before{
+    color: #1E969F;
+    @include md{
+        color: white;
+    }
+}
+.slick-dots{
+    position: absolute;
+    bottom: -17px;
+}

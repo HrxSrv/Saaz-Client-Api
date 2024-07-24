@@ -7,7 +7,7 @@ import Home from "./components/Home/Home";
 import AboutPage from "./Pages/About/About_page";
 import AppContext from "./utils/context";
 import LoadingSaaz from "./components/Animation/LoadingSaaz";
-
+import Merch from "./Pages/Merch/Merch";
 import Events from "./Pages/Events/Events";
 import Event from "./Pages/Event/Event";
 import PageTransition from "./components/PageTransition/PageTransition"; // Import the PageTransition component
@@ -71,6 +71,14 @@ function PageWrapper() {
                                 <Event />
                             </PageTransition>
                         }
+                    />
+                    <Route
+                    path="/merch"
+                    element={
+                       <PageTransition>
+                        <Merch/>
+                       </PageTransition>
+                    }
                     />
                 </Routes>
                 
