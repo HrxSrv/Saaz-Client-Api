@@ -2,7 +2,7 @@ import "./Members.scss";
 import React from "react";
 import cordinator from "../../../assets/MemberImages/Cordinator.png";
 import cocordinator1 from "../../../assets/MemberImages/Co-Cordinator 1.png";
-import cocordinator2 from "../../../assets/MemberImages/Co-Cordinator 2.png";
+import cocordinator2 from "../../../assets/MemberImages/Co-Cordinator 2.jpg";
 import arrow from "../../../assets/arrow2x.png";
 import { Grid } from "@mui/material";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
@@ -189,22 +189,6 @@ function Members() {
         "display_name": "Prakriti Das",
         "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1721222495/SaazMembers/Prakriti_Das.jpg",
         "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1721222495/SaazMembers/Prakriti_Das.jpg"
-    },
-    {
-        "asset_id": "40049018f6ee47a3374a48fdb576759b",
-        "public_id": "SaazMembers/Prateek_Pandey",
-        "format": "jpg",
-        "version": 1721222508,
-        "resource_type": "image",
-        "type": "upload",
-        "created_at": "2024-07-17T13:21:48Z",
-        "bytes": 379670,
-        "width": 4160,
-        "height": 2773,
-        "asset_folder": "SaazMembers",
-        "display_name": "Prateek Pandey",
-        "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1721222508/SaazMembers/Prateek_Pandey.jpg",
-        "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1721222508/SaazMembers/Prateek_Pandey.jpg"
     },
     {
         "asset_id": "0941e43a63567638a261595bcd55e637",

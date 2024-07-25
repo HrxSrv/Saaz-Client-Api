@@ -1,0 +1,141 @@
+@import "https://fonts.googleapis.com/css2?family=Anton&display=swap";
+@import "../../../css-config/mixins.scss";
+.MuiDialog-paper {
+  background-color: black;
+}
+.merch-tile1-register-tile {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 10px);
+  padding: 10px;
+  border-radius: 8px;
+  font-family: Helvetica, sans-serif;
+  position: relative;
+  top: 30%;
+  .left {
+    .eventName {
+      font-family: "Anton";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 33.79px;
+      letter-spacing: 0.045em;
+      text-align: left;
+      // margin-right: 100px;
+    }
+    .date {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17.93px;
+      letter-spacing: 0.045em;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.718);
+    }
+  }
+  .merch-register {
+    background-color: white;
+    color: black;
+    height: fit-content;
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    padding: 2px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22.1px;
+    letter-spacing: 0.045em;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+.merch-tile2-audition-tile {
+    position: relative;
+    bottom: 30%;
+
+    form {
+      position: relative;
+      top: 30%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+.invisible-on-phone {
+  display: none;
+}
+.merch-tile3 {
+  width: 200px;
+  img {
+    width: 100%;
+  }
+}
+@include md {
+  .merch-tile1-register-tile {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 20px);
+    padding: 15px;
+    border-radius: 1vw;
+    font-family: Helvetica, sans-serif;
+    position: relative;
+    top: 40%;
+    .left {
+      .eventName {
+        font-family: "Anton";
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 33.79px;
+        letter-spacing: 0.045em;
+        text-align: left;
+      }
+      .date {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17.93px;
+        letter-spacing: 0.045em;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.718);
+      }
+    }
+
+    .register {
+      background-color: white;
+      color: black;
+      height: fit-content;
+      position: relative;
+      top: 10%;
+      padding: 10px;
+      cursor: pointer;
+      // font-family: Helvetica Neue;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 22.1px;
+      letter-spacing: 0.045em;
+      text-align: center;
+      border-radius: 0.5vw;
+    }
+  }
+  .merch-tile2-audition-tile {
+    position: relative;
+    bottom: 30%;
+
+    form {
+      position: relative;
+      top: 30%;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  .invisible-on-phone {
+    display: block;
+  }
+}

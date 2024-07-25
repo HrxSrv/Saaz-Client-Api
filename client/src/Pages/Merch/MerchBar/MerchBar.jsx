@@ -103,8 +103,8 @@ function MerchBar( { name }) {
         <div className="h1s">
             <h1>Discover </h1>
             <h1>All</h1>
-            <h1>The</h1>
-            <h1> Events</h1>
+            <h1>New</h1>
+            <h1>Merch</h1>
           </div>
           <img src={arrow} alt="" />
         </div>

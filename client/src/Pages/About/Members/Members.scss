@@ -51,6 +51,9 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  img {
+    border-radius: 50%;
+  }
   .cordinator {
     width: 50%;
     display: flex;
@@ -60,6 +63,9 @@
     gap: 10px;
     img {
       width: 100%;
+    }
+    @include md{
+      width: 20%;
     }
   }
   .cocs {
@@ -77,6 +83,9 @@
       gap: 10px;
       img {
         width: 100%;
+      }
+      @include md{
+        width: 20%;
       }
     }
   }
