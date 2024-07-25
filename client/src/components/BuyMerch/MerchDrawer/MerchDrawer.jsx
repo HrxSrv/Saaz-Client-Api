@@ -27,35 +27,23 @@ const Transition = forwardRef(function Transition(props, ref) {
 const TileContainer = styled("div")(({ theme }) => ({
   display: "grid",
   gridTemplateAreas: `
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
-    'tile1 tile1 '
+    
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
+    'tile4 tile4 '
     'tile2 tile2 '
-    'tile3 tile4 '
+    'tile3 tile3 '
+    
   `,
-  gridGap: "8px",
-  width: "82vw",
+  gridGap: "18px",
+  width: "86vw",
   height: "100%",
   background: "#181818",
   // overflowY:"scroll",
@@ -131,7 +119,7 @@ const StyledDialog = styled(Dialog)(({ theme }) => ({
       position: "relative",
       overflow: "visible", // Ensure overflow is visible
       borderRadius: "10px",
-      top: "13vh",
+      top: "7vh",
     },
   },
 }));
@@ -161,6 +149,9 @@ const StyledTextField = styled(TextField)({
   },
   "& .MuiInputLabel-root": {
     color: "white", // Change label color
+    "&.Mui-focused ": {
+      color:'white'
+    },
   },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
@@ -175,7 +166,7 @@ const StyledTextField = styled(TextField)({
       color:'white'
     },
   },
-  width: "300px",
+  width: "280px",
   // marginBottom: "1rem", // Space between fields
 });
 const TilePopup = ({ product, onClose }) => {
@@ -193,6 +184,8 @@ const TilePopup = ({ product, onClose }) => {
     rollNumber: "",
     size: "",
     paymentImage: null,
+    textOnProduct:"",
+    phone:"",
   });
 
   const handleChange = (e) => {
@@ -223,6 +216,8 @@ const TilePopup = ({ product, onClose }) => {
     formDataToSubmit.append("entry.1234567890", formData.name); // Replace with your field ID
     formDataToSubmit.append("entry.2345678901", formData.rollNumber); // Replace with your field ID
     formDataToSubmit.append("entry.3456789012", formData.size); // Replace with your field ID
+    formDataToSubmit.append("entry.3456789012", formData.textOnProduct); // Replace with your field ID
+    formDataToSubmit.append("entry.3456789012", formData.phone); // Replace with your field ID
 
     if (formData.paymentImage) {
       formDataToSubmit.append("entry.4567890123", formData.paymentImage); // Replace with your field ID
@@ -276,9 +271,9 @@ const TilePopup = ({ product, onClose }) => {
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
-
+                
               }}
-             
+             className="invisible-on-phone"
             >
               {/* <Arrow src={arrow} alt="Arrow" className="arrow" /> */}
               <div className="merch-tile1-register-tile">
@@ -295,6 +290,7 @@ const TilePopup = ({ product, onClose }) => {
                 backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
+                padding:"20px 0"
               }}
             >
               {/* <button
@@ -321,7 +317,7 @@ const TilePopup = ({ product, onClose }) => {
                     value={formData.name}
                     onChange={handleChange}
                     fullWidth
-                    margin="normal"
+                    // margin="normal"
                     required
                     style={{ Width: "50px" }}
                   />
@@ -331,7 +327,25 @@ const TilePopup = ({ product, onClose }) => {
                     value={formData.rollNumber}
                     onChange={handleChange}
                     fullWidth
-                    margin="normal"
+                    // margin="normal"
+                    required
+                  />
+                  <StyledTextField
+                    name="textOnProduct"
+                    label={"Customise text on your " + product.title}
+                    value={formData.textOnProduct}
+                    onChange={handleChange}
+                    fullWidth
+                    // margin="normal"
+                    // required
+                  />
+                  <StyledTextField
+                    name="phone"
+                    label="Phone number."
+                    value={formData.phone}
+                    onChange={handleChange}
+                    fullWidth
+                    // margin="normal"
                     required
                   />
                   <StyledTextField
@@ -341,7 +355,7 @@ const TilePopup = ({ product, onClose }) => {
                     value={formData.size}
                     onChange={handleChange}
                     fullWidth
-                    margin="normal"
+                    // margin="normal"
                     required
                   >
                     <MenuItem value="S">S</MenuItem>
@@ -412,33 +426,24 @@ const TilePopup = ({ product, onClose }) => {
                 />
               </div>
             </Tile>
-            <Tile area="tile4" style={{ background: "#1E969F" }} >
+            <Tile area="tile4" style={{ background: "black" }} >
               {/* <Arrow src={arrow} alt="Arrow" className="arrow" /> */}
               <Typography
                 variant="h6"
                 fontFamily={"Anton"}
-                color={"black"}
+                color={"white"}
                 fontSize={"30px"}
                 style={{ top: "10px", left: "10px", position: "absolute" }}
               >
-                Our <br /> Contact
+                How to buy !
               </Typography>
-              <Typography
-                variant="h1"
-                fontFamily={"Helvetica"}
-                color={"#181818c4"}
-                fontSize={"10px"}
-                letterSpacing={"1px"}
-                style={{
-                  bottom: "10px",
-                  left: "10px",
-                  position: "absolute",
-                  fontWeight: "light",
-                }}
-                className="invisible-on-phone"
-              >
-                Having Some <br /> Questions <br /> Specific <br /> To Event ?
-              </Typography>
+              <div className="how-to-buy-text">
+                <ul>
+                  <li>Get customised text on your {product.title}.</li>
+                  <li>Pay {product.price} on the below Qr and  upload.</li>
+                  <li>Any Query at Saaz@iiitdmj.ac.in.</li>
+                </ul>
+              </div>
             </Tile>
           </TileContainer>
         </StyledDialogContent>
