@@ -20,7 +20,7 @@ import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
 import Fade from "@mui/material/Fade";
-
+import UploadWidget from "../UploadWidget/UploadWidget";
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -183,9 +183,10 @@ const TilePopup = ({ product, onClose }) => {
     name: "",
     rollNumber: "",
     size: "",
-    paymentImage: null,
+    paymentImage: "",
     textOnProduct:"",
     phone:"",
+    product:product.title,
   });
 
   const handleChange = (e) => {
@@ -198,10 +199,10 @@ const TilePopup = ({ product, onClose }) => {
 
   const [fileUploaded, setFileUploaded] = useState(false);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (url) => {
     setFormData({
       ...formData,
-      paymentImage: e.target.files[0],
+      paymentImage: url,
     });
     setFileUploaded(true);
   };
@@ -210,17 +211,18 @@ const TilePopup = ({ product, onClose }) => {
     e.preventDefault();
 
     const googleFormUrl =
-      "https://docs.google.com/forms/d/e/your-form-id/formResponse";
+      "https://docs.google.com/forms/d/e/1FAIpQLSekm7duFf3IdJDRdIpt-2tSW5GIrvCvc_TgL6urj6v1zdLHnQ/formResponse";
 
     const formDataToSubmit = new FormData();
-    formDataToSubmit.append("entry.1234567890", formData.name); // Replace with your field ID
-    formDataToSubmit.append("entry.2345678901", formData.rollNumber); // Replace with your field ID
-    formDataToSubmit.append("entry.3456789012", formData.size); // Replace with your field ID
-    formDataToSubmit.append("entry.3456789012", formData.textOnProduct); // Replace with your field ID
-    formDataToSubmit.append("entry.3456789012", formData.phone); // Replace with your field ID
+    formDataToSubmit.append("entry.1655643117", formData.name); // Replace with your field ID
+    formDataToSubmit.append("entry.514288282", formData.rollNumber); // Replace with your field ID
+    formDataToSubmit.append("entry.596053227", formData.size); // Replace with your field ID
+    formDataToSubmit.append("entry.354983475", formData.textOnProduct); // Replace with your field ID
+    formDataToSubmit.append("entry.2083287449", formData.phone); // Replace with your field ID
+    formDataToSubmit.append("entry.1639928190", formData.product); // Replace with your field ID
 
     if (formData.paymentImage) {
-      formDataToSubmit.append("entry.4567890123", formData.paymentImage); // Replace with your field ID
+      formDataToSubmit.append("entry.1717975506", formData.paymentImage); // Replace with your field ID
     }
 
     fetch(googleFormUrl, {
@@ -245,7 +247,20 @@ const TilePopup = ({ product, onClose }) => {
 
   // const openPopup = Boolean(anchorEl);
   // const id = open ? "simple-popper" : undefined;
-
+  //UPLOAD
+  const [url, updateUrl] = useState();
+  const [error, updateError] = useState();
+  function handleOnUpload(error, result, widget) {
+    if ( error ) {
+      updateError(error.message);
+      // widget.close({
+      //   quiet: true
+      // });
+      return;
+    }
+    updateUrl(result?.info?.secure_url);
+  }
+  // console.log(formData);
   return (
     <div>
       <StyledDialog
@@ -376,15 +391,37 @@ const TilePopup = ({ product, onClose }) => {
                       textTransform:"none"
                     }}
                   >
-                    {fileUploaded?"Uploaded":"Payment Screenshot"}
-                    <input
-                      type="file"
-                      hidden
-                      accept="image/*"
-                      onChange={handleFileChange}
-                      required
-                      
-                    />
+                   <UploadWidget onUpload={handleOnUpload}>
+          {({ open }) => {
+            function handleOnClick(e) {
+              e.preventDefault();
+              open();
+            }
+            return (
+              <button onClick={handleOnClick}>
+                {!url && <p>Upload an Image</p>}
+                {error && <p>{ error }</p>}
+
+        {url && (
+          <>
+            <p><img src={ url } alt="Uploaded resource"  style={{width:"20px"}}/></p>
+            {/* <p>{ url }</p> */}
+          </>
+        )}
+        {url && handleFileChange(url)}
+              </button>
+            )
+          }}
+        </UploadWidget>
+
+        {/* {error && <p>{ error }</p>}
+
+        {url && (
+          <>
+            <p><img src={ url } alt="Uploaded resource" /></p>
+            <p>{ url }</p>
+          </>
+        )} */}
                   </Button>
                   <Button
                     type="submit"
