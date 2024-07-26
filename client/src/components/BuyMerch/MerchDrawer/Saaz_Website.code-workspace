@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		}
+	],
+	"settings": {
+		"workbench.settings.editor": "ui",
+		"liveServer.settings.CustomBrowser": "chrome",
+		"files.associations": {
+			"*.embeddedhtml": "html",
+			"iostream": "cpp",
+			"valarray": "cpp",
+			"random": "cpp",
+			"*.tcc": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"forward_list": "cpp",
+			"list": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"regex": "cpp",
+			"atomic": "cpp",
+			"exception": "cpp",
+			"iterator": "cpp",
+			"functional": "cpp",
+			"iosfwd": "cpp",
+			"istream": "cpp",
+			"new": "cpp",
+			"ostream": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp"
+		}
+	}
+}

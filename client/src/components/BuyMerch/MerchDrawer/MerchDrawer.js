@@ -378,19 +378,7 @@ const TilePopup = ({ product, onClose }) => {
                     <MenuItem value="L">L</MenuItem>
                     <MenuItem value="XL">XL</MenuItem>
                   </StyledTextField>
-                  <Button
-                    variant="contained"
-                    component="label"
-                    fullWidth
-                    margin="normal"
-                    style={{
-                      backgroundColor: `${fileUploaded ? "#1e979f8c" : "#1E969F"} `,
-                      color: "white",
-                      fontWeight: "600",
-                      fontStyle: "Helvetica",
-                      textTransform:"none"
-                    }}
-                  >
+                 
                    <UploadWidget onUpload={handleOnUpload}>
           {({ open }) => {
             function handleOnClick(e) {
@@ -398,7 +386,20 @@ const TilePopup = ({ product, onClose }) => {
               open();
             }
             return (
-              <button onClick={handleOnClick}>
+              <Button
+                    variant="contained"
+                    component="label"
+                    fullWidth
+                    margin="normal"
+                    onClick={handleOnClick}
+                    style={{
+                      backgroundColor: `${fileUploaded ? "#1e979f8c" : "#1E969F"} `,
+                      color: "white",
+                      fontWeight: "600",
+                      fontStyle: "Helvetica",
+                      textTransform:"none"
+                    }}
+                    >
                 {!url && <p>Upload an Image</p>}
                 {error && <p>{ error }</p>}
 
@@ -409,7 +410,7 @@ const TilePopup = ({ product, onClose }) => {
           </>
         )}
         {url && handleFileChange(url)}
-              </button>
+              </Button>
             )
           }}
         </UploadWidget>
@@ -422,7 +423,6 @@ const TilePopup = ({ product, onClose }) => {
             <p>{ url }</p>
           </>
         )} */}
-                  </Button>
                   <Button
                     type="submit"
                     variant="contained"
@@ -458,7 +458,7 @@ const TilePopup = ({ product, onClose }) => {
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               <div className="merch-tile3">
                 <img
-                  src="https://res.cloudinary.com/djy2jlthj/image/upload/v1721909264/Saaz-merch-payment-qr.jpg"
+                  src={Qr}
                   alt=""
                 />
               </div>
