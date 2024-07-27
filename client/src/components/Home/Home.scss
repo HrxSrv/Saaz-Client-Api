@@ -20,4 +20,21 @@
     // height: calc(200%);
     // @include md{
     // }
+    .footer-img{
+        z-index: -1;
+        position:absolute;
+        bottom:-34%;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        background-color: #181818;
+        padding-top: 250px;
+        img{
+            width:100%;
+            margin: 0 auto;
+        }
+        @include md{
+            display: none;
+        }
+    }
 }

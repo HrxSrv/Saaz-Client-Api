@@ -7,6 +7,8 @@ import Tiles from './Tiles/Tiles'
 import  ImageSlider from "../Slideshow/Carousel/Carousel"
 import Newsletter from '../../components/Footer/Newsletter/About';
 import AlertBanner from './Alert_Banner/Alert_Banner'
+import Audition from "./AudtionSection/Audition";
+import casset from '../../assets/cassette.png'
 const Home = () => {
     const { products, setProducts, categories, setCategories } =
         useContext(Context);
@@ -32,7 +34,11 @@ const Home = () => {
             <AlertBanner/>
             <Tiles/>
             {/* <ImageSlider/> */}
+            <Audition/>
             <Newsletter/>
+            <div className="footer-img"> 
+                <img src={casset} alt="casset"/>
+            </div>
         </div>
     );
 };

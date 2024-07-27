@@ -65,6 +65,14 @@ function PageWrapper() {
                         }
                     />
                     <Route
+                        path="/Library"
+                        element={
+                            <PageTransition>
+                                <Events />
+                            </PageTransition>
+                        }
+                    />
+                    <Route
                         path="/event/:id"
                         element={
                             <PageTransition>

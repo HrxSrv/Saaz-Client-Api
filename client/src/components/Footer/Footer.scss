@@ -9,7 +9,7 @@
     /* Specify the correct path to the font files */
   }
 .footer {
-    background:black;
+    background:transparent;
     width: 100%;
     .footer-content {
         padding: 50px 0px;
@@ -95,6 +95,7 @@
     .bottom-bar {
         position: relative;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: -2;
         .bottom-bar-content {
             padding: 20px;
             display: flex;

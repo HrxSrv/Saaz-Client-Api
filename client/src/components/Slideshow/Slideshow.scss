@@ -13,38 +13,55 @@
   }
   .left{
     display: flex;
-    display:none;
+    // display:none;
     margin-left: 40px;
+    height:200px;
     @include md{
       display:flex;
       margin-left: 180px;
+      height: fit-content;
     }
     .title{
       font-family: "Anton";
       font-weight: 400;
       font-style: normal;
       background-color: transparent;
-      font-size: 100px;
+      font-size: 60px;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      @include md{
+        font-size: 100px;
+        position: static;
+      }
       transform: rotate(-90deg);
       // position: relative;
       line-height: 107.5%; 
       letter-spacing: 5.721px;
       // width: 150px;
+      
      }
      .subtext{
       .h1s{
         display:flex;
         flex-direction:column;
         justify-content: left;
-        gap:20px;
+        gap:5px;
         text-align: left;
+        font-weight: lighter;
+        @include md{
+          gap: 20px;
+        }
       }
       position: absolute;
-      left: -60%;
-      margin-top: 30px;
+      left: 48%;
+      margin-top: 0px;
+      font-size: 10px;
       @include md{
         position: relative;
         left: -40%;
+        margin-top: 30px;
+        font-size: 15px;
       }
       h1{
         width: 150px;
@@ -54,17 +71,34 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      img{
+      .arrow{
         width: 150px;
         position: relative;
         left: -20%;
+        display: none;
+        @include md{
+          display: inline;
+        }
+      }
+      .gayGuitar{
+        width: 250px;
+        position: relative;
+        left: -50%;
+        top: -18px;
+        z-index: -1;
+        // display: none;
+        @include md{
+          display: none;
+        }
       }
      }
   }
   .right{
     width: calc(100% );
     margin-bottom: 20px;
+    display:none;
     @include md{
+      display: inline;
       width: 50%;
       position: relative;
       left:-5%;

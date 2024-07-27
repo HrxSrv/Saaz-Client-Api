@@ -3,6 +3,7 @@ import "./Slideshow.scss";
 import Gallary from "./CloudinaryGallary/Gallary";
 import arrow from "../../assets/arrow2x.png";
 import ImageSlider from "./Carousel/Carousel";
+import gayGuitar from "../../assets/gay-guitar.png"
 function Slideshow() {
   return (
     <div className="layout">
@@ -15,8 +16,9 @@ function Slideshow() {
             <h1>The</h1>
             <h1> Events</h1>
           </div>
-          <img src={arrow} alt="" />
-        </div>
+          <img className="arrow" src={arrow} alt="" />
+          <img className="gayGuitar" src={gayGuitar} alt=""/>
+        </div> 
       </div>
       <div className="right">
         {/* <Gallary /> */}
