@@ -15,13 +15,14 @@ import Merch1 from "../../../assets/Home-tiles/Merch1.jpg";
 // import saazInstagram from "../../../assets/Home-tiles/saazInstagram1.mp4";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import ContentPasteIcon from "@mui/icons-material/ContentPaste";
+import Vector from "../../../assets/Vector.png"
 function Tiles() {
   // const orientation = '../../../assets/Home-tiles/orientation.jpg'
   const [clickedTiles, setClickedTiles] = useState({});
 
   const handleClick = (tile) => {
     setClickedTiles((prevState) => ({
-      ...prevState,
+      ...prevState, 
       [tile]: !prevState[tile],
     }));
     console.log(clickedTiles[tile]);
@@ -67,6 +68,9 @@ function Tiles() {
       <div className="menAvatar">
         <img src={menAvatar} alt="Men Avatar" />
       </div>
+      <div className="latest-events">
+          Latest Events <span><img src={Vector} style={{width:"6px"}} alt="" /></span>
+        </div>
       <div className="Tiles" ref={scrollableContainerRef}>
         <div className="one" onClick={() => navigate("/Events")}>
           <div className="title">EVENTS</div>

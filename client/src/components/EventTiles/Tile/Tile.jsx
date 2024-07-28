@@ -79,6 +79,9 @@ const Tile = ({ event }) => {
       style={{
         backgroundColor: "#1E969F",
         borderRadius: "10px",
+        border: "1px solid black",
+      boxShadow: "12px 17px 30px rgba(0, 0, 0, 1)",
+      backdropFilter: "blur(6px)",
       }}
       onClick={handleTileClick}
     >

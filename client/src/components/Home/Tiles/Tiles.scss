@@ -6,6 +6,27 @@
   height: fit-content;
   padding-bottom: 30px;
   overflow: hidden;
+  .latest-events {
+    color: white;
+    position: absolute;
+    top: 11%;
+    left: 8%;
+    z-index: 2;
+
+    font-family: Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 107.5%;
+    /* or 17px */
+    letter-spacing: 0.045em;
+    text-transform: capitalize;
+
+    color: #ffffff;
+    @include md {
+      display: none;
+    }
+  }
 }
 .menAvatar {
   width: 9vw;
@@ -17,7 +38,7 @@
   @include md {
     top: 1vh;
   }
-  left: 5vw;
+  left: 80vw;
 }
 .Tiles {
   // grid-template-columns: repeat(6, 1fr);
@@ -26,26 +47,37 @@
   // display: grid;
   display: flex;
   flex-direction: row;
-  gap: 2vw;
+  gap: 6vw;
   max-width: calc(100vw - 20px);
   min-width: calc(100%);
   margin: 0px auto;
-  background-color:transparent;
+  background-color: #181818;
   position: relative;
   // top: 1vh;
   overflow-x: scroll;
   overflow-y: hidden;
+  padding: 18px;
+  padding-top: 45px;
+  border-radius: 8px;
+
   @include md {
     top: 0;
     overflow-x: auto;
     overflow: hidden;
   }
   div {
-    background: #1E969F;
+    background: #1e969f;
     border-radius: 2vw;
     font-family: "Anton", sans-serif;
     font-weight: 400;
-    font-style: normal
+    font-style: normal;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 56.88%,
+        rgba(0, 0, 0, 0.35) 100%
+      ),
+      linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   }
   .one,
   .two,
@@ -57,12 +89,24 @@
   .eight,
   .nine,
   .ten {
+    --dark-grey: #353535;
+    --middle-grey: #767676;
+    --lightest-grey: linear-gradient(#fafafa, #ebebeb);
+    --shadow: 0 5px 15px 0 #00000026;
+    --shadow-active: 0 5px 5px 0 #00000026;
+    --border-radius-main: 10px;
+    --border-radius-icon: 50px;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow);
+    transition: 0.2s ease all;
     overflow: hidden;
     opacity: 80%;
-    min-width: calc(50% - 6px); 
-    width: calc(50% - 6px); 
+    min-width: calc(45% - 6px);
+    width: calc(40% - 6px);
     min-height: 20vh;
     position: relative;
+    box-shadow: 12px 17px 30px rgba(0, 0, 0, 1);
+    backdrop-filter: blur(6px);
     .date {
       color: white;
       position: absolute;
@@ -72,6 +116,7 @@
       display: flex;
       flex-direction: column;
       // gap: 10px;
+
       .month {
         font-family: Helvetica, sans-serif;
         font-size: 12.73px;
@@ -99,16 +144,16 @@
       margin: 0 auto;
       font-size: 2vh;
       font-weight: 400;
-      line-height: 31.58px;
+      // line-height: 0.58px;
       letter-spacing: 0.045em;
       text-align: left;
-      bottom: 0;
+      bottom: 2px;
       left: 2vw;
     }
     .more1 {
       display: none;
     }
-    .more1-square{
+    .more1-square {
       display: none;
     }
     transition: 0.5s ease-in-out;
@@ -178,7 +223,7 @@
   border-radius: 2vw;
   position: relative;
   min-height: 20vh;
-  
+
   .title {
     font-family: "Anton", sans-serif !important;
     font-weight: 400;
@@ -187,22 +232,21 @@
     position: absolute;
     top: 6vw;
   }
-  
+
   .more {
     font-family: "Anton", sans-serif !important;
     font-weight: 400;
     position: absolute;
     background-color: transparent;
     font-size: 10px;
-    bottom:1vw;
+    bottom: 1vw;
   }
 
-  
   .arrow {
     background-color: transparent;
     position: absolute;
-    bottom:1vw; 
-    right:2vw; 
+    bottom: 1vw;
+    right: 2vw;
     width: 9vw;
     img {
       width: 100%;
@@ -212,7 +256,7 @@
       }
     }
   }
-  
+
   &:hover {
     img {
       transform: rotate(45deg) scale(1.1);
@@ -254,13 +298,14 @@
     top: 5vh;
     overflow-x: scroll;
     overflow-y: hidden;
+    padding: 0px;
     @include md {
       top: 0;
-      overflow-x: auto;
+      overflow-x: hidden;
     }
     div {
       // padding: 30px;
-      background: #1E969F;
+      background: #1e969f;
       width: 210px;
       border-radius: 1vw;
       font-family: "Anton", sans-serif;
@@ -280,8 +325,20 @@
       opacity: 80%;
       width: inherit;
       height: inherit;
-      min-width: inherit; 
+      min-width: inherit;
       position: relative;
+      border: 0.5px solid black;
+      box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.985);
+      backdrop-filter: blur(6px);
+      transition: all 0.1s;
+
+      &:hover {
+        border: 0.5px solid rgb(93, 93, 93);
+        transform: scale(1.01);
+      }
+      &:active {
+        transform: scale(0.95) rotateZ(1.1deg);
+      }
       .date {
         color: white;
         position: relative;
@@ -322,7 +379,7 @@
         line-height: 31.58px;
         letter-spacing: 0.045em;
         text-align: left;
-        left:1vw;
+        left: 1vw;
       }
       .more1 {
         cursor: pointer;
@@ -337,7 +394,7 @@
         left: 16px;
         display: inline;
       }
-      .more1-square{
+      .more1-square {
         color: white;
         font-family: Helvetica, sans-serif;
         font-size: 12.73px;
@@ -416,8 +473,8 @@
     .six {
       grid-row: 2/4;
     }
-    .seven{
-      grid-row:2/4;
+    .seven {
+      grid-row: 2/4;
     }
   }
   .one-mobile {
@@ -459,6 +516,7 @@
 //   padding: 20px;
 // }
 
-h1, p {
+h1,
+p {
   margin: 0;
 }

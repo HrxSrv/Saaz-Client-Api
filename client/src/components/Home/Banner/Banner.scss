@@ -36,7 +36,7 @@
     }
     .content {
         position: absolute;
-            top: 20px;
+            top: 60px;
             // left: 50%;
             // transform: translate(-50%, -50%);
             width: fit-content;
@@ -58,7 +58,7 @@
             .banner-img {
                 position: relative;
                 z-index: 9;
-                width: 50vw;
+                width: 40vw;
                 @include md{
                     width: 40vw;
                 }
@@ -106,18 +106,32 @@
         }
         .text-content {
            color: white;
-           font-family: 'saazLight';
-           line-height: 132%;
-           letter-spacing: 3px;
+        //    font-family: 'saazLight';
+        //    line-height: 132%;
+        //    letter-spacing: 3px;
            position:relative;
            top:-38px;
            width: fit-content;
            display: flex;
            justify-content: center;
            align-items: center;
-           left: 8%;
+           left: 11%;
         margin: 0 auto;
-        font-size: 10px;
+        // font-size: 10px;
+        /* THE MUSIC CLUB */
+
+
+font-family: Helvetica;
+font-style: normal;
+font-weight: 400;
+font-size: 7.58826px;
+line-height: 132%;
+/* identical to box height, or 10px */
+letter-spacing: 0.045em;
+
+color: #FFFFFF;
+
+
            @include md{
             font-size: 30.35px;
         position: relative;

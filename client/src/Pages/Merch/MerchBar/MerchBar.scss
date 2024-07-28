@@ -1,3 +1,7 @@
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-zoom.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-share.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-video.css');
 @import '../../../css-config/mixins.scss';
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 .Merch-banner{
@@ -270,12 +274,7 @@
     
     }
 }
-}
 //lightroom css
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css');
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-zoom.css');
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-share.css');
-@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-video.css');
 .slick__slide img {
 //   height: 270px;
   max-width: 100%;
@@ -307,8 +306,7 @@
         border-radius: 8px; 
         border: 4px solid white;
         // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
+        
     }
     @include md{
         width: 80%;
@@ -360,4 +358,5 @@
 .slick-dots{
     position: absolute;
     bottom: -17px;
+}
 }
