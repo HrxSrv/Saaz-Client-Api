@@ -21,7 +21,7 @@
     // @include md{
     // }
     .footer-img{
-        z-index: -1;
+        z-index: 1;
         position:absolute;
         bottom:-34%;
         width:100%;
@@ -38,3 +38,53 @@
         }
     }
 }
+.one-mobile {
+    margin-top: 50px;
+    padding: 2vh;
+    background-color: #181818;
+    color: #e0e0e0;
+    opacity: 100%;
+    transition: 0.2s ease-out;
+    border-radius: 2vw;
+    position: relative;
+    min-height: 20vh;
+    width: calc(100% - 40px);
+    .title {
+      font-family: "Anton", sans-serif !important;
+      font-weight: 400;
+      background-color: transparent;
+      font-size: 40px;
+      position: absolute;
+      top: 6vw;
+    }
+  
+    .more {
+      font-family: "Anton", sans-serif !important;
+      font-weight: 400;
+      position: absolute;
+      background-color: transparent;
+      font-size: 10px;
+      bottom: 1vw;
+    }
+  
+    .arrow {
+      background-color: transparent;
+      position: absolute;
+      bottom: 1vw;
+      right: 2vw;
+      width: 9vw;
+      img {
+        width: 100%;
+        transition: 0.2s ease-out;
+        &:hover {
+          transform: rotate(45deg) scale(1.1);
+        }
+      }
+    }
+  
+    &:hover {
+      img {
+        transform: rotate(45deg) scale(1.1);
+      }
+    }
+  }

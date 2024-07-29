@@ -342,13 +342,7 @@ function Tiles() {
           )}
         </div> */}
       </div>
-      <div className="one-mobile" onClick={() => navigate("/Events")}>
-        <div className="title">EVENTS</div>
-        <div className="more">more</div>
-        <div className="arrow">
-          <img src={arrow} alt="arrowIcon" />
-        </div>
-      </div>
+     
     </div>
   );
 }

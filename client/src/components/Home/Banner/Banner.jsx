@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="hero-banner">
             <img src={BannerImg} alt="Banner" className="background"/>
             <div className="content">
-                <div className="img-cta">
+                <div className="img-cta"> 
                 <img className="banner-img" src={saazBanner} />
                 {/* <div className="ctas">
                         <div className="banner-cta">YOUTUBE</div>

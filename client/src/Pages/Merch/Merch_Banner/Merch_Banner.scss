@@ -2,56 +2,73 @@
 .merch-hero-banner {
   height: fit-content;
   width: calc(100% - 10px);
-.cart{
+  .cart {
     width: 10%;
     position: absolute;
-    right: 35%;
-    top: 1.1%;
-   @include md{
-    right: 29%;
-    top: 1%;
-   }
-    img{
-        width: 100%;
+    right: 30%;
+    top: 1.8%;
+    @include md {
+      right: 29%;
+      top: 1%;
+    }
+    img {
+      width: 100%;
     }
   }
-.content {
+  .content {
     position: relative;
-    top:30px;  
+    top: 60px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    @include md{
+    @include md {
       gap: 10px;
-        flex-direction: column;
+      flex-direction: column;
+      top:30px;
     }
     .img-cta {
-      width: 50vw;
-      @include md{
+      width: 40vw;
+      @include md {
         width: 40vw;
       }
-      margin-bottom:20px;
+      margin-bottom: 20px;
       img {
         width: 100%;
       }
     }
     .text-content {
       color: white;
-      font-family: Helvetica, sans-serif;
-      line-height: 132%;
-      letter-spacing: 3px;
+      //    font-family: 'saazLight';
+      //    line-height: 132%;
+      //    letter-spacing: 3px;
+      position: relative;
+      top: -38px;
       width: fit-content;
-      position:relative;
-      top:-38px;
-      left: 8%;
-      font-size: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 11%;
+      margin: 0 auto;
+      // font-size: 10px;
+      /* THE MUSIC CLUB */
+
+      font-family: Helvetica;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 7.58826px;
+      line-height: 132%;
+      /* identical to box height, or 10px */
+      letter-spacing: 0.045em;
+
+      color: #ffffff;
+
       @include md {
         font-size: 30.35px;
         position: relative;
-        bottom: 85px;
-        left: 10.5%;
-        width:fit-content
+        top: -85px;
+        left: 11.5%;
+        width: fit-content;
       }
     }
   }

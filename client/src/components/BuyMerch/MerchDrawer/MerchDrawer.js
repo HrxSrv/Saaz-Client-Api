@@ -50,8 +50,8 @@ const TileContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     width: "90vw",
     gridTemplateAreas: `
-    'tile1 tile1 tile2  tile3 tile3 '
-    'tile1 tile1 tile2  tile4 tile4'
+    'tile1 tile1 tile2  tile3  '
+    'tile1 tile1 tile2  tile4  '
   `,
   },
 }));
@@ -470,12 +470,12 @@ const TilePopup = ({ product, onClose }) => {
                 fontFamily={"Anton"}
                 color={"white"}
                 fontSize={"30px"}
-                style={{ top: "10px", left: "10px", position: "absolute" }}
+                style={{ top: "20px", left: "10px", position: "absolute" }}
               >
                 How to buy !
               </Typography>
               <div className="how-to-buy-text">
-                <ul>
+                <ul> 
                   <li>Get customised text on your {product.title}.</li>
                   <li>Pay {product.price} on the below Qr and  upload.</li>
                   <li>Any Query at Saaz@iiitdmj.ac.in.</li>

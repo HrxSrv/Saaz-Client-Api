@@ -64,7 +64,7 @@
     img {
       width: 100%;
     }
-    @include md{
+    @include md {
       width: 20%;
     }
   }
@@ -84,7 +84,7 @@
       img {
         width: 100%;
       }
-      @include md{
+      @include md {
         width: 20%;
       }
     }
@@ -156,17 +156,16 @@
     align-items: center;
     gap: 40px;
     max-height: 450px; // Set a max-height for the collapsed state
-    @include md{
-        max-height: fit-content;
+    @include md {
+      max-height: fit-content;
     }
     transition: max-height 0.5s ease;
     overflow-y: hidden;
     position: relative;
     &.expanded {
       max-height: fit-content; // Set a max-height that is sufficient for the expanded state
-
     }
-  
+
     .committee-member-tile {
       display: flex;
       flex-direction: column;
@@ -191,32 +190,32 @@
       border-radius: 6px;
       padding: 6px 12px;
     }
-}
-
+  }
 }
 .toggle-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
   cursor: default;
   left: 45%;
+  // top: 85%;
   color: white;
   position: absolute;
-  bottom:225px;
-  img{
+  bottom: 210px;
+  img {
     transform: rotate(135deg);
-  transition: transform 0.5s ease;
-  width:50px;
+    transition: transform 0.5s ease;
+    width: 50px;
     height: 50px;
   }
-  &.up{
-    img{
-        transform: rotate(315deg);
+  &.up {
+    img {
+      transform: rotate(315deg);
     }
   }
-  @include md{
-      display: none;
+  @include md {
+    display: none;
   }
   .more {
     color: white;
@@ -227,6 +226,6 @@
     // left: 4%;
     font-family: "Anton", sans-serif;
     font-weight: 400;
-    font-style: normal
+    font-style: normal;
   }
 }

@@ -32,7 +32,7 @@ function AlertBanner() {
     registerLink: "#",
   };
   return (
-    <div className="Alert_banner">
+    <div className="Alert_banner"> 
       <div className="horizontal-bar">
         <div className="pc-Qr">
           <img src={NotificationQr} alt="" />

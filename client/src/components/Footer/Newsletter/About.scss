@@ -1,6 +1,6 @@
 @import "../../../css-config/mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-.Home-About-section{
+.Home-About-section {
   width: 100%;
   height: 400px;
   display: flex;
@@ -9,7 +9,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  .Home-About-content{
+  .Home-About-content {
     position: relative;
     width: fit-content;
     display: flex;
@@ -31,6 +31,10 @@
       font-size: 14px;
       color: rgb(177, 174, 174);
       text-align: left;
+      width: 90%;
+      @include md {
+        width: 160%;
+      }
     }
     // .small-text {
     //   margin-bottom: 15px;
@@ -43,9 +47,11 @@
       flex-direction: column;
       align-items: center;
       position: relative;
-      @include md{
-        right: 20px;
-      top: 10px;
+      top: 16px;
+      left: -130px;
+      @include md {
+        left: -2%;
+        top: 14px;
       }
 
       // margin-bottom: 10px;
@@ -62,7 +68,7 @@
         left: 0;
         transition: 0.1s ease-in-out;
       }
-      img:hover{
+      img:hover {
         transform: rotate(45deg);
       }
 
@@ -76,10 +82,17 @@
       }
     }
     .bannerImg {
+      position: absolute;
+      right: 10%;
+      top: 85%;
       margin-bottom: 20px;
-      width: 33vw;
+      width: 25vw;
       img {
         width: 100%;
+      }
+      @include md{
+        position: static;
+        width: 33vw;
       }
     }
     .form {

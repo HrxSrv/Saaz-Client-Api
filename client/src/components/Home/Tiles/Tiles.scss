@@ -9,7 +9,7 @@
   .latest-events {
     color: white;
     position: absolute;
-    top: 11%;
+    top: 19%;
     left: 8%;
     z-index: 2;
 
@@ -39,6 +39,7 @@
     top: 1vh;
   }
   left: 80vw;
+  transform: scaleX(-1);
 }
 .Tiles {
   // grid-template-columns: repeat(6, 1fr);
@@ -284,6 +285,7 @@
       top: 1vh;
     }
     left: 5vw;
+    transform: scaleX(1);
   }
   .Tiles {
     grid-template-columns: repeat(6, 1fr);

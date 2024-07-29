@@ -8,12 +8,16 @@
     position: relative;
     width: 100%;
     background-color: transparent;
-    // top: 10vh;
+     top: 10vh;
+     @include md{
+        top:4vh;
+     }
     height: fit-content;
     margin: 40px auto;
-    margin-top: 60px;
+    // margin-top: 60px;
+    margin-bottom: 150px;
     .Merch-horizontal-bar{
-        height: 150px;
+        height: 190px;
         width: calc(100% - 10px);
         margin: 0 auto;
         background-color: #125055;
@@ -176,7 +180,7 @@
         flex-grow: 0;
         background-color: white;
         width: calc(100% - 40px);
-        height: 170px;
+        height: 215px;
         margin: 0 auto;
         position: relative;
         top: -6.5%;

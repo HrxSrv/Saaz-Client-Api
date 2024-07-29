@@ -331,7 +331,7 @@ function Members() {
           <div className={`toggle-button ${isExpanded ? "up":""}`} onClick={toggleExpand}>
             <img src={arrow} alt="" />
             <div className="more">
-                more
+                {isExpanded ? "Less" : "more"}
             </div>
           </div>
     </div>

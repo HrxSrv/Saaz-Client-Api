@@ -38,7 +38,7 @@ function PageWrapper() {
         <>
             {loading && <LoadingSaaz />}
             <Header />
-            <AnimatePresence mode="wait">
+            {/* <AnimatePresence mode="wait"> */}
                 <Routes location={location} key={location.pathname}>
                     <Route
                         path="/"
@@ -93,7 +93,7 @@ function PageWrapper() {
                 
                 <Footer />
            
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
         </>
     );
 }

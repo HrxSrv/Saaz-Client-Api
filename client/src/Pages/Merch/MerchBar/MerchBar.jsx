@@ -123,6 +123,6 @@ function MerchBar( { name }) {
     </div>
   );
 }
-
+ 
 export default MerchBar;
 

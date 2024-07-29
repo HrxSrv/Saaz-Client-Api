@@ -8,8 +8,12 @@ import {
     FaYoutube
 } from "react-icons/fa";
 import { FaLocationArrow, FaMobileAlt, FaEnvelope } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 // import Payment from "../../assets/payments.png";
 const Footer = () => {
+  const location = useLocation();
+  // console.log(location.pathname);
+  const currLocation = location.pathname === '/';
   return (
     <div className="footer">
       <div className="footer-content">
@@ -51,12 +55,12 @@ const Footer = () => {
         </div>
       <div className="bottom-bar">
         <div className="bottom-bar-content">
-          <span className="text">
-            Developed By Harshit Srivastava
-          </span>
-          <span className="text">
+          {!currLocation && <span className="text">
             Designed By Vishrut Sagar
-          </span>
+          </span>}
+          {!currLocation && <span className="text">
+            Developed By Harshit Srivastava
+          </span>}
           {/* <img src={Payment} /> */}
         </div>
       </div>

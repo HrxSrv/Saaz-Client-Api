@@ -80,7 +80,7 @@ const Tile = ({ event }) => {
         backgroundColor: "#1E969F",
         borderRadius: "10px",
         border: "1px solid black",
-      boxShadow: "12px 17px 30px rgba(0, 0, 0, 1)",
+      boxShadow: "6px 6px 15px rgba(0, 0, 0, 0.5)",
       backdropFilter: "blur(6px)",
       }}
       onClick={handleTileClick}
@@ -102,7 +102,7 @@ const Tile = ({ event }) => {
               component="img"
               height={height}
               // alt={event.name}
-              // className="cardMedia"
+              // classNam e="cardMedia"
             />
           </Box>
         )}
@@ -118,7 +118,9 @@ const Tile = ({ event }) => {
               // lineHeight: "40.47px",
               letterSpacing: "0.045em",
               wordWrap: "break-word",
-              // width: "250px", // Adjust width as per your design
+              // width: "150px", // Adjust width as per your design
+              position:'relative',
+              bottom:'-15px'
             }}
           >
             {event.name || "Unnamed Event"} {/* Fallback text for debugging */}

@@ -14,7 +14,7 @@ const MerchBanner = () => {
                 <img className="banner-img" src={saazBanner} />
                 </div>
                 <div className="text-content">
-                     <p>All NEW MERCH</p>
+                     <p>All NEW MERCH</p> 
                 </div> 
             </div>
         </div>

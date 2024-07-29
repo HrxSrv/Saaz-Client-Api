@@ -20,7 +20,7 @@ const About_page = () => {
           aims to discover and enhance the skills of students with diverse
           talents, providing opportunities to showcase and develop those
           talents. It organizes various events, competitions, and practice
-          sessions to create a supportive environment for students to gain
+          sessions to create a supportive environment for students to gain 
           confidence and explore their musical abilities.
         </span>
       </div>
