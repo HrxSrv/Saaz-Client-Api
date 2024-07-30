@@ -26,7 +26,6 @@ function MerchBar( { name }) {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  const merchShootImages=[];
   return (
     <div className="Merch-banner">
        

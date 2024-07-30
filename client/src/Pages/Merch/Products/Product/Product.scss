@@ -4,7 +4,7 @@
   // overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   .product-title {
     font-size: 40px;
@@ -15,6 +15,7 @@
     line-height: 80%;
     letter-spacing: 0.045em;
     color: #e0e0e0;
+    width: calc(100%);
   }
   .product-info {
     font-style: normal;
@@ -23,6 +24,7 @@
     line-height: 80%;
     letter-spacing: 0.045em;
     color: #909090;
+    width: calc(100%);
   }
   .product-img {
     width: 300px;
@@ -43,9 +45,9 @@
     display: flex;
     gap: 60%;
     height: fit-content;
-    width: 180%;
+    width: 100%;
     @include md{
-        width: 70%;
+        width: 100%;
     }
     .price {
         width: 50px;
@@ -115,6 +117,7 @@
       border-radius: 9.59108px;
     //   cursor: pointer;
       opacity: 80%;
+      pointer-events: none;
     }
   }
 }
