@@ -68,6 +68,21 @@
       width: 20%;
     }
   }
+  .counsellor {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    img {
+      border-radius: 100%;
+      width: 100%;
+    }
+    @include md {
+      width: 50%;
+    }
+  }
   .cocs {
     width: 100%;
     display: flex;

@@ -269,7 +269,8 @@
 @include md {
   .tileLayout {
     position: relative;
-    height: 125vh;
+    height: fit-content;
+    padding: 40px;
     min-width: none;
     max-width: calc(100% - 50px);
     background-color: transparent;
@@ -329,14 +330,15 @@
       height: inherit;
       min-width: inherit;
       position: relative;
-      border: 0.5px solid black;
+      border: 1px solid black;
       box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.985);
       backdrop-filter: blur(6px);
       transition: all 0.1s;
-
+      opacity: 90%;
       &:hover {
-        border: 0.5px solid rgb(93, 93, 93);
-        transform: scale(1.01);
+        border: 1px solid rgb(93, 93, 93);
+        // transform: scale(1.01);
+        opacity: 100%;
       }
       &:active {
         transform: scale(0.95) rotateZ(1.1deg);

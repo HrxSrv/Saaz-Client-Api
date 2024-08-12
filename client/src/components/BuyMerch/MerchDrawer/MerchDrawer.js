@@ -199,13 +199,8 @@ const TilePopup = ({ product, onClose }) => {
 
   const [fileUploaded, setFileUploaded] = useState(false);
 
-  const handleFileChange = (url) => {
-    setFormData({
-      ...formData,
-      paymentImage: url,
-    });
-    setFileUploaded(true);
-  };
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -249,7 +244,17 @@ const TilePopup = ({ product, onClose }) => {
   // const id = open ? "simple-popper" : undefined;
   //UPLOAD
   const [url, updateUrl] = useState();
+
   const [error, updateError] = useState();
+  useEffect(() => {
+    if (url) {
+      setFormData({
+        ...formData,
+        paymentImage: url,
+      });
+      setFileUploaded(true);
+    }
+  }, [url]);
   function handleOnUpload(error, result, widget) {
     if ( error ) {
       updateError(error.message);
@@ -409,7 +414,6 @@ const TilePopup = ({ product, onClose }) => {
             {/* <p>{ url }</p> */}
           </>
         )}
-        {url && handleFileChange(url)}
               </Button>
             )
           }}

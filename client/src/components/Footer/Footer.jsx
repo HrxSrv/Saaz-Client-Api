@@ -21,11 +21,11 @@ const Footer = () => {
           <div className="title">Contact</div>
           <div className="c-item">
             <FaLocationArrow />
-            <div className="text">
+            <a href="https://www.google.com/maps/place/IIITDM+Jabalpur/@23.176431,80.025314,15z/data=!4m6!3m5!1s0x3981a94397365dd3:0x5f9aeb812c2678c9!8m2!3d23.1764313!4d80.0253136!16s%2Fm%2F02rnwg1?hl=en&entry=ttu" className="text">
               Indian Institute of Information Technology Design &
               Manufacturing Jabalpur Dumna Airport Road, Dumna - 482005
               saaz@iiitdmj.ac.in +91 7466917708
-            </div>
+            </a >
           </div>
           <div className="c-item">
             <FaMobileAlt />

@@ -11,21 +11,22 @@
 .hero-banner {
     position: relative; 
     background-color: black;
-    max-width: 100vw;
-    width: calc(100% - 10px);
+    // max-width: 100vw;
+    width: calc(100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     .background{
-        filter: blur(2px);
+        // filter: blur(2px);
         display: none;
         @include md{
             display: inline;
         }
     }
     img{
-        max-width: 100vw;
+        // max-width: 100vw;
+        width:100%;
     }
     height:20vh;
     @include md {

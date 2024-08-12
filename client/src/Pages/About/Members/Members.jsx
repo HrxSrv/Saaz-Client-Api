@@ -7,6 +7,7 @@ import arrow from "../../../assets/arrow2x.png";
 import { Grid } from "@mui/material";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import { useState,useEffect } from "react";
+import Counsellor from "../../../assets/MemberImages/Koushik Dutta.jpg"
 function Members() {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -286,6 +287,18 @@ function Members() {
   // ];
   return (
     <div className="Members_page">
+      {/* <div className="members-title">
+        <div className="one"></div>
+        <div className="two">Counsellor</div>
+        <div className="three"></div>
+      </div> */}
+      <div className="members-details">
+        <div className="counsellor">
+          <img src={Counsellor} alt="" />
+          <div className="position">Cultural Counsellor</div>
+          <div className="Name">Koushik Dutta</div>
+        </div>
+      </div>
       <div className="members-title">
         <div className="one"></div>
         <div className="two">Members</div>
@@ -294,18 +307,18 @@ function Members() {
       <div className="members-details">
         <div className="cordinator">
           <img src={cordinator} alt="" />
-          <div className="position">Cordinator</div>
+          <div className="position">Coordinator</div>
           <div className="Name">Kaustubh Upadhyay</div>
         </div>
         <div className="cocs">
           <div className="co-cordinator1">
             <img src={cocordinator1} alt="" />
-            <div className="position">Co-Cordinator</div>
+            <div className="position">Co-Coordinator</div>
             <div className="Name">Utkarsh Raj</div>
           </div>
           <div className="co-cordinator2">
             <img src={cocordinator2} alt="" />
-            <div className="position">Co-Cordinator</div>
+            <div className="position">Co-Coordinator</div>
             <div className="Name">Prateek Pandey</div>
           </div>
         </div>

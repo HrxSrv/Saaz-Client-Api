@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Header from "./components/Header/Header";
@@ -100,11 +100,11 @@ function PageWrapper() {
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <AppContext>
                 <PageWrapper />
             </AppContext>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
