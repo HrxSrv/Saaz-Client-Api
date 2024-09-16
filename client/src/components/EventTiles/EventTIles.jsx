@@ -51,14 +51,15 @@ function EventTIles() {
             "path": "Saaz Events 23-24/Saaz Events 23-24/Tarang '23"
         }
     ]);
-  // useEffect(()=>{
-  //   const loadEvents = async () => {
-  //     const fetchedEvents = await fetchEvents()
-  //     setEvents(fetchedEvents)
-  //     console.log(fetchedEvents);
-  //   }
-  //   loadEvents();
-  // },[])
+  useEffect(()=>{
+    const loadEvents = async () => {
+      const fetchedEvents = await fetchEvents()
+      setEvents(fetchedEvents)
+      console.log(fetchedEvents);
+      console.log("*****");
+    }
+    loadEvents();
+  },[])
 //   const events =[
 //     {
 //         "name": "Alumni Meet '24",

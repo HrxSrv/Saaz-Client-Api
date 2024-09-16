@@ -13,7 +13,7 @@ export const searchByTag = async (req, res) => {
 }
 export const searchForAllFolders =  async (req, res) => {
   try {
-    const result = await cloudinary.api.sub_folders("Saaz Events 23-24/Saaz Events 23-24");
+    const result = await cloudinary.api.sub_folders("Saaz Events");
     res.json(result.folders);
   } catch (error) {
     res.status(500).json({ error });
