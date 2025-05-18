@@ -154,14 +154,15 @@
   }
 }
 .how-to-buy-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
-  left: 2%;
+  left: 6%;
   top: 14%;
-  
+  // margin-top: 20px;
   ul {
     display: flex;
     flex-direction: column;
-    
     gap: 4px;
   }
   li{
@@ -171,8 +172,9 @@
     // letter-spacing: 1px;
   }
   @include md {
-    left: -12%;
+    left: -8%;
     top: 18%;
+    margin-top: auto;
     li{
       font-family: "IBM Plex Sans", sans-serif;
       font-weight: 200;

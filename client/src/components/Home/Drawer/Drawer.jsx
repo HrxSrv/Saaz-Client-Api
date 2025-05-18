@@ -13,6 +13,7 @@ import arrow from "../../../assets/arrow3x.png"; // Import the arrow image
 import Mic from "../../../assets/Mic.png"
 import { useNavigate} from "react-router-dom";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
+import MaterialPopup from "../../MaterialPopup";
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -129,6 +130,40 @@ const StyledDialogContent = styled(DialogContent)({
 });
 
 const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clickedTiles }) => {
+  const [isOpen, setIsOpen] = useState(false);  // Changed initial state to false
+  const [isOpenContact, setIsOpenContact] = useState(false);  // Changed initial state to false
+
+  const popupData = {
+    title: "Sorry we are not inducting right now",  // Updated text to match context
+    description: "The audition link will open soon",
+    primaryButton: {
+      text: "Reach Us",
+      action: () => window.location.href = 'mailto:saaz@iiitdmj.ac.in',
+    },
+    secondaryButton: {
+      text: "Close",
+      action: () => setIsOpen(false),
+    }
+  };
+  const contactPopupData = {
+    title: "Contact us !",  // Updated text to match context
+    description: "Reach Us @Music Room Sac II IIITDM Jabalpur or mail on the link below.",
+    primaryButton: {
+      text: "Reach Us",
+      action: () => window.location.href = 'mailto:saaz@iiitdmj.ac.in',
+    },
+    secondaryButton: {
+      text: "Close",
+      action: () => setIsOpenContact(false),
+    }
+  };
+
+  const handleApplyClick = () => {
+    setIsOpen(true);  // Open popup when apply button is clicked
+  };
+  const handleContactClick = () => {
+    setIsOpenContact(true);  // Open popup when apply button is clicked
+  };
   const [open, setOpen] = useState(true);
   // console.log(open)
   const [images, setImages] = useState(null);
@@ -164,7 +199,7 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
       >
         <StyledDialogContent>
           <CloseButtonContainer>
-            <IconButton onClick={handleClose} style={{ color: "white" }}>
+            <IconButton onClick={handleClose } style={{ color: "white" }}>
               <CloseIcon />
             </IconButton>
           </CloseButtonContainer>
@@ -174,29 +209,40 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat'
-  }}>
+    
+  }} onClick={(e) => e.stopPropagation()}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               <div className="tile1-register-tile">
                 <div className="left">
                 <div className="eventName">{eventName}</div>
                 <div className="date">{date}</div>
                 </div>
-                <div className="register">
+                <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe5_PcHI7wfTLpsxcUg8-7odOYk3yJj98tohs8dBxwWus_iDg/viewform?usp=sharing&urp=gmail_link" className="register">
                   Register
-                </div>
+                </a>
               </div>
             </Tile>
-            <Tile area="tile2" style={{ backgroundImage: `url(${Mic})`, backgroundSize: 'cover', backgroundPosition: 'right' }}>
+            <Tile area="tile2" style={{ backgroundImage: `url(${Mic})`, backgroundSize: 'cover', backgroundPosition: 'right' }} onClick={(e) => {
+                e.stopPropagation();
+                handleApplyClick();
+              }}  // Added click handler
+          // role="button"
+>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               {/* <Typography variant="h6"
                 fontFamily={"Anton"}
                 color={"white"}
                 fontSize={"30px"}
                 style={{ position:'relative',zIndex:'100'}}>Audition Registration</Typography> */}
-                <div className="tile2-audition-tile">
+                <div className="tile2-audition-tile"  >
                   <div className="audition"> Audition Registration</div>
                   <div className="audition-subtext">Show Us What You Got And Get To Perform On Stage.</div>
                 </div>
+                <MaterialPopup
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          data={popupData}
+        />
                {/* <Typography
                 variant="h1"
                 fontFamily={"Helvetica"}
@@ -208,7 +254,10 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
                 Show Us What You Got <br/>And Get To Perform.
               </Typography>   */}
                   </Tile>
-            <Tile area="tile3" style={{ background: "#FFFFFF",minHeight:'100px' }} onClick={handleTileClick}>
+            <Tile area="tile3" style={{ background: "#FFFFFF",minHeight:'100px' }} onClick={(e) => {
+                e.stopPropagation();
+                handleTileClick();
+              }}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               <Typography
                 variant="h6"
@@ -233,7 +282,10 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
                 Explore The Photos <br/>And Videos Of The <br/>Event
               </Typography>
             </Tile>
-            <Tile area="tile4" style={{ background: "#1E969F" }}>
+            <Tile area="tile4" style={{ background: "#1E969F" }} onClick={(e) => {
+                e.stopPropagation();
+                handleContactClick();
+              }}>
               <Arrow src={arrow} alt="Arrow" className="arrow" />
               <Typography
                 variant="h6"
@@ -242,6 +294,11 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
                 fontSize={"30px"}
                 style={{top:'10px', left:'10px', position:'absolute'}}
               >Our <br/> Contact</Typography>
+              <MaterialPopup
+          isOpen={isOpenContact}
+          onClose={() => setIsOpenContact(false)}
+          data={contactPopupData}
+        />
               <Typography
                 variant="h1"
                 fontFamily={"Helvetica"}
@@ -254,6 +311,7 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
                 Having Some <br/> Questions <br/> Specific <br/> To Event ?
               </Typography>
             </Tile>
+            
           </TileContainer>
         </StyledDialogContent>
       </StyledDialog>

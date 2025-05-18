@@ -21,6 +21,8 @@ import Box from "@mui/material/Box";
 import Popper from "@mui/material/Popper";
 import Fade from "@mui/material/Fade";
 import UploadWidget from "../UploadWidget/UploadWidget";
+import MaterialPopup from "../../MaterialPopup";
+import SuccessPopup from './SuccessPopup';
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -170,6 +172,7 @@ const StyledTextField = styled(TextField)({
   // marginBottom: "1rem", // Space between fields
 });
 const TilePopup = ({ product, onClose }) => {
+  const [isOpen, setIsOpen] = useState(false);  // Changed initial state to false
   const [open, setOpen] = useState(true);
   const navigate = useNavigate();
   const handleClose = () => {
@@ -199,9 +202,20 @@ const TilePopup = ({ product, onClose }) => {
 
   const [fileUploaded, setFileUploaded] = useState(false);
 
-  
+  const PopupData = {
+    title: "Thanks fo booking your merch !",  // Updated text to match context
+    description: "We will reach you as soon as your merch arrives, feel free to reach us at saaz@iiitdmj.ac.in",
+    primaryButton: {
+      text: "Reach Us",
+      action: () => window.location.href = 'mailto:saaz@iiitdmj.ac.in',
+    },
+    secondaryButton: {
+      text: "Close",
+      action: () => setIsOpen(false),
+    }
+  };
 
-
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -226,8 +240,9 @@ const TilePopup = ({ product, onClose }) => {
       mode: "no-cors",
     })
       .then(() => {
+        setShowSuccessPopup(true);
         console.log("Form submitted");
-        onClose();
+        // onClose();
       })
       .catch((error) => {
         console.error("Error submitting form", error);
@@ -352,12 +367,12 @@ const TilePopup = ({ product, onClose }) => {
                   />
                   <StyledTextField
                     name="textOnProduct"
-                    label={"Customise text on your " + product.title}
+                    label={"Write song + singer name on " + product.title}
                     value={formData.textOnProduct}
                     onChange={handleChange}
                     fullWidth
                     // margin="normal"
-                    // required
+                    required
                   />
                   <StyledTextField
                     name="phone"
@@ -405,7 +420,7 @@ const TilePopup = ({ product, onClose }) => {
                       textTransform:"none"
                     }}
                     >
-                {!url && <p>Upload an Image</p>}
+                {!url && <p>Payment Screenshot</p>}
                 {error && <p>{ error }</p>}
 
         {url && (
@@ -442,6 +457,18 @@ const TilePopup = ({ product, onClose }) => {
                   >
                     Confirm
                   </Button>
+                  <SuccessPopup 
+  isOpen={showSuccessPopup} 
+  onClose={() => {
+    setShowSuccessPopup(false);
+    onClose(); // Close the main popup after success
+  }} 
+/>
+                  {/* <MaterialPopup
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          data={PopupData}
+        /> */}
                   {/* <Button
                     type="button"
                     variant="outlined"
@@ -468,23 +495,27 @@ const TilePopup = ({ product, onClose }) => {
               </div>
             </Tile>
             <Tile area="tile4" style={{ background: "black" }} >
-              {/* <Arrow src={arrow} alt="Arrow" className="arrow" /> */}
-              <Typography
-                variant="h6"
-                fontFamily={"Anton"}
-                color={"white"}
-                fontSize={"30px"}
-                style={{ top: "20px", left: "10px", position: "absolute" }}
-              >
-                How to buy !
-              </Typography>
-              <div className="how-to-buy-text">
-                <ul> 
-                  <li>Get customised text on your {product.title}.</li>
-                  <li>Pay {product.price} on the below Qr and  upload.</li>
-                  <li>Any Query at Saaz@iiitdmj.ac.in.</li>
-                </ul>
-              </div>
+            <div className="relative w-full h-full bg-black p-6 overflow-hidden">
+      {/* Title */}
+      <h2 className="text-2xl md:text-3xl font-anton text-white absolute top-5 left-4">
+        How to buy !
+      </h2>
+
+      {/* Instructions List Container */}
+      <div className="w-full h-full pt-16 px-4 md:px-6">
+        <ul className="flex flex-col gap-4 md:gap-6 text-white max-w-[90%] md:max-w-[80%]">
+          <li className="font-ibm-plex text-sm md:text-base font-light leading-relaxed">
+            Get your favorite song  and its singer <br/>on your {product.title}.
+          </li>
+          <li className="font-ibm-plex text-sm md:text-base font-light leading-relaxed">
+            Pay {product.price} on the Qr and upload screenshot here.
+          </li>
+          <li className="font-ibm-plex text-sm md:text-base font-light leading-relaxed">
+            Any Query at Saaz@iiitdmj.ac.in.
+          </li>
+        </ul>
+      </div>
+    </div>
             </Tile>
           </TileContainer>
         </StyledDialogContent>

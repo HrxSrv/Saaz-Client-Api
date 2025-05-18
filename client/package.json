@@ -17,6 +17,7 @@
     "framer-motion": "^11.2.11",
     "lightgallery": "^2.7.2",
     "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.5",
@@ -50,5 +51,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "."
+  "homepage": ".",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
 }

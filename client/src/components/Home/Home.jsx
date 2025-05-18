@@ -10,6 +10,7 @@ import AlertBanner from "./Alert_Banner/Alert_Banner";
 import Audition from "./AudtionSection/Audition";
 import casset from "../../assets/cassette.png";
 import arrow from "../../assets/arrow3x.png";
+import MerchBanner from "../../Pages/Merch/MerchBar/MerchBar"
 import { useNavigate } from "react-router-dom";
 const Home = () => {
   const { products, setProducts, categories, setCategories } =
@@ -33,15 +34,15 @@ const Home = () => {
   return (
     <div className="home">
       <Banner />
-      <AlertBanner />
+      <AlertBanner/>
       <Tiles />
       {/* <ImageSlider/> */}
       <Audition />
       {newFunction(navigate)}
       <Newsletter />
-      <div className="footer-img">
+      {/* <div className="footer-img">
         <img src={casset} alt="casset" />
-      </div>
+      </div> */}
     </div>
   );
 };

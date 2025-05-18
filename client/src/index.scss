@@ -15,3 +15,8 @@ body {
     font-weight: 500;
     background-color: black;
 }
+// .tailwind-scope {
+// }
+// @tailwind base;
+@tailwind components;
+@tailwind utilities;

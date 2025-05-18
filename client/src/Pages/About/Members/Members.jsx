@@ -1,7 +1,7 @@
 import "./Members.scss";
 import React from "react";
-import cordinator from "../../../assets/MemberImages/Cordinator.png";
-import cocordinator1 from "../../../assets/MemberImages/Co-Cordinator 1.png";
+import cordinator from "../../../assets/MemberImages/Cordinator.jpg";
+import cocordinator1 from "../../../assets/MemberImages/Co-Cordinator 1.jpg";
 import cocordinator2 from "../../../assets/MemberImages/Co-Cordinator 2.jpg";
 import arrow from "../../../assets/arrow2x.png";
 import { Grid } from "@mui/material";
@@ -308,18 +308,18 @@ function Members() {
         <div className="cordinator">
           <img src={cordinator} alt="" />
           <div className="position">Coordinator</div>
-          <div className="Name">Kaustubh Upadhyay</div>
+          <div className="Name">Prateek Pandey</div>
         </div>
         <div className="cocs">
           <div className="co-cordinator1">
             <img src={cocordinator1} alt="" />
             <div className="position">Co-Coordinator</div>
-            <div className="Name">Utkarsh Raj</div>
+            <div className="Name">Piyush Deshmukh</div>
           </div>
           <div className="co-cordinator2">
             <img src={cocordinator2} alt="" />
             <div className="position">Co-Coordinator</div>
-            <div className="Name">Prateek Pandey</div>
+            <div className="Name">Malhar Patel</div>
           </div>
         </div>
       </div>

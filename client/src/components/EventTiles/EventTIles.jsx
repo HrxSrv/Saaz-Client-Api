@@ -60,7 +60,7 @@ function EventTIles() {
     }
     loadEvents();
   },[])
-//   const events =[
+//   const backupevents =[
 //     {
 //         "name": "Alumni Meet '24",
 //         "path": "Saaz Events 23-24/Saaz Events 23-24/Alumni Meet '24"

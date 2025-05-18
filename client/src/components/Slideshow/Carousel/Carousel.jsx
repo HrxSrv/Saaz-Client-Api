@@ -1,88 +1,50 @@
-import React from 'react';
-import {fetchEventMedia} from "../../../Cloudinary/Cloudinary.js"
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import  { useState, useEffect } from 'react';
+import { fetchEventMedia } from '../../../Cloudinary/Cloudinary.js';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+
 const ImageSlider = () => {
   const [images, setImages] = useState([]);
 
+  const backupimages = [
+    {
+      "asset_id": "52e51265677c5beab300697283cee487",
+      "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/hh9xki6uoxl4udvxswex.png",
+      // "title": "Backup Image 1"
+    },
+    {
+      "asset_id": "8ee4203ab1b78fd24b8da4e73b754762",
+      "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/isiqhf0nttc2gf9i0gux.png",
+      // "title": "Backup Image 2"
+    },
+    {
+      "asset_id": "a10a91243db751068b16677867046a61",
+      "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/jgcpdyuft7jenov8vggr.png",
+      // "title": "Backup Image 3"
+    },
+    {
+      "asset_id": "deaac797f999da749fafbd23efa6903c",
+      "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/jrjkhvufy8rksf9nzra7.png",
+      "title": "Backup Image 4"
+    }
+  ];
+
   useEffect(() => {
     const loadImages = async () => {
-      const fetchedImages = await fetchEventMedia('Dummy Images');
-      setImages(fetchedImages);
+      try {
+        const fetchedImages = await fetchEventMedia('Dummy Images');
+        setImages(fetchedImages.length > 0 ? fetchedImages : backupimages);
+      } catch (error) {
+        console.error("Failed to fetch images, using backup images.", error);
+        setImages(backupimages);
+      }
     };
 
     loadImages();
   }, []);
-  // console.log(images)
-//    const images = [
-//     {
-//         "asset_id": "52e51265677c5beab300697283cee487",
-//         "public_id": "Dummy Images/hh9xki6uoxl4udvxswex",
-//         "format": "png",
-//         "version": 1718386282,
-//         "resource_type": "image",
-//         "type": "upload",
-//         "created_at": "2024-06-14T17:31:22Z",
-//         "bytes": 499323,
-//         "width": 939,
-//         "height": 368,
-//         "asset_folder": "Dummy Images",
-//         "display_name": "hh9xki6uoxl4udvxswex",
-//         "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/hh9xki6uoxl4udvxswex.png",
-//         "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/hh9xki6uoxl4udvxswex.png"
-//     },
-//     {
-//         "asset_id": "8ee4203ab1b78fd24b8da4e73b754762",
-//         "public_id": "Dummy Images/isiqhf0nttc2gf9i0gux",
-//         "format": "png",
-//         "version": 1718386282,
-//         "resource_type": "image",
-//         "type": "upload",
-//         "created_at": "2024-06-14T17:31:22Z",
-//         "bytes": 563269,
-//         "width": 939,
-//         "height": 368,
-//         "asset_folder": "Dummy Images",
-//         "display_name": "isiqhf0nttc2gf9i0gux",
-//         "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/isiqhf0nttc2gf9i0gux.png",
-//         "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/isiqhf0nttc2gf9i0gux.png"
-//     },
-//     {
-//         "asset_id": "a10a91243db751068b16677867046a61",
-//         "public_id": "Dummy Images/jgcpdyuft7jenov8vggr",
-//         "format": "png",
-//         "version": 1718386282,
-//         "resource_type": "image",
-//         "type": "upload",
-//         "created_at": "2024-06-14T17:31:22Z",
-//         "bytes": 376856,
-//         "width": 939,
-//         "height": 368,
-//         "asset_folder": "Dummy Images",
-//         "display_name": "jgcpdyuft7jenov8vggr",
-//         "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/jgcpdyuft7jenov8vggr.png",
-//         "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/jgcpdyuft7jenov8vggr.png"
-//     },
-//     {
-//         "asset_id": "deaac797f999da749fafbd23efa6903c",
-//         "public_id": "Dummy Images/jrjkhvufy8rksf9nzra7",
-//         "format": "png",
-//         "version": 1718386282,
-//         "resource_type": "image",
-//         "type": "upload",
-//         "created_at": "2024-06-14T17:31:22Z",
-//         "bytes": 486477,
-//         "width": 939,
-//         "height": 368,
-//         "asset_folder": "Dummy Images",
-//         "display_name": "jrjkhvufy8rksf9nzra7",
-//         "url": "http://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/jrjkhvufy8rksf9nzra7.png",
-//         "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1718386282/Dummy%20Images/jrjkhvufy8rksf9nzra7.png"
-//     }
-// ]
+
   const settings = {
     dots: true,
     infinite: true,
@@ -91,13 +53,13 @@ const ImageSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    cssEase: 'ease-in-out', // Easing function for transition
-    fade: true, // Enable fade effect
-    arrows:false,
+    cssEase: 'ease-in-out',
+    fade: true,
+    arrows: false,
   };
 
   return (
-    <Box sx={{ width: 'calc(100% - 50px)', margin: 'auto',position:'relative' }}>
+    <Box sx={{ width: 'calc(100% - 50px)', margin: 'auto', position: 'relative' }}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <Box key={index} sx={{ position: 'relative' }}>

@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import independenceDay from "../../../assets/DrawerImages/independenceDay.jpg";
 import { useEffect, useRef } from "react";
 import orientation from "../../../assets/Home-tiles/orientation.jpg";
+import Orientation24 from "../../../assets/Home-tiles/Orientation24.jpg";
+import Orientation242 from "../../../assets/Home-tiles/Orientation24-2.jpg";
 import Tarang from "../../../assets/Home-tiles/Tarang.jpg";
 import saazNight25 from "../../../assets/Home-tiles/saazNight25.jpg";
 import Saanjh24 from "../../../assets/Home-tiles/Saanjh24.jpg";
@@ -83,31 +85,35 @@ function Tiles() {
         <div
           className="two"
           onClick={() => handleClick("two")}
-          style={{ "background-color": "#1E969F" }}
+          style={{
+            backgroundImage: `url(${Orientation24})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
           <div className="date" style={{ background: "transparent" }}>
             <div className="day" style={{ background: "transparent" }}>
-              15
+              1
             </div>
             <div className="month" style={{ background: "transparent" }}>
-              August
+              September
             </div>
             <div className="year" style={{ background: "transparent" }}>
               2024
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
-            Independence Day
+            Orientation '24
           </div>
           <div className="more1" style={{ background: "transparent" }}>
             More
           </div>
           {clickedTiles["two"] && (
             <TilePopup
-              eventName={"Independence Day"}
-              eventGallary={"Independence Day"}
-              image={independenceDay}
-              date={"15 August 2024"}
+              eventName={"Orientation '24"}
+              eventGallary={"Orientation '24"}
+              image={Orientation242}
+              date={"1 September 2024"}
               color="black"
               handleClick={() => handleClick("two")}
               buttonId="two"
@@ -135,7 +141,7 @@ function Tiles() {
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
-            Orientation '24
+            Orientation '23
           </div>
           <div className="more1-square" style={{ background: "transparent" }}>
             More
@@ -144,7 +150,7 @@ function Tiles() {
             <TilePopup
               color="black"
               handleClick={() => handleClick("three")}
-              eventName={"Orientation '24"}
+              eventName={"Orientation '23"}
               image={orientation}
               date={"21 August 2024"}
               eventGallary={"Orientation '23"}
@@ -163,13 +169,13 @@ function Tiles() {
         >
           <div className="date" style={{ background: "transparent" }}>
             <div className="day" style={{ background: "transparent" }}>
-              Soon
+              7
             </div>
             <div className="month" style={{ background: "transparent" }}>
-              {/* August */}
+              April
             </div>
             <div className="year" style={{ background: "transparent" }}>
-              {/* 2024 */}
+              2025
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
@@ -243,15 +249,34 @@ function Tiles() {
             <TilePopup color="black" handleClick={() => handleClick("six")} image={NoticeBoard}  buttonId="six" eventName={"Cooking Somethin...."}/>
           )}
         </div>
-        <div className="seven" style={{background:"black"}} onClick={() => handleClick("seven")}>
-          {/* <div className="video-background">
-            <video autoPlay muted loop id="bgVideo">
-              <source src={saazInstagram} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div> */}
+        <div className="seven" style={{ "background-color": "#1E969F" }} onClick={() => handleClick("seven")}>
+        <div className="date" style={{ background: "transparent" }}>
+            <div className="day" style={{ background: "transparent" }}>
+              15
+            </div>
+            <div className="month" style={{ background: "transparent" }}>
+              August
+            </div>
+            <div className="year" style={{ background: "transparent" }}>
+              2024
+            </div>
+          </div>
+          <div className="eventName" style={{ background: "transparent" }}>
+            Independence Day
+          </div>
+          <div className="more1" style={{ background: "transparent" }}>
+            More
+          </div>
           {clickedTiles["seven"] && (
-            <TilePopup color="black" handleClick={() => handleClick("seven")} buttonId="seven" />
+            <TilePopup
+              eventName={"Independence Day"}
+              eventGallary={"Independence Day"}
+              image={independenceDay}
+              date={"15 August 2024"}
+              color="black"
+              handleClick={() => handleClick("two")}
+              buttonId="two"
+            />
           )}
         </div>
         <div

@@ -29,3 +29,99 @@
         width: 20%;
     }
 }
+.blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.812);
+    z-index: 1;
+}
+.countdown-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.countdown-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.countdown-title {
+    font-family: "Anton", sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-blocks {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.countdown-block {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 80px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .countdown-number {
+        font-family: "Anton", sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        color: #ffffff;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    .countdown-label {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        letter-spacing: 1px;
+    }
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .blur-effect {
+        filter: blur(4px);
+    }
+}
+
+@include md {
+    .notification-details-square {
+        .countdown-title {
+            font-size: 40px;
+        }
+
+        .countdown-block {
+            min-width: 100px;
+
+            .countdown-number {
+                font-size: 48px;
+            }
+
+            .countdown-label {
+                font-size: 16px;
+            }
+        }
+    }
+}

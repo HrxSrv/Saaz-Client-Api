@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Banner.scss";
-import BannerImg from "../../../assets/BannerImg.png";
+import BannerImg from "../../../assets/Hand.jpg";
 import saazBanner from "../../../assets/SaazIntext.png"
 const Banner = () => {
     return (

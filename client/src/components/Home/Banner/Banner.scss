@@ -144,3 +144,17 @@ color: #FFFFFF;
         
     }
 }
+
+.content::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 50%; /* Gradient covers top half */
+    background: linear-gradient(to bottom, 
+      rgb(0, 0, 0) 0%, 
+      rgba(0,0,0,0) 100%);
+    pointer-events: none; /* Allows clicks to pass through */
+  }
+  
