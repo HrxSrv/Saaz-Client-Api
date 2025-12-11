@@ -248,7 +248,8 @@ function Members() {
                 width: "250px",        
                 height: "250px",       
                 objectFit: "cover",    
-                borderRadius: "50%"    
+                borderRadius: "50%",
+                marginBottom: "20px"
             }} 
           />
           <div className="position">Cultural Counsellor </div>
@@ -257,13 +258,14 @@ function Members() {
 
         <div className="faculty">
           <img 
-            src="http://faculty.iiitdmj.ac.in/proPic/Nitish%20pic.jpg" 
+            src="https://res.cloudinary.com/dddirokst/image/upload/v1765467482/Nitish_Andola.jpg" 
             alt="Faculty In-Charge Saaz"
             style={{ 
                 width: "250px",        
                 height: "250px",       
                 objectFit: "cover",    
-                borderRadius: "50%"    
+                borderRadius: "50%",
+                marginBottom: "20px"
             }} 
           />
           <div className="position">Faculty In-Charge </div>
@@ -281,14 +283,14 @@ function Members() {
       <div className="members-details">
         <div className="cordinator">
           <img 
-            src="https://res.cloudinary.com/dddirokst/image/upload/v1765458525/SaazMembers/Ishwar
-i_Maske.jpg"
+            src="https://res.cloudinary.com/dddirokst/image/upload/v1765467480/Ishwari_Maske.jpg"
             alt="Coordinator"
             style={{ 
                 width: "250px",        
                 height: "250px",       
                 objectFit: "cover",    
-                borderRadius: "50%"    
+                borderRadius: "50%",
+                marginBottom: "20px"
             }}
           />
           <div className="position">Coordinator</div>
@@ -299,14 +301,14 @@ i_Maske.jpg"
 
           <div className="co-cordinator1">
             <img 
-                src="https://res.cloudinary.com/dddirokst/image/upload/v1765458837/SaazMembers/Akash_
-Deep_Saikia.jpg"
+                src="https://res.cloudinary.com/dddirokst/image/upload/v1765467480/Akash_Deep_Saikia.jpg"
                 alt="Co-Coordinator"
                 style={{ 
                     width: "250px",        
                     height: "250px",       
                     objectFit: "cover",    
-                    borderRadius: "50%"    
+                    borderRadius: "50%",
+                    marginBottom: "20px" 
                 }} 
             />
             <div className="position">Co-Coordinator</div>
@@ -314,14 +316,14 @@ Deep_Saikia.jpg"
           </div>
           <div className="co-cordinator2">
             <img 
-                src="https://res.cloudinary.com/dddirokst/image/upload/v1765461034/SaazMembers/Sai_An
-kith.jpg"
+                src="https://res.cloudinary.com/dddirokst/image/upload/v1765467722/Sai_Ankith.jpg"
                 alt="Co-Coordinator"
                 style={{ 
                     width: "250px",        
                     height: "250px",       
                     objectFit: "cover",    
-                    borderRadius: "50%"    
+                    borderRadius: "50%",
+                    marginBottom: "20px"
                 }}
             />
             <div className="position">Co-Coordinator</div>
