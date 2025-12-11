@@ -249,7 +249,7 @@ function Members() {
                 height: "250px",       
                 objectFit: "cover",    
                 borderRadius: "50%",
-                marginBottom: "20px"
+                marginBottom: "32px"
             }} 
           />
           <div className="position">Cultural Counsellor </div>
@@ -265,7 +265,7 @@ function Members() {
                 height: "250px",       
                 objectFit: "cover",    
                 borderRadius: "50%",
-                marginBottom: "20px"
+                marginBottom: "32px"
             }} 
           />
           <div className="position">Faculty In-Charge </div>
@@ -290,7 +290,7 @@ function Members() {
                 height: "250px",       
                 objectFit: "cover",    
                 borderRadius: "50%",
-                marginBottom: "20px"
+                marginBottom: "16px"
             }}
           />
           <div className="position">Coordinator</div>
@@ -308,7 +308,7 @@ function Members() {
                     height: "250px",       
                     objectFit: "cover",    
                     borderRadius: "50%",
-                    marginBottom: "20px" 
+                    marginBottom: "16px" 
                 }} 
             />
             <div className="position">Co-Coordinator</div>
@@ -323,7 +323,7 @@ function Members() {
                     height: "250px",       
                     objectFit: "cover",    
                     borderRadius: "50%",
-                    marginBottom: "20px"
+                    marginBottom: "16px"
                 }}
             />
             <div className="position">Co-Coordinator</div>
