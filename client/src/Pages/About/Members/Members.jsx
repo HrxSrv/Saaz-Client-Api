@@ -1,18 +1,17 @@
 import "./Members.scss";
 import React from "react";
-import cordinator from "../../../assets/MemberImages/Cordinator.jpg";
-import cocordinator1 from "../../../assets/MemberImages/Co-Cordinator 1.jpg";
-import cocordinator2 from "../../../assets/MemberImages/Co-Cordinator 2.jpg";
 import arrow from "../../../assets/arrow2x.png";
 import { Grid } from "@mui/material";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import { useState,useEffect } from "react";
+
 function Members() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
+
   const [members,setMembers] = useState([
     {
         "asset_id": "7d91af0f67dbe4fc7a9b4e8e740c57c2",
@@ -223,6 +222,7 @@ function Members() {
         "secure_url": "https://res.cloudinary.com/djy2jlthj/image/upload/v1721222504/SaazMembers/Virat_Singh.jpg"
     }
 ]);
+
   useEffect(()=>{
     const fetchMemebers= async () =>{
         const fetchedMemebers = await fetchEventMedia("SaazMembers")
@@ -230,68 +230,16 @@ function Members() {
     }
     fetchMemebers();
   },[]);
+
   console.log(members);
+  
   const getTransformedImageUrl = (url) => {
     return url.replace("/upload/", "/upload/w_600,q_50/");
   };
-  // const testMembers = [
-  //   {
-  //     name: "Harshit Srivastava",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Kaustubh Upadhyay",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  //   {
-  //     name: "Random log",
-  //     path: "../../../assets/Dummy Images/bg (1).png",
-  //   },
-  // ];
+
   return (
     <div className="Members_page">
-      {/* <div className="members-title">
-        <div className="one"></div>
-        <div className="two">Counsellor</div>
-        <div className="three"></div>
-      </div> */}
-      <div className="members-details">
+      <div className="members-details" style={{display: 'flex', justifyContent: 'center', gap: '50px', flexWrap: 'wrap'}}>
         <div className="counsellor">
           <img 
             src="https://res.cloudinary.com/dddirokst/image/upload/v1765443854/qa9nlgfxo9dzz1hpkqbd.jpg" 
@@ -300,38 +248,90 @@ function Members() {
                 width: "250px",        
                 height: "250px",       
                 objectFit: "cover",    
-                borderRadius: "50%"    
+                borderRadius: "50%",
+                marginBottom: "32px"
             }} 
           />
           <div className="position">Cultural Counsellor </div>
           <div className="Name">Dr.Amrita Bhattacharjee</div>
+        </div>
 
+        <div className="faculty">
+          <img 
+            src="https://res.cloudinary.com/dddirokst/image/upload/v1765467482/Nitish_Andola.jpg" 
+            alt="Faculty In-Charge Saaz"
+            style={{ 
+                width: "250px",        
+                height: "250px",       
+                objectFit: "cover",    
+                borderRadius: "50%",
+                marginBottom: "32px"
+            }} 
+          />
+          <div className="position">Faculty In-Charge </div>
+          <br></br>
+          <div className="Name">Dr. Nitish Andola</div>
         </div>
       </div>
+
       <div className="members-title">
         <div className="one"></div>
         <div className="two">Members</div>
         <div className="three"></div>
       </div>
+
       <div className="members-details">
         <div className="cordinator">
-          <img src={cordinator} alt="" />
+          <img 
+            src="https://res.cloudinary.com/dddirokst/image/upload/v1765467480/Ishwari_Maske.jpg"
+            alt="Coordinator"
+            style={{ 
+                width: "250px",        
+                height: "250px",       
+                objectFit: "cover",    
+                borderRadius: "50%",
+                marginBottom: "16px"
+            }}
+          />
           <div className="position">Coordinator</div>
-          <div className="Name">Prateek Pandey</div>
+          <div className="Name">Ishwari Maske</div>
         </div>
-        <div className="cocs">
+        
+        <div className="cocs" style={{ display: "flex", gap: "250px", justifyContent: "center", flexWrap: "wrap" }}>
+
           <div className="co-cordinator1">
-            <img src={cocordinator1} alt="" />
+            <img 
+                src="https://res.cloudinary.com/dddirokst/image/upload/v1765467480/Akash_Deep_Saikia.jpg"
+                alt="Co-Coordinator"
+                style={{ 
+                    width: "250px",        
+                    height: "250px",       
+                    objectFit: "cover",    
+                    borderRadius: "50%",
+                    marginBottom: "16px" 
+                }} 
+            />
             <div className="position">Co-Coordinator</div>
-            <div className="Name">Piyush Deshmukh</div>
+            <div className="Name">Akash Deep Saikia</div>
           </div>
           <div className="co-cordinator2">
-            <img src={cocordinator2} alt="" />
+            <img 
+                src="https://res.cloudinary.com/dddirokst/image/upload/v1765467722/Sai_Ankith.jpg"
+                alt="Co-Coordinator"
+                style={{ 
+                    width: "250px",        
+                    height: "250px",       
+                    objectFit: "cover",    
+                    borderRadius: "50%",
+                    marginBottom: "16px"
+                }}
+            />
             <div className="position">Co-Coordinator</div>
-            <div className="Name">Malhar Patel</div>
+            <div className="Name">Ankith Sai</div>
           </div>
         </div>
       </div>
+
       <div className="bottom-half">
         <div className="working-committe-title">Committee Members</div>
         <div className={`working-committe ${isExpanded ? "expanded" : ""}`}>
@@ -350,12 +350,13 @@ function Members() {
           </Grid>
         </div>
       </div>
-          <div className={`toggle-button ${isExpanded ? "up":""}`} onClick={toggleExpand}>
-            <img src={arrow} alt="" />
-            <div className="more">
-                {isExpanded ? "Less" : "more"}
-            </div>
-          </div>
+      
+      <div className={`toggle-button ${isExpanded ? "up":""}`} onClick={toggleExpand}>
+        <img src={arrow} alt="" />
+        <div className="more">
+            {isExpanded ? "Less" : "more"}
+        </div>
+      </div>
     </div>
   );
 }
