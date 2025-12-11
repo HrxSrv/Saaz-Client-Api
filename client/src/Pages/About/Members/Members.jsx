@@ -7,7 +7,6 @@ import arrow from "../../../assets/arrow2x.png";
 import { Grid } from "@mui/material";
 import { fetchEventMedia } from "../../../Cloudinary/Cloudinary";
 import { useState,useEffect } from "react";
-import Counsellor from "../../../assets/MemberImages/Koushik Dutta.jpg"
 function Members() {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -294,9 +293,19 @@ function Members() {
       </div> */}
       <div className="members-details">
         <div className="counsellor">
-          <img src={Counsellor} alt="" />
-          <div className="position">Cultural Counsellor</div>
-          <div className="Name">Koushik Dutta</div>
+          <img 
+            src="https://res.cloudinary.com/dddirokst/image/upload/v1765443854/qa9nlgfxo9dzz1hpkqbd.jpg" 
+            alt="Counsellor"
+            style={{ 
+                width: "250px",        
+                height: "250px",       
+                objectFit: "cover",    
+                borderRadius: "50%"    
+            }} 
+          />
+          <div className="position">Cultural Counsellor </div>
+          <div className="Name">Dr.Amrita Bhattacharjee</div>
+
         </div>
       </div>
       <div className="members-title">

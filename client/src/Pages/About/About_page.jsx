@@ -10,10 +10,6 @@ const About_page = () => {
         <div className="bannerImg">
           <img src={saazBanner} alt="saaz banner" />
         </div>
-        {/* <div className="form">
-                    <input type="text" placeholder="Email Address" />
-                    <button>Subscribe</button>
-                </div> */}
         <span className="text">
           Saaz - The Music Club, of PDPM IIITDM- Jabalpur, is a platform that
           fosters a network among peers through the language of music. The club
