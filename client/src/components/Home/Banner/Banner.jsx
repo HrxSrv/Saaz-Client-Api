@@ -1,19 +1,19 @@
 import React from "react";
-
 import "./Banner.scss";
 import BannerImg from "../../../assets/Hand.jpg";
-import saazBanner from "../../../assets/SaazIntext.png"
-const Banner = () => {
+import saazBanner from "../../../assets/SaazIntext.png";
+
+// positionX represents a percentage to center the SAAZ logo.
+const Banner = ({ positionX = -1 }) => {
     return (
         <div className="hero-banner">
             <img src={BannerImg} alt="Banner" className="background"/>
-            <div className="content">
+            <div 
+                className="content" 
+                style={{ left: `${positionX}%` }}
+            >
                 <div className="img-cta"> 
-                <img className="banner-img" src={saazBanner} />
-                {/* <div className="ctas">
-                        <div className="banner-cta">YOUTUBE</div>
-                        <div className="banner-cta v2">READ MORE</div>
-                    </div> */}
+                    <img className="banner-img" src={saazBanner} alt="Saaz content" />
                 </div>
                 <div className="text-content">
                     <p>THE MUSIC CLUB</p>
