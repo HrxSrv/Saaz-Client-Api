@@ -99,32 +99,43 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-700 py-4">
-                    <div className="flex flex-row flex-wrap justify-center md:justify-between items-center gap-4 text-gray-300">
-                        <span className="text-xs md:text-sm font-light">
-                            Designed By{" "}
-                            <a 
-                                href="https://www.linkedin.com/in/vishrut-sagar-75b598272/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white hover:text-gray-300 transition-colors"
-                            >
-                                Vishrut Sagar
-                            </a>
-                        </span>
-                        <span className="text-xs md:text-sm font-light">
-                            Coded By{" "}
-                            <a 
-                                href="https://www.linkedin.com/in/harshitsrv"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white hover:text-gray-300 transition-colors"
-                            >
-                                Harshit Srivastava
-                            </a>
-                        </span>
-                    </div>
-                </div>
+<div className="border-t border-gray-700 py-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-2 md:gap-4 text-gray-300 text-center">
+        <span className="text-xs md:text-sm font-light md:text-left">
+            Designed By{" "}
+            <a
+                href="https://www.linkedin.com/in/vishrut-sagar-75b598272/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition-colors"
+            >
+                Vishrut Sagar
+            </a>
+        </span>
+        <span className="text-xs md:text-sm font-light md:text-center">
+            Coded By{" "}
+            <a
+                href="https://www.linkedin.com/in/harshitsrv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition-colors"
+            >
+                Harshit Srivastava
+            </a>
+        </span>
+        <span className="text-xs md:text-sm font-light md:text-right">
+            Maintained By{" "}
+            <a
+                href="https://www.linkedin.com/in/alok-karn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 transition-colors"
+            >
+                Alok Karn
+            </a>
+        </span>
+    </div>
+</div>
             </div>
         </footer>
     );

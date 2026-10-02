@@ -1,8 +1,8 @@
 import React from "react";
 import "./Alert_Banner.scss";
-import Notification from "../../../assets/Home-tiles/SaazNight.png";
+import Notification from "../../../assets/Home-tiles/SaazNight.jpg";
 import NotificationQr from "../../../assets/Home-tiles/Home-Nofification-Banner/Qr.jpg";
-import Ticket from "../../../assets/Home-tiles/Home-Nofification-Banner/ticket.jpg";
+import Ticket from "../../../assets/Home-tiles/Home-Nofification-Banner/SaazNight.jpg";
 import SaazFabric from "../../../assets/Merch/Saaz-Fabric.png"
 import TilePopup from "../Drawer/Drawer";
 import { useState, useEffect } from "react";
@@ -18,28 +18,28 @@ function AlertBanner() {
     console.log(clickedTiles["notification"]);
   }, [clickedTiles]);
   const notification = {
-    title: "Saaz Night '25",
-    date: "7",
-    month: "April",
-    year: "2025",
-    fullDate: "7 April 2025",
-    eventGallary: "Saaz Night '24",
+    title: "Ecstasy '26",
+    date: "08",
+    month: "October",
+    year: "2026",
+    fullDate: "08 October 2026",
+    eventGallary: "Ecstasy '26",
     eventBulletins: [
-     "Duet Competetion",
-     "Sufi",
-     "Qawwali",
+     "Band Competition",
+     "Metal",
+     "Classical Fusion",
      "Bollywood",
      "Rock",
-     "Metal"
+     "Pop"
     ],
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSe5_PcHI7wfTLpsxcUg8-7odOYk3yJj98tohs8dBxwWus_iDg/viewform?usp=sharing"
+    registerLink: "https://forms.gle/LTcr2LuSFzfRaG2A6"
   };
   return (
     <div className="Alert_banner"> 
       <div className="horizontal-bar">
         <div className="pc-Qr">
           <img src={NotificationQr} alt="" />
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5_PcHI7wfTLpsxcUg8-7odOYk3yJj98tohs8dBxwWus_iDg/viewform?usp=sharing" className="register">Register</a>
+          <a href="https://forms.gle/LTcr2LuSFzfRaG2A6" className="register">Register</a>
         </div>
         <div className="Bulletin">
           <div className="title">Prospects</div>

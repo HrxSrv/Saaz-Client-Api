@@ -1,6 +1,7 @@
 import React from 'react'
 import './Product.scss'
-function Product({product,onBuyClick}) {
+
+function Product({product}) {
   return (
     <div className='Product'>
         <div className="product-title">
@@ -16,9 +17,14 @@ function Product({product,onBuyClick}) {
             <div className="price">
                 {product.price}
             </div>
-            <div className={ product.instock? "buy-button":"SoldOut"} onClick={()=>(onBuyClick(product))}>
-                {product.instock? "Buy":" Sold_Out"}
-            </div>
+            <a 
+                href="https://forms.gle/TXZsNTqPcdYRDNtx7" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={product.instock ? "buy-button" : "SoldOut"}
+            >
+                Buy Now
+            </a>
         </div>
     </div>
   )

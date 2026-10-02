@@ -7,14 +7,16 @@ import { useNavigate } from "react-router-dom";
 import independenceDay from "../../../assets/DrawerImages/independenceDay.jpg";
 import { useEffect, useRef } from "react";
 import orientation from "../../../assets/Home-tiles/orientation.jpg";
-import Orientation24 from "../../../assets/Home-tiles/Orientation24.jpg";
+import Orientation24 from "../../../assets/Home-tiles/Orientation24.png";
 import Orientation242 from "../../../assets/Home-tiles/Orientation24-2.jpg";
-import Tarang from "../../../assets/Home-tiles/Tarang.jpg";
-import saazNight25 from "../../../assets/Home-tiles/saazNight25.jpg";
-import Saanjh24 from "../../../assets/Home-tiles/Saanjh24.jpg";
+import Orientation26 from "../../../assets/Home-tiles/Orientation26.jpg"
+import RepublicDay26 from "../../../assets/Home-tiles/RepublicDay26.png";
+import saazNight26 from "../../../assets/Home-tiles/saazNight26.jpg";
+import BitsPilani25 from "../../../assets/Home-tiles/BitsPilani25.jpg";
 import NoticeBoard from "../../../assets/Home-tiles/NoticeBoard.jpg";
 import Merch1 from "../../../assets/Home-tiles/Merch1.jpg";
 // import saazInstagram from "../../../assets/Home-tiles/saazInstagram1.mp4";
+import IndependenceDay25 from "../../../assets/Home-tiles/IndependenceDay25.jpg";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import ContentPasteIcon from "@mui/icons-material/ContentPaste";
 import Vector from "../../../assets/Vector.png"
@@ -84,7 +86,7 @@ function Tiles() {
 
         <div
           className="two"
-          onClick={() => handleClick("two")}
+          onClick={() => window.location.href = "#/event/Orientation '25"}
           style={{
             backgroundImage: `url(${Orientation24})`,
             backgroundSize: "cover",
@@ -99,87 +101,76 @@ function Tiles() {
               September
             </div>
             <div className="year" style={{ background: "transparent" }}>
-              2024
+              2025
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
-            Orientation '24
+            Orientation '25
           </div>
           <div className="more1" style={{ background: "transparent" }}>
             More
           </div>
           {clickedTiles["two"] && (
             <TilePopup
-              eventName={"Orientation '24"}
-              eventGallary={"Orientation '24"}
+              eventName={"Orientation '25"}
+              eventGallary={"Orientation '25"}
               image={Orientation242}
-              date={"1 September 2024"}
+              date={"1 September 2025"}
               color="black"
-              handleClick={() => handleClick("two")}
+              handleClick={() => window.open("", "_blank") }
               buttonId="two"
             />
           )}
         </div>
         <div
           className="three"
-          onClick={() => handleClick("three")}
+          onClick={() => window.location.href = "#/event/Republic Day '26"}
           style={{
-            backgroundImage: `url(${orientation})`,
+            backgroundImage: `url(${RepublicDay26})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
           <div className="date" style={{ background: "transparent" }}>
             <div className="day" style={{ background: "transparent" }}>
-              21
+              26
             </div>
             <div className="month" style={{ background: "transparent" }}>
-              August
+              January
             </div>
             <div className="year" style={{ background: "transparent" }}>
-              2024
+              2026
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
-            Orientation '23
+            Republic Day '26
           </div>
           <div className="more1-square" style={{ background: "transparent" }}>
             More
           </div>
-          {clickedTiles["three"] && (
-            <TilePopup
-              color="black"
-              handleClick={() => handleClick("three")}
-              eventName={"Orientation '23"}
-              image={orientation}
-              date={"21 August 2024"}
-              eventGallary={"Orientation '23"}
-              buttonId="three"
-            />
-          )}
         </div>
         <div
           className="four"
-          onClick={() => handleClick("four")}
+          onClick={() => window.location.href = "#/event/Saaz Night '26"}
           style={{
-            backgroundImage: `url(${saazNight25})`,
+            backgroundImage: `url(${saazNight26})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
           <div className="date" style={{ background: "transparent" }}>
             <div className="day" style={{ background: "transparent" }}>
-              7
+              30
             </div>
             <div className="month" style={{ background: "transparent" }}>
-              April
+              March
             </div>
             <div className="year" style={{ background: "transparent" }}>
-              2025
+              2026
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
-            Saaz Night'25
+            Saaz Night'26
           </div>
           <div className="more1" style={{ background: "transparent" }}>
             More
@@ -188,9 +179,9 @@ function Tiles() {
             <TilePopup
               color="black"
               handleClick={() => handleClick("four")}
-              eventName={"Saaz Night '25"}
-              eventGallary={"Saaz Night '24"}
-              image={saazNight25}
+              eventName={"Saaz Night '26"}
+              eventGallary={"Saaz Night '26"}
+              image={saazNight26}
               date={"To Be Announced"}
               buttonId="four"
             />
@@ -198,7 +189,7 @@ function Tiles() {
         </div>
         <div
           className="five"
-          onClick={() => handleClick("five")}
+          onClick={() => window.location.href = "#/merch"}
           style={{
             backgroundImage: `url(${Merch1})`,
             backgroundSize: "cover",
@@ -249,16 +240,22 @@ function Tiles() {
             <TilePopup color="black" handleClick={() => handleClick("six")} image={NoticeBoard}  buttonId="six" eventName={"Cooking Somethin...."}/>
           )}
         </div>
-        <div className="seven" style={{ "background-color": "#1E969F" }} onClick={() => handleClick("seven")}>
-        <div className="date" style={{ background: "transparent" }}>
-            <div className="day" style={{ background: "transparent" }}>
+        <div className="seven" style=
+        {{backgroundImage: `url(${IndependenceDay25})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+           }} 
+        onClick={() => window.location.href = "#/event/Independence Day '25"}>
+        <div className="date" style={{  background: "transparent"
+        }}>
+            <div className="day" style={{ background: "transparent " }}>
               15
             </div>
             <div className="month" style={{ background: "transparent" }}>
               August
             </div>
             <div className="year" style={{ background: "transparent" }}>
-              2024
+              2025
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
@@ -272,7 +269,7 @@ function Tiles() {
               eventName={"Independence Day"}
               eventGallary={"Independence Day"}
               image={independenceDay}
-              date={"15 August 2024"}
+              date={"15 August 2025"}
               color="black"
               handleClick={() => handleClick("two")}
               buttonId="two"
@@ -283,7 +280,7 @@ function Tiles() {
           className="eight"
           onClick={() => handleClick("eight")}
           style={{
-            backgroundImage: `url(${Tarang})`,
+            backgroundImage: `url(${Orientation26})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -303,7 +300,7 @@ function Tiles() {
             </div>
           </div>
           {/* <div className="eventName" style={{ background: "transparent" }}>
-            Tarang '24
+            Orientation '26
           </div> */}
           <div className="more1-square" style={{ background: "transparent" }}>
             More
@@ -312,19 +309,18 @@ function Tiles() {
             <TilePopup
               color="black"
               handleClick={() => handleClick("eight")}
-              eventName={"Tarang '24"}
-              eventGallary={"Tarang '23"}
-              image={Tarang}
-              date={"21 August 2024"}
+              eventName={"Orientation '26"}
+              image={Orientation26}
+              date={"September 2026"}
               buttonId="eight"
             />
           )}
         </div>
         <div
           className="nine"
-          onClick={() => handleClick("nine")}
+          onClick={() => window.location.href = "#/event/Bits Pilani '25"}
           style={{
-            backgroundImage: `url(${Saanjh24})`,
+            backgroundImage: `url(${BitsPilani25})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -334,17 +330,17 @@ function Tiles() {
               className="day"
               style={{ background: "transparent", zIndex: "2" }}
             >
-              12
+              6
             </div>
             <div className="month" style={{ background: "transparent" }}>
-              October
+              Novemeber
             </div>
             <div className="year" style={{ background: "transparent" }}>
-              2024
+              2025
             </div>
           </div>
           <div className="eventName" style={{ background: "transparent" }}>
-            Saanjh '24
+            BITS Pilani '25
           </div>
           <div className="more1-square" style={{ background: "transparent" }}>
             More
@@ -355,7 +351,6 @@ function Tiles() {
               handleClick={() => handleClick("nine")}
               eventName={"Saanjh '24"}
               eventGallary={"Saanjh 22"}
-              image={Saanjh24}
               date={"21 August 2024"}
               buttonId="nine"
             />

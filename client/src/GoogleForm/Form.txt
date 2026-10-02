@@ -1,4 +1,4 @@
-https://docs.google.com/forms/d/e/1FAIpQLSekm7duFf3IdJDRdIpt-2tSW5GIrvCvc_TgL6urj6v1zdLHnQ/formResponse
+https://froms.gle/LTcr2LuSFzfRaG2A6
 ?usp=pp_url&
 entry.1655643117=999-1
 &entry.514288282=999-2&
@@ -6,7 +6,7 @@ entry.596053227=S&
 entry.354983475=999-3
 &entry.2083287449=999-4
 &entry.1717975506=https://res.cloudinary.com/djy2jlthj/image/upload/v1721978572/PaymentQrs/Saaz-merch-payment-qr_ylqdci.jpg 
-https://docs.google.com/forms/d/e/1FAIpQLSekm7duFf3IdJDRdIpt-2tSW5GIrvCvc_TgL6urj6v1zdLHnQ/viewform
+https://froms.gle/LTcr2LuSFzfRaG2A6
 ?usp=pp_url&
 entry.1655643117=Name&
 entry.514288282=Roll+Number&

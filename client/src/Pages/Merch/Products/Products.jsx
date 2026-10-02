@@ -2,6 +2,8 @@ import React from 'react';
 import './Products.scss';
 import Product from './Product/Product';
 import tshirt from "../../../assets/Merch/Saaz-Tshirt.png";
+import tshirt1 from "../../../assets/Merch/Saaz-Tshirt1.png";
+
 import hoodie from "../../../assets/Merch/Saaz-Hoodie.png";
 import sticker from "../../../assets/Merch/Saaz-Sticker.png";
 import notebook from "../../../assets/Merch/Saaz-Notebook1.png";
@@ -66,11 +68,12 @@ const CountdownTimer = () => {
 };
 function Products() {
     const productsArray = [
-        { id:"1", title: "T-shirt", img: tshirt, price: "₹499", info: "Over shoulder",instock: false },
-        { id:"2",title: "T-shirt (Oversized)", img: tshirt, price: "₹499", info: "Drop shoulder oversized",instock: false  },
-        { id:"3", title: "Hoodie", img: hoodie, price: "₹699", info: "300 gsm pure wool",instock: false },
+        { id:"1", title: "T-shirt", img: tshirt, price: "₹599", info: "Over shoulder",instock: false },
+        { id:"2",title: "T-shirt (Oversized)", img: tshirt1, price: "₹599", info: "Drop shoulder oversized",instock: false  },
+        //{ id:"3", title: "Hoodie", img: hoodie, price: "₹699", info: "300 gsm pure wool",instock: false },
+        { id:"3",title: "Notebook", img: notebook, price: "₹100", info: "Paper-Back" ,instock: false},
         { id:"4",title: "Sticker", img: sticker, price: "₹30", info: "Black and White",instock: false  },
-        { id:"5",title: "Notebook", img: notebook, price: "₹100", info: "Paper-Back" ,instock: false}
+        
     ];
     const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);

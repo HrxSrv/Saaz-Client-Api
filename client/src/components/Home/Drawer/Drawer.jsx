@@ -217,7 +217,7 @@ const TilePopup = ({ eventName,image,date,handleClick,eventGallary,buttonId,clic
                 <div className="eventName">{eventName}</div>
                 <div className="date">{date}</div>
                 </div>
-                <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSe5_PcHI7wfTLpsxcUg8-7odOYk3yJj98tohs8dBxwWus_iDg/viewform?usp=sharing&urp=gmail_link" className="register">
+                <a href="https://forms.gle/LTcr2LuSFzfRaG2A6" className="register">
                   Register
                 </a>
               </div>

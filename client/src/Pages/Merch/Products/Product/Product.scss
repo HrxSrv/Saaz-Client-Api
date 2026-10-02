@@ -81,15 +81,20 @@
       // left: 347.28px;
       // top: 2039.98px;
 
-      background: #1e969f;
+      background: #2563eb;
       box-shadow: 24px 16px 8px rgba(0, 0, 0, 0.01),
         15px 10px 7px rgba(0, 0, 0, 0.08), 9px 6px 6px rgba(0, 0, 0, 0.28),
         4px 2px 5px rgba(0, 0, 0, 0.47), 1px 1px 3px rgba(0, 0, 0, 0.54);
       border-radius: 9.59108px;
       cursor: pointer;
       transition: all 150ms linear;
+      text-decoration: none;
+      color: inherit;
       &:hover{
         opacity: 80%;
+      }
+      &:visited {
+        color: inherit;
       }
     }
     .SoldOut{
@@ -116,8 +121,10 @@
         4px 2px 5px rgba(0, 0, 0, 0.47), 1px 1px 3px rgba(0, 0, 0, 0.54);
       border-radius: 9.59108px;
     //   cursor: pointer;
-      opacity: 80%;
-      pointer-events: none;
+      opacity: 100%;
+      // pointer-events: none;
+      text-decoration: none;
+      color: inherit;
     }
   }
 }
